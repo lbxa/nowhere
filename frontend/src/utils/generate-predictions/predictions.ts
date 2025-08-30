@@ -1,21 +1,13 @@
 /**
  * Bondi Lines API Client - Optimized for Bun Runtime with Auto Token Refresh
- * 
- * Features:
- * - Automatic token refresh on 401 errors
- * - Token persistence in auth.json file
- * - Built-in timeout support with AbortController
- * - Automatic compression handling (Bun native)
- * - TypeScript support out of the box
- * - Efficient parallel request handling
- * 
- * Usage: bun run bondi-api-client.ts
+ * Now with robust prediction chart processing that handles duplicates and malformed data
  */
 
-import { DateTime } from 'luxon'; // You'll need to install: bun add luxon @types/luxon
+import { DateTime } from 'luxon';
 import * as fs from 'fs';
 import * as path from 'path';
 
+// [Keep all the existing interfaces and BondiLinesApiClient class as-is]
 interface FeedQueryParams {
     cityId: string;
     page: number;
@@ -57,7 +49,6 @@ interface AuthData {
     expiresAt?: string;
 }
 
-// Raw JSON string response type
 type JsonString = string;
 
 class BondiLinesApiClient {
@@ -67,13 +58,11 @@ class BondiLinesApiClient {
 
     constructor(config: Partial<ApiConfig> = {}) {
         this.authFilePath = path.join(process.cwd(), 'auth.json');
-        
-        // Load token from auth.json if it exists
         const authToken = this.loadAuthToken();
-        
+
         this.config = {
             baseUrl: config.baseUrl || 'https://api.bondilinesapp.com',
-            timeout: config.timeout || 10000, // 10 seconds default timeout
+            timeout: config.timeout || 10000,
             headers: {
                 host: 'api.bondilinesapp.com',
                 accept: 'application/json',
@@ -86,13 +75,10 @@ class BondiLinesApiClient {
         };
     }
 
-    // Load auth token from file
     private loadAuthToken(): string | null {
         try {
             if (fs.existsSync(this.authFilePath)) {
                 const authData: AuthData = JSON.parse(fs.readFileSync(this.authFilePath, 'utf-8'));
-                
-                // Check if token is expired
                 if (authData.expiresAt) {
                     const expiresAt = new Date(authData.expiresAt);
                     const now = new Date();
@@ -101,7 +87,6 @@ class BondiLinesApiClient {
                         return null;
                     }
                 }
-                
                 return authData.token;
             }
         } catch (error) {
@@ -110,21 +95,17 @@ class BondiLinesApiClient {
         return null;
     }
 
-    // Save auth token to file
     private saveAuthToken(token: string, expiresIn?: string, refreshToken?: string): void {
         try {
             const authData: AuthData = {
                 token,
                 refreshToken
             };
-
-            // Calculate expiration time if provided
             if (expiresIn) {
                 const expiresInSeconds = parseInt(expiresIn);
                 const expiresAt = new Date(Date.now() + (expiresInSeconds * 1000));
                 authData.expiresAt = expiresAt.toISOString();
             }
-
             fs.writeFileSync(this.authFilePath, JSON.stringify(authData, null, 2));
             console.log('Auth token saved to auth.json');
         } catch (error) {
@@ -132,12 +113,10 @@ class BondiLinesApiClient {
         }
     }
 
-    // Refresh authentication token
     private async refreshAuthToken(): Promise<string> {
         console.log('Refreshing authentication token...');
-        
         const authUrl = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD_Bwm02299rbe9Xab4ufyux3fHI2hYxKE';
-        
+
         const requestBody = {
             returnSecureToken: true,
             email: "fasisol266@noidem.com",
@@ -170,13 +149,8 @@ class BondiLinesApiClient {
             }
 
             const authData = await response.json() as AuthResponse;
-            
-            // Save the new token
             this.saveAuthToken(authData.idToken, authData.expiresIn, authData.refreshToken);
-            
-            // Update the config with new token
             this.config.headers.authorization = `Bearer ${authData.idToken}`;
-            
             console.log('Authentication token refreshed successfully');
             return authData.idToken;
         } catch (error) {
@@ -185,7 +159,6 @@ class BondiLinesApiClient {
         }
     }
 
-    // Update configuration
     updateConfig(newConfig: Partial<ApiConfig>): void {
         this.config = {
             ...this.config,
@@ -197,13 +170,11 @@ class BondiLinesApiClient {
         };
     }
 
-    // Set authorization token
     setAuthToken(token: string): void {
         this.config.headers.authorization = `Bearer ${token}`;
         this.saveAuthToken(token);
     }
 
-    // Bun-specific: Save response data to file (leveraging Bun's fast file I/O)
     async saveResponseToFile(jsonString: string, filename: string): Promise<void> {
         try {
             await Bun.write(filename, jsonString);
@@ -214,7 +185,6 @@ class BondiLinesApiClient {
         }
     }
 
-    // Build query string from parameters
     private buildQueryString(params: Record<string, string | number>): string {
         const searchParams = new URLSearchParams();
         Object.entries(params).forEach(([key, value]) => {
@@ -223,52 +193,41 @@ class BondiLinesApiClient {
         return searchParams.toString();
     }
 
-    // Convert headers to fetch headers format
     private buildHeaders(): HeadersInit {
         const headers: HeadersInit = {};
-
         Object.entries(this.config.headers).forEach(([key, value]) => {
             if (value !== undefined) {
-                // Convert camelCase to kebab-case for HTTP headers
                 const headerKey = key.replace(/([A-Z])/g, '-$1').toLowerCase();
                 headers[headerKey] = value;
             }
         });
-
         return headers;
     }
 
-    // Execute request with retry logic for 401 errors
     private async executeWithRetry(
         requestFunc: () => Promise<Response>,
         retryCount: number = 0
     ): Promise<Response> {
         const response = await requestFunc();
-
-        // If we get a 401 and haven't exceeded retry limit, refresh token and retry
         if (response.status === 401 && retryCount < this.maxRetries) {
             console.log(`Got 401 error, attempting to refresh token (retry ${retryCount + 1}/${this.maxRetries})`);
-            
             try {
                 await this.refreshAuthToken();
                 console.log('Token refreshed, retrying request...');
-                // Retry the request with new token
                 return this.executeWithRetry(requestFunc, retryCount + 1);
             } catch (error) {
                 console.error('Failed to refresh token:', error);
                 throw error;
             }
         }
-
         return response;
     }
 
-    // Get feed data (returns raw JSON string)
     async getFeed(params: Partial<FeedQueryParams> = {}): Promise<JsonString> {
         const defaultParams: FeedQueryParams = {
             cityId: 'recnHvUyeNJfBtDtk',
             page: 1,
-            size: 100,
+            size: 5000,
             sortBy: 'default',
             categories: 'laterToday,tonight,lateNight,openNow,aboutToStart'
         };
@@ -280,16 +239,11 @@ class BondiLinesApiClient {
         let timeoutId: Timer | undefined;
 
         const makeRequest = async (): Promise<Response> => {
-            // Create new AbortController for each attempt
             const controller = new AbortController();
-            
-            // Clear any existing timeout
             if (timeoutId) {
                 clearTimeout(timeoutId);
             }
-            
             timeoutId = setTimeout(() => controller.abort(), this.config.timeout);
-            
             try {
                 return await fetch(url, {
                     method: 'GET',
@@ -297,7 +251,6 @@ class BondiLinesApiClient {
                     signal: controller.signal,
                 });
             } finally {
-                // Always clear the timeout after the request completes
                 if (timeoutId) {
                     clearTimeout(timeoutId);
                     timeoutId = undefined;
@@ -307,11 +260,9 @@ class BondiLinesApiClient {
 
         try {
             const response = await this.executeWithRetry(makeRequest);
-
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
             }
-
             const jsonString = await response.text();
             return jsonString;
         } catch (error) {
@@ -320,13 +271,11 @@ class BondiLinesApiClient {
                     throw new Error(`Request timeout after ${this.config.timeout}ms`);
                 }
             }
-
             console.error('Error fetching feed:', error);
             throw error;
         }
     }
 
-    // Generic method for making custom requests (returns raw JSON string)
     async makeRequest(
         endpoint: string,
         options: RequestInit = {},
@@ -340,16 +289,11 @@ class BondiLinesApiClient {
         let timeoutId: Timer | undefined;
 
         const makeRequest = async (): Promise<Response> => {
-            // Create new AbortController for each attempt
             const controller = new AbortController();
-            
-            // Clear any existing timeout
             if (timeoutId) {
                 clearTimeout(timeoutId);
             }
-            
             timeoutId = setTimeout(() => controller.abort(), this.config.timeout);
-            
             const requestOptions: RequestInit = {
                 ...options,
                 headers: {
@@ -358,11 +302,9 @@ class BondiLinesApiClient {
                 },
                 signal: controller.signal
             };
-
             try {
                 return await fetch(url, requestOptions);
             } finally {
-                // Always clear the timeout after the request completes
                 if (timeoutId) {
                     clearTimeout(timeoutId);
                     timeoutId = undefined;
@@ -372,11 +314,9 @@ class BondiLinesApiClient {
 
         try {
             const response = await this.executeWithRetry(makeRequest);
-
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
             }
-
             const jsonString = await response.text();
             return jsonString;
         } catch (error) {
@@ -385,7 +325,6 @@ class BondiLinesApiClient {
                     throw new Error(`Request timeout after ${this.config.timeout}ms`);
                 }
             }
-
             console.error('Error making request:', error);
             throw error;
         }
@@ -394,8 +333,7 @@ class BondiLinesApiClient {
 
 export { BondiLinesApiClient, type ApiConfig, type FeedQueryParams, type ApiHeaders, type JsonString };
 
-
-// ============= KEEP ALL THE EXISTING CODE BELOW THIS LINE =============
+// ============= DATA PROCESSING CODE WITH ROBUST CHART PROCESSOR =============
 
 interface LocationConfig {
     name: string;
@@ -417,6 +355,11 @@ interface PredictionPoint {
     value: number;
     label: string;
     dataPointText: string;
+}
+
+interface ProcessedPoint extends PredictionPoint {
+    hour: number;
+    originalIndex: number;
 }
 
 interface VenueData {
@@ -449,49 +392,157 @@ interface FeedResponse {
 }
 
 /**
- * Infers the starting hour from a prediction chart by finding the first labeled hour
- * and working backwards
+ * ROBUST PREDICTION CHART PROCESSOR
+ * Handles duplicate hours and malformed data from the API
  */
-function inferStartingHour(predictionChart: PredictionPoint[]): number | null {
-    // Find the first item with a label
+function processPredictionChart(predictionChart: PredictionPoint[]): PredictionPoint[] {
+    if (!predictionChart || predictionChart.length === 0) {
+        return [];
+    }
+
+    // Step 1: Build a map of all labeled hours and their positions
+    const labeledHours = new Map<number, { indices: number[], maxValue: number }>();
+    const labeledIndices = new Set<number>();
+    
+    predictionChart.forEach((point, index) => {
+        if (point.label && point.label.endsWith('h')) {
+            const hour = parseInt(point.label.replace('h', ''));
+            if (!isNaN(hour)) {
+                labeledIndices.add(index);
+                if (!labeledHours.has(hour)) {
+                    labeledHours.set(hour, { indices: [index], maxValue: point.value });
+                } else {
+                    const existing = labeledHours.get(hour)!;
+                    existing.indices.push(index);
+                    existing.maxValue = Math.max(existing.maxValue, point.value);
+                }
+            }
+        }
+    });
+
+    // Step 2: Infer hours for unlabeled entries based on their position
+    const processedPoints: ProcessedPoint[] = [];
+    const sortedLabeledIndices = Array.from(labeledIndices).sort((a, b) => a - b);
+    
+    if (sortedLabeledIndices.length === 0) {
+        // No labeled hours at all - can't process
+        console.warn('No labeled hours found in prediction chart');
+        return predictionChart;
+    }
+
+    // Process each point and assign it an hour
     for (let i = 0; i < predictionChart.length; i++) {
-        const label = predictionChart[i]!.label;
-        if (label && label.endsWith('h')) {
-            const hour = parseInt(label.replace('h', ''));
-            // Calculate what the first hour should be
-            return (hour - i + 24) % 24;
+        const point = predictionChart[i];
+        let assignedHour: number | null = null;
+
+        if (point.label && point.label.endsWith('h')) {
+            // This point has a label
+            assignedHour = parseInt(point.label.replace('h', ''));
+        } else {
+            // This point needs an inferred hour
+            let prevLabeledIdx = -1;
+            let nextLabeledIdx = -1;
+            
+            for (let j = i - 1; j >= 0; j--) {
+                if (labeledIndices.has(j)) {
+                    prevLabeledIdx = j;
+                    break;
+                }
+            }
+            
+            for (let j = i + 1; j < predictionChart.length; j++) {
+                if (labeledIndices.has(j)) {
+                    nextLabeledIdx = j;
+                    break;
+                }
+            }
+
+            if (prevLabeledIdx !== -1 && nextLabeledIdx !== -1) {
+                // Between two labeled points
+                const prevHour = parseInt(predictionChart[prevLabeledIdx].label.replace('h', ''));
+                const nextHour = parseInt(predictionChart[nextLabeledIdx].label.replace('h', ''));
+                
+                // Calculate position between the two labeled points
+                const gapSize = nextLabeledIdx - prevLabeledIdx - 1;
+                const positionInGap = i - prevLabeledIdx;
+                
+                // Handle hour wrapping (e.g., 23h to 2h)
+                let hourDiff = nextHour - prevHour;
+                if (hourDiff < 0) {
+                    hourDiff += 24;
+                }
+                
+                // Infer the hour based on position
+                if (gapSize > 0 && hourDiff > 0) {
+                    const hoursPerPosition = hourDiff / (gapSize + 1);
+                    assignedHour = (prevHour + Math.round(hoursPerPosition * positionInGap)) % 24;
+                }
+            } else if (prevLabeledIdx !== -1) {
+                // After the last labeled point
+                const prevHour = parseInt(predictionChart[prevLabeledIdx].label.replace('h', ''));
+                const distance = i - prevLabeledIdx;
+                assignedHour = (prevHour + distance) % 24;
+            } else if (nextLabeledIdx !== -1) {
+                // Before the first labeled point
+                const nextHour = parseInt(predictionChart[nextLabeledIdx].label.replace('h', ''));
+                const distance = nextLabeledIdx - i;
+                assignedHour = (nextHour - distance + 24) % 24;
+            }
+        }
+
+        if (assignedHour !== null && !isNaN(assignedHour)) {
+            processedPoints.push({
+                ...point,
+                hour: assignedHour,
+                originalIndex: i
+            });
         }
     }
-    return null;
-}
 
-/**
- * Fills in missing labels in the prediction chart
- */
-function fillPredictionLabels(predictionChart: PredictionPoint[]): PredictionPoint[] {
-    const filled = [...predictionChart];
-    const startHour = inferStartingHour(predictionChart);
-
-    if (startHour === null) return filled;
-
-    for (let i = 0; i < filled.length; i++) {
-        if (!filled[i]!.label || filled[i]!.label === '') {
-            const hour = (startHour + i) % 24;
-            filled[i]! = {
-                ...filled[i]!,
-                label: `${hour}h`
-            };
+    // Step 3: Group by hour and take the highest value for each hour
+    const hourMap = new Map<number, ProcessedPoint>();
+    
+    for (const point of processedPoints) {
+        if (!hourMap.has(point.hour)) {
+            hourMap.set(point.hour, point);
+        } else {
+            const existing = hourMap.get(point.hour)!;
+            if (point.value > existing.value) {
+                hourMap.set(point.hour, point);
+            }
         }
     }
 
-    return filled;
+    // Step 4: Sort by hour and create the final cleaned array
+    const sortedHours = Array.from(hourMap.keys()).sort((a, b) => {
+        // Check if we're dealing with a day boundary crossing
+        const hasNightHours = Array.from(hourMap.keys()).some(h => h >= 20);
+        const hasMorningHours = Array.from(hourMap.keys()).some(h => h <= 6);
+        
+        if (hasNightHours && hasMorningHours) {
+            // We have hours crossing midnight
+            if (a >= 20 && b <= 6) return -1;
+            if (a <= 6 && b >= 20) return 1;
+        }
+        
+        return a - b;
+    });
+
+    // Create the final cleaned array
+    const cleanedChart: PredictionPoint[] = sortedHours.map(hour => {
+        const point = hourMap.get(hour)!;
+        return {
+            value: point.value,
+            label: `${hour}h`,
+            dataPointText: point.dataPointText || `${point.value}%`
+        };
+    });
+
+    return cleanedChart;
 }
 
 /**
  * Converts Sydney time to Unix timestamp (seconds since epoch)
- * @param sydneyHour - Hour in Sydney time (0-23)
- * @param baseDate - Base date in Sydney timezone
- * @param isNextDay - Whether this hour is on the next day
  */
 function sydneyToUnix(sydneyHour: number, baseDate: DateTime, isNextDay: boolean): number {
     let targetDate = baseDate.set({
@@ -505,12 +556,12 @@ function sydneyToUnix(sydneyHour: number, baseDate: DateTime, isNextDay: boolean
         targetDate = targetDate.plus({ days: 1 });
     }
 
-    // Return Unix timestamp in ms
-    return targetDate.toMillis();
+    return targetDate.toSeconds();
 }
 
 /**
  * Main function to extract timeslots from feed data
+ * Now uses robust prediction chart processing
  */
 export async function get_timeslots(
     feedResponseJson: string | FeedResponse,
@@ -525,15 +576,13 @@ export async function get_timeslots(
         ? JSON.parse(locationsJson)
         : locationsJson;
 
-    // Create a map of venue names to location objects for quick lookup
-    // Store the complete location object instead of just capacity
+    // Create a map of venue names to location objects
     const locationMap = new Map<string, LocationConfig>();
     locations.forEach(loc => {
-        // Store both exact name and lowercase for case-insensitive matching
         locationMap.set(loc.name.toLowerCase(), {
             ...loc,
-            capacity: typeof loc.capacity === 'string' 
-                ? parseInt(loc.capacity) 
+            capacity: typeof loc.capacity === 'string'
+                ? parseInt(loc.capacity)
                 : loc.capacity
         });
     });
@@ -549,10 +598,10 @@ export async function get_timeslots(
             continue;
         }
 
-        // Check if this venue is in our locations list (case-insensitive)
+        // Check if this venue is in our locations list
         const venueLower = venue.name.toLowerCase();
         let matchedLocation: LocationConfig | undefined;
-        
+
         // Try exact match first
         if (locationMap.has(venueLower)) {
             matchedLocation = locationMap.get(venueLower);
@@ -568,35 +617,38 @@ export async function get_timeslots(
 
         if (!matchedLocation) continue;
 
-        // Extract all needed values from the matched location
         const capacity = matchedLocation.capacity as number;
-        const lat = typeof matchedLocation.lat === 'string' 
-            ? parseFloat(matchedLocation.lat) 
+        const lat = typeof matchedLocation.lat === 'string'
+            ? parseFloat(matchedLocation.lat)
             : matchedLocation.lat;
-        const lng = typeof matchedLocation.lng === 'string' 
-            ? parseFloat(matchedLocation.lng) 
+        const lng = typeof matchedLocation.lng === 'string'
+            ? parseFloat(matchedLocation.lng)
             : matchedLocation.lng;
 
-        // Get timezone (default to Sydney if not specified)
+        // Get timezone
         const timezone = venue.city?.timezone || 'Australia/Sydney';
 
-        // Use event start date as base date, or current date if not available
+        // Use the ROBUST processor to clean the prediction chart
+        const cleanedChart = processPredictionChart(venue.predictionChart);
+        
+        if (cleanedChart.length === 0) {
+            console.warn(`Skipping venue ${venue.name} - could not process prediction chart`);
+            continue;
+        }
+
+        // Use event start date as base date
         const eventStartDate = item.data.event?.startDate || item.data.startDate;
         const baseDate = eventStartDate
             ? DateTime.fromISO(eventStartDate).setZone(timezone)
             : DateTime.now().setZone(timezone);
 
-        // Fill in missing labels
-        const filledChart = fillPredictionLabels(venue.predictionChart);
-
         // Track if we've rolled over to the next day
         let previousHour = -1;
         let isNextDay = false;
 
-        // Generate timeslots for each prediction point
-        for (const point of filledChart) {
-            const hourStr = point.label.replace('h', '');
-            const hour = parseInt(hourStr);
+        // Generate timeslots for each cleaned prediction point
+        for (const point of cleanedChart) {
+            const hour = parseInt(point.label.replace('h', ''));
 
             // Check if we've rolled over to the next day
             if (previousHour > hour && previousHour >= 20 && hour <= 6) {
@@ -627,48 +679,48 @@ export async function get_timeslots(
 
     return timeslots;
 }
-// A simple structure for a coordinate pair
+
+// ============= MAP POINT GENERATION CODE =============
+
 interface Coordinate {
-  lat: number;
-  lng: number;
+    lat: number;
+    lng: number;
 }
 
 interface MapPoint {
-  id: string; // A unique identifier
-  timestamp: number;  // Unix timestamp
-  lat: number;
-  lng: number;
+    id: string;
+    timestamp: number;
+    lat: number;
+    lng: number;
 }
+
 export function generateRandomPolygon(
-  center: Coordinate,
-  avgRadius: number,
-  irregularity: number,
-  spikiness: number,
-  numVertices: number
+    center: Coordinate,
+    avgRadius: number,
+    irregularity: number,
+    spikiness: number,
+    numVertices: number
 ): Coordinate[] {
-  const vertices: Coordinate[] = [];
-  const angleStep = (2 * Math.PI) / numVertices;
+    const vertices: Coordinate[] = [];
+    const angleStep = (2 * Math.PI) / numVertices;
 
-  for (let i = 0; i < numVertices; i++) {
-    const baseAngle = i * angleStep;
-    // Add randomness to the angle
-    const randomAngle = baseAngle + (Math.random() - 0.5) * irregularity * angleStep;
-    // Add randomness to the radius
-    const randomRadius = avgRadius * (1 + (Math.random() - 0.5) * spikiness);
+    for (let i = 0; i < numVertices; i++) {
+        const baseAngle = i * angleStep;
+        const randomAngle = baseAngle + (Math.random() - 0.5) * irregularity * angleStep;
+        const randomRadius = avgRadius * (1 + (Math.random() - 0.5) * spikiness);
 
-    const lat = center.lat + randomRadius * Math.cos(randomAngle);
-    const lng = center.lng + randomRadius * Math.sin(randomAngle);
-    
-    vertices.push({ lat, lng });
-  }
+        const lat = center.lat + randomRadius * Math.cos(randomAngle);
+        const lng = center.lng + randomRadius * Math.sin(randomAngle);
 
-  return vertices;
+        vertices.push({ lat, lng });
+    }
+
+    return vertices;
 }
 
 export function random_normal(): number {
     let u1 = Math.random();
     let u2 = Math.random();
-    //Convert uniform distributions to standard normal
     let z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2.0 * Math.PI * u2);
     return z0;
 }
@@ -680,43 +732,37 @@ export function generateGaussianPoint(center: Coordinate, stdDev: number): Coord
 }
 
 export function isPointInPolygon(point: Coordinate, polygon: Coordinate[]): boolean {
-  let isInside = false;
-  const numVertices = polygon.length;
-  for (let i = 0, j = numVertices - 1; i < numVertices; j = i++) {
-    const xi = polygon[i].lng, yi = polygon[i].lat;
-    const xj = polygon[j].lng, yj = polygon[j].lat;
+    let isInside = false;
+    const numVertices = polygon.length;
+    for (let i = 0, j = numVertices - 1; i < numVertices; j = i++) {
+        const xi = polygon[i].lng, yi = polygon[i].lat;
+        const xj = polygon[j].lng, yj = polygon[j].lat;
 
-    const intersect = ((yi > point.lat) !== (yj > point.lat))
-        && (point.lng < (xj - xi) * (point.lat - yi) / (yj - yi) + xi);
-    if (intersect) {
-        isInside = !isInside;
+        const intersect = ((yi > point.lat) !== (yj > point.lat))
+            && (point.lng < (xj - xi) * (point.lat - yi) / (yj - yi) + xi);
+        if (intersect) {
+            isInside = !isInside;
+        }
     }
-  }
-  return isInside;
+    return isInside;
 }
-
 
 export function generateRealisticMapPoints(data: TimeSlot): MapPoint[] {
     const finalPoints: MapPoint[] = [];
     const center: Coordinate = { lat: data.lat, lng: data.lng };
 
-    // --- Tuneable Parameters ---
-    // The approximate size of the venue area in latitude/longitude degrees.
-    // A value of 0.0005 is roughly 55 meters.
-    const polygonRadius = 0.0005;
-    const standardDeviation = polygonRadius / 3; // Make the spread smaller than the area
+    const polygonRadius = 0.00025;
+    const standardDeviation = polygonRadius / 3;
     const numPolygonVertices = 8;
-    
-    // Generate the boundary for this venue
+
     const polygon = generateRandomPolygon(center, polygonRadius, 0.5, 0.5, numPolygonVertices);
 
-    // Generate points using rejection sampling
     while (finalPoints.length < data.count) {
         const candidatePoint = generateGaussianPoint(center, standardDeviation);
 
         if (isPointInPolygon(candidatePoint, polygon)) {
             finalPoints.push({
-                id: crypto.randomUUID(), // Standard way to get a UUID in modern JS
+                id: crypto.randomUUID(),
                 timestamp: data["unix-time"],
                 lat: candidatePoint.lat,
                 lng: candidatePoint.lng,
