@@ -1,0 +1,24 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(test(\"\\.(ts|tsx|js|jsx|mjs|cjs)$\"))' | sort -u | xargs -r pnpm lint"
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(test(\"\\.(ts|tsx|js|jsx|mjs|cjs)$\"))' | sort -u | xargs -r pnpm typecheck"
+          }
+        ]
+      }
+    ]
+  }
+}
