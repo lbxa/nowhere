@@ -1,7 +1,7 @@
 import { initTRPC, TRPCError } from "@trpc/server";
 import { ZodError } from "zod";
 import { validate as uuidValidate } from "uuid";
-import type { TRPCContext } from "./context.js";
+import type { TRPCContext } from "./context";
 
 const t = initTRPC.context<TRPCContext>().create({
   errorFormatter({ shape, error }) {

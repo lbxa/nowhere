@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
-import type LocationService from "@/services/locationService.js";
-import type SocketHandler from "@/websocket/socketHandler.js";
+import type LocationService from "@/services/locationService";
+import type SocketHandler from "@/websocket/socketHandler";
 
 export interface TRPCContext {
   req: Request;

@@ -1,5 +1,5 @@
 // Location-related types
-export * from "./location.types.js";
+export * from "./location.types";
 
 // Middleware types
-export * from "./middleware.types.js";
+export * from "./middleware.types";
