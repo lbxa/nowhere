@@ -1,5 +1,5 @@
-import { readFileSync, writeFileSync } from 'fs';
-import { randomUUID } from 'crypto';
+import { readFileSync, writeFileSync } from "fs";
+import { randomUUID } from "crypto";
 
 export interface LocationPing {
   id: string;
@@ -8,7 +8,7 @@ export interface LocationPing {
   lng: number;
 }
 
-const SYDNEY_COORDINATES = {  
+const SYDNEY_COORDINATES = {
   lat: -33.8688,
   lng: 151.2093,
 } as const;
@@ -59,12 +59,15 @@ function chooseIndexByWeights(weights: number[]): number {
  * Clusters drift smoothly (global wind + per-cluster velocity),
  * creating a precipitation-like motion when animated.
  */
-function generateMockLocationData({lat, lng}: {lat?: number, lng?: number} = {}): LocationPing[] {
+function generateMockLocationData({
+  lat,
+  lng,
+}: { lat?: number; lng?: number } = {}): LocationPing[] {
   const data: LocationPing[] = [];
   const baseLat = lat ?? SYDNEY_COORDINATES.lat;
   const baseLng = lng ?? SYDNEY_COORDINATES.lng;
   const numPoints = 1000; // Generate 500 data points
-  const startTime = Date.now() - (24 * 60 * 60 * 1000); // Start from 24 hours ago
+  const startTime = Date.now() - 24 * 60 * 60 * 1000; // Start from 24 hours ago
   const timeRange = 2 * 60 * 60 * 1000; // Spread over 2 hours (realistic for real-time pings)
 
   // Define Gaussian clusters around the base location
@@ -78,12 +81,17 @@ function generateMockLocationData({lat, lng}: {lat?: number, lng?: number} = {})
   }));
 
   // Heavier weight for earlier clusters to create visible hotspots
-  const clusterWeights = Array.from({ length: numClusters }, (_, k) => Math.pow(0.6, k));
+  const clusterWeights = Array.from({ length: numClusters }, (_, k) =>
+    Math.pow(0.6, k),
+  );
 
   // Global wind drift (total degrees across the whole timeRange)
   const windDir = Math.random() * 2 * Math.PI;
   const windMagDeg = 0.02; // ~2.2km total drift across timeRange
-  const windVel = { lat: windMagDeg * Math.sin(windDir), lng: windMagDeg * Math.cos(windDir) };
+  const windVel = {
+    lat: windMagDeg * Math.sin(windDir),
+    lng: windMagDeg * Math.cos(windDir),
+  };
 
   // Per-cluster velocity perturbations (in degrees across timeRange)
   const clusterVelocities = Array.from({ length: numClusters }, () => ({
@@ -95,7 +103,9 @@ function generateMockLocationData({lat, lng}: {lat?: number, lng?: number} = {})
     // Create timestamps that progress forward but with some randomness
     const timeOffset = (i / numPoints) * timeRange;
     const randomTimeJitter = (Math.random() - 0.5) * 30000; // ±15 seconds jitter
-    const timestamp = Math.floor((startTime + timeOffset + randomTimeJitter) / 1000);
+    const timestamp = Math.floor(
+      (startTime + timeOffset + randomTimeJitter) / 1000,
+    );
     const progress = timeOffset / timeRange; // normalized [0,1]
 
     // Sample coordinates from a 2D Gaussian around a chosen cluster center
@@ -111,7 +121,7 @@ function generateMockLocationData({lat, lng}: {lat?: number, lng?: number} = {})
       id: randomUUID(),
       timestamp: timestamp,
       lat: Math.round(lat * 1000000) / 1000000, // Round to 6 decimal places
-      lng: Math.round(lng * 1000000) / 1000000
+      lng: Math.round(lng * 1000000) / 1000000,
     });
   }
 
@@ -122,41 +132,63 @@ function generateMockLocationData({lat, lng}: {lat?: number, lng?: number} = {})
 /**
  * Saves mock data to a JSON file
  */
-function saveMockData(data: LocationPing[], filename: string = 'locations.json'): void {
+function saveMockData(
+  data: LocationPing[],
+  filename: string = "locations.json",
+): void {
   try {
     // Read existing data if file exists
     let existingData: LocationPing[] = [];
     try {
-      const existingContent = readFileSync(filename, 'utf8');
+      const existingContent = readFileSync(filename, "utf8");
       existingData = JSON.parse(existingContent);
     } catch {
       // File doesn't exist or is invalid, start with empty array
     }
-    
+
     // Append new data to existing data
     const combinedData = [...existingData, ...data];
     const jsonData = JSON.stringify(combinedData, null, 2);
     writeFileSync(filename, jsonData);
     console.log(`✅ Mock data generated and saved to ${filename}`);
     console.log(`📊 Generated ${data.length} location points`);
-    console.log(`📍 Geographic center: ${data[0].lat.toFixed(6)}, ${data[0].lng.toFixed(6)}`);
-    console.log(`⏰ Time range: ${new Date(data[0].timestamp).toLocaleString()} to ${new Date(data[data.length - 1].timestamp).toLocaleString()}`);
+    console.log(
+      `📍 Geographic center: ${data[0].lat.toFixed(6)}, ${data[0].lng.toFixed(6)}`,
+    );
+    console.log(
+      `⏰ Time range: ${new Date(data[0].timestamp).toLocaleString()} to ${new Date(data[data.length - 1].timestamp).toLocaleString()}`,
+    );
   } catch (error) {
-    console.error('❌ Error saving mock data:', error);
+    console.error("❌ Error saving mock data:", error);
   }
 }
 
 // Generate and save the mock data
 if (import.meta.main) {
-  console.log('🚀 Generating mock location data...');
+  console.log("🚀 Generating mock location data...");
   const mockData = [
-    ...generateMockLocationData({lat: SYDNEY_COORDINATES.lat, lng: SYDNEY_COORDINATES.lng}),
-    ...generateMockLocationData({lat: NEWTOWN_COORDINATES.lat, lng: NEWTOWN_COORDINATES.lng}),
-    ...generateMockLocationData({lat: SURRY_HILLS_COORDINATES.lat, lng: SURRY_HILLS_COORDINATES.lng}),
-    ...generateMockLocationData({lat: BONDI_BEACH_COORDINATES.lat, lng: BONDI_BEACH_COORDINATES.lng}),
-    ...generateMockLocationData({lat: CENTENNIAL_PARK_COORDINATES.lat, lng: CENTENNIAL_PARK_COORDINATES.lng}),
+    ...generateMockLocationData({
+      lat: SYDNEY_COORDINATES.lat,
+      lng: SYDNEY_COORDINATES.lng,
+    }),
+    ...generateMockLocationData({
+      lat: NEWTOWN_COORDINATES.lat,
+      lng: NEWTOWN_COORDINATES.lng,
+    }),
+    ...generateMockLocationData({
+      lat: SURRY_HILLS_COORDINATES.lat,
+      lng: SURRY_HILLS_COORDINATES.lng,
+    }),
+    ...generateMockLocationData({
+      lat: BONDI_BEACH_COORDINATES.lat,
+      lng: BONDI_BEACH_COORDINATES.lng,
+    }),
+    ...generateMockLocationData({
+      lat: CENTENNIAL_PARK_COORDINATES.lat,
+      lng: CENTENNIAL_PARK_COORDINATES.lng,
+    }),
   ];
-  saveMockData(mockData, './src/mocks/locations.json');
+  saveMockData(mockData, "./src/mocks/locations.json");
 }
 
 export { generateMockLocationData, saveMockData };

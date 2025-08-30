@@ -1,4 +1,4 @@
-import type { Map, Expression } from 'mapbox-gl';
+import type { Map, Expression } from "mapbox-gl";
 
 export type TimelineControllerOptions = {
   heatmapLayerId: string;
@@ -44,8 +44,8 @@ export default class TimelineController {
     this.removeHandler = () => {
       this.stop();
     };
-    this.map.on('styledata', this.styleHandler);
-    this.map.on('remove', this.removeHandler);
+    this.map.on("styledata", this.styleHandler);
+    this.map.on("remove", this.removeHandler);
   }
 
   public setTime(t: number): void {
@@ -76,31 +76,34 @@ export default class TimelineController {
 
   public dispose(): void {
     this.stop();
-    if (this.styleHandler) this.map.off('styledata', this.styleHandler);
-    if (this.removeHandler) this.map.off('remove', this.removeHandler);
+    if (this.styleHandler) this.map.off("styledata", this.styleHandler);
+    if (this.removeHandler) this.map.off("remove", this.removeHandler);
     this.styleHandler = null;
     this.removeHandler = null;
   }
 
   private applyTimeToMap(t: number): void {
-    const filter: Expression = ['all',
-      ['>=', ['get', 't'], t - this.trailWindowMs],
-      ['<=', ['get', 't'], t]
+    const filter: Expression = [
+      "all",
+      [">=", ["get", "t"], t - this.trailWindowMs],
+      ["<=", ["get", "t"], t],
     ];
 
     if (this.map.getLayer(this.heatmapLayerId)) {
       this.map.setFilter(this.heatmapLayerId, filter);
       const weight: Expression = [
-        'interpolate', ['linear'], ['-', t, ['get', 't']],
-        0, 1,
-        this.trailWindowMs, 0
+        "interpolate",
+        ["linear"],
+        ["-", t, ["get", "t"]],
+        0,
+        1,
+        this.trailWindowMs,
+        0,
       ];
-      this.map.setPaintProperty(this.heatmapLayerId, 'heatmap-weight', weight);
+      this.map.setPaintProperty(this.heatmapLayerId, "heatmap-weight", weight);
     }
     if (this.map.getLayer(this.circleLayerId)) {
       this.map.setFilter(this.circleLayerId, filter);
     }
   }
 }
-
-

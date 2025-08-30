@@ -1,6 +1,11 @@
 {
   "name": "nowhere",
-  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
   "private": true,
   "scripts": {
     "dev": "bun --filter '*' dev",
@@ -8,14 +13,9 @@
     "lint": "bun --filter '*' lint",
     "preview": "bun --filter '*' preview"
   },
+  "type": "module",
   "workspaces": [
     "frontend",
     "backend"
-  ],
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  }
+  ]
 }
