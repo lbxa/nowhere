@@ -1,8 +1,13 @@
 {
   "name": "nowhere",
-  "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": "bun --filter '*' dev",
+    "build": "bun --filter '*' build",
+    "lint": "bun --filter '*' lint",
+    "preview": "bun --filter '*' preview"
+  },
   "workspaces": [
     "frontend",
     "backend"
