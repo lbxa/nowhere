@@ -6,7 +6,7 @@ import TimelineController from './utils/TimelineController';
 import locations from './mocks/predicted-locations.json';
 
 const INITIAL_ZOOM = 13;
-const TRAIL_WINDOW_MS = 30 * 60 * 1000; // trailing window (e.g., last 10m)
+const TRAIL_WINDOW_MS = 60 * 60 * 1000; // trailing window (e.g., last 10m)
 const PLAY_SPEED = 60 * 1000; // 1 minute of data per real second
 
 export const App = () => {
