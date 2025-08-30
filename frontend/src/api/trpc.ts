@@ -1,5 +1,5 @@
 import { QueryClient } from "@tanstack/react-query";
-import { createTRPCClient, httpBatchLink } from "@trpc/client";
+import { createTRPCClient, httpLink } from "@trpc/client";
 import { createTRPCOptionsProxy } from "@trpc/tanstack-react-query";
 import { deviceIdService } from "../services/deviceIdService";
 import type { AppRouter } from "../../../backend/src/trpc/appRouter";
@@ -18,12 +18,11 @@ export const queryClient = new QueryClient();
 
 const trpcClient = createTRPCClient<AppRouter>({
   links: [
-    httpBatchLink({
+    httpLink({
       url: getApiUrl(),
       headers() {
         return {
           "X-Device-ID": deviceIdService.getDeviceId(),
-          "Content-Type": "application/json",
         };
       },
     }),
