@@ -24,7 +24,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "paths": {
-      "@locations.json": ["./src/mocks/locations.json"]
+      "@locations.json": ["./src/mocks/locations.json"],
+      "@backend/*": ["../backend/src/*"]
     }
   },
   "include": ["src"]

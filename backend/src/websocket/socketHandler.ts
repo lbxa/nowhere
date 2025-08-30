@@ -1,7 +1,7 @@
 import { Server as HttpServer, IncomingMessage } from "http";
 import { WebSocketServer, WebSocket } from "ws";
-import LocationService from "@/services/locationService";
-import type { LocationInput } from "@/types/location.types";
+import LocationService from "../services/locationService";
+import type { LocationInput } from "../types/location.types";
 
 export interface SocketData {
   deviceId?: string;
@@ -16,13 +16,14 @@ interface WebSocketMessage {
 
 export class SocketHandler {
   private wss: WebSocketServer;
-  private locationService: LocationService;
+  // @ts-expect-error - locationService is stored for future use but not currently accessed
+  private _locationService: LocationService;
   private activeConnections = new Map<string, WebSocket & { data: SocketData }>();
   private locationUpdatesRoom = new Set<string>();
   private nextId = 1;
 
   constructor(httpServer: HttpServer, locationService: LocationService) {
-    this.locationService = locationService;
+    this._locationService = locationService;
 
     this.wss = new WebSocketServer({
       server: httpServer,
@@ -54,7 +55,7 @@ export class SocketHandler {
   }
 
   private setupEventHandlers(): void {
-    this.wss.on("connection", (ws: WebSocket, request: IncomingMessage) => {
+    this.wss.on("connection", (ws: WebSocket, _request: IncomingMessage) => {
       const socketId = this.generateId();
       const extendedWs = ws as WebSocket & { data: SocketData };
 

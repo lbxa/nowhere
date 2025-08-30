@@ -1,8 +1,8 @@
 import { TRPCError } from "@trpc/server";
-import { router, publicProcedure } from "../trpc";
+import { createTRPCRouter, publicProcedure } from "../trpc";
 import { HealthCheckResponseSchema, StatsResponseSchema } from "../schemas";
 
-export const healthRouter = router({
+export const healthRouter = createTRPCRouter({
   // Health check endpoint - migrated from locationController.healthCheck
   check: publicProcedure.output(HealthCheckResponseSchema).query(async () => {
     try {

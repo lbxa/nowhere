@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "bun --hot src/index.ts",
     "start": "bun src/index.ts",
-    "build": "bun build src/index.ts --outdir dist",
+    "build": "bun build src/index.ts --outdir dist --target=bun",
     "test": "bun test",
     "healthcheck": "curl -f http://localhost:3000/api/health || exit 1",
     "docker:dev": "docker compose up -d",
@@ -21,14 +21,14 @@
     "docker:clean": "docker system prune -f && docker volume prune -f"
   },
   "dependencies": {
-    "express": "^4.18.0",
-    "ws": "^8.14.0",
-    "redis": "^4.6.0",
-    "express-rate-limit": "^7.1.0",
+    "@trpc/server": "^11.5.0",
     "cors": "^2.8.5",
+    "express": "^4.18.0",
+    "express-rate-limit": "^7.1.0",
     "helmet": "^7.1.0",
+    "redis": "^4.6.0",
     "uuid": "^9.0.0",
-    "@trpc/server": "^10.45.0",
+    "ws": "^8.14.0",
     "zod": "^3.22.0"
   },
   "devDependencies": {
