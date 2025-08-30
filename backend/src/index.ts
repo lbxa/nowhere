@@ -12,7 +12,20 @@ import { locationUpdateLimiter, apiLimiter } from "./middleware/rateLimiters";
 // Load environment variables
 const PORT = parseInt(process.env.PORT || "3000");
 const NODE_ENV = process.env.NODE_ENV || "development";
-const CORS_ORIGIN = process.env.CORS_ORIGIN || "http://localhost:5173";
+
+// Parse CORS origins - supports single origin or comma-separated multiple origins
+const parseCorsOrigins = (origins: string): string | string[] => {
+  const trimmedOrigins = origins.trim();
+  if (trimmedOrigins.includes(",")) {
+    return trimmedOrigins
+      .split(",")
+      .map((origin) => origin.trim())
+      .filter(Boolean);
+  }
+  return trimmedOrigins;
+};
+
+const CORS_ORIGIN = parseCorsOrigins(process.env.CORS_ORIGIN || "http://localhost:5173");
 
 // Create Express app
 const app = express();
@@ -148,7 +161,7 @@ process.on("SIGINT", () => gracefulShutdown("SIGINT"));
 httpServer.listen(PORT, () => {
   console.log(`🚀 Location sharing server running on port ${PORT}`);
   console.log(`📍 Environment: ${NODE_ENV}`);
-  console.log(`🌐 CORS Origin: ${CORS_ORIGIN}`);
+  console.log(`🌐 CORS Origin(s): ${Array.isArray(CORS_ORIGIN) ? CORS_ORIGIN.join(", ") : CORS_ORIGIN}`);
   console.log(`⚡ WebSocket endpoint: ws://localhost:${PORT}/api/live`);
   console.log(`🔗 tRPC API Documentation: http://localhost:${PORT}`);
 
