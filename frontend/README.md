@@ -2,6 +2,45 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Mock Data Generator
+
+This project includes a mock data generator for simulating real-time location tracking data.
+
+### Usage
+
+1. **Generate Mock Data:**
+   ```bash
+   bun run generate-mock-data
+   ```
+
+2. **Import and Use in Components:**
+   ```typescript
+   import { loadMockLocationData, getLatestLocations } from './mockDataLoader';
+
+   // Load all mock data
+   const allLocations = loadMockLocationData();
+
+   // Get latest 10 locations
+   const recentLocations = getLatestLocations(10);
+   ```
+
+### Data Schema
+
+Each location point follows this schema:
+```typescript
+{
+  id: string,    // UUID
+  t: number,     // Timestamp in milliseconds
+  lat: number,   // Latitude
+  lng: number    // Longitude
+}
+```
+
+The generated data simulates:
+- 500 location points clustered in a small geographic area (~200m x 200m)
+- Timestamps spanning approximately 2 hours
+- Realistic movement patterns that simulate walking around
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
