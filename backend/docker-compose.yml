@@ -17,26 +17,6 @@ services:
     networks:
       - location-network
 
-  # Backend API Service
-  backend:
-    build: .
-    container_name: location-backend-dev
-    restart: unless-stopped
-    ports:
-      - "3000:3000"
-    env_file:
-      - .env.development
-    depends_on:
-      redis:
-        condition: service_healthy
-    networks:
-      - location-network
-    volumes:
-      # Mount source code for development hot reload
-      - .:/app
-      - /app/node_modules
-    command: bun run dev
-
 # Named volumes for data persistence
 volumes:
   redis_data:
