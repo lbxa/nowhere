@@ -8,7 +8,7 @@ async function main() {
         const client = new BondiLinesApiClient(); 
         const feedResponse = await client.getFeed(); // Gets live predictions
         const timeslots = await get_timeslots(feedResponse, locations); // Formats feed into timeslots for the specific locations in locations.json
-        fs.writeFileSync("timeslots.json", timeslots ? JSON.stringify(timeslots, null, 2) : "No response");
+        fs.writeFileSync("../../mocks/timeslots.json", timeslots ? JSON.stringify(timeslots, null, 2) : "No response");
         console.log(`✅ Successfully processed ${timeslots?.length || 0} timeslots`);        
     } catch (error) {
         console.error("❌ Error in main process:", error);
