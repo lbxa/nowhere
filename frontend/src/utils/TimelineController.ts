@@ -8,6 +8,9 @@ export type TimelineControllerOptions = {
   minTime: number;
   maxTime: number;
   onTimeChange?: (t: number) => void;
+  // Limit how often map styling is updated to reduce layer update cost
+  // Defaults to 10 updates per second
+  updatesPerSecond?: number;
 };
 
 export default class TimelineController {
@@ -19,6 +22,8 @@ export default class TimelineController {
   private readonly minTime: number;
   private readonly maxTime: number;
   private onTimeChange?: (t: number) => void;
+  private updateIntervalMs: number;
+  private lastAppliedAtMs: number = 0;
 
   private currentTime: number;
   private animId: number | null = null;
@@ -34,6 +39,7 @@ export default class TimelineController {
     this.minTime = options.minTime;
     this.maxTime = options.maxTime;
     this.onTimeChange = options.onTimeChange;
+    this.updateIntervalMs = 1000 / (options.updatesPerSecond ?? 10);
 
     this.currentTime = this.minTime;
 
@@ -83,8 +89,14 @@ export default class TimelineController {
   }
 
   private applyTimeToMap(t: number): void {
+    const now =
+      typeof performance !== "undefined" ? performance.now() : Date.now();
+    if (now - this.lastAppliedAtMs < this.updateIntervalMs) return;
+    this.lastAppliedAtMs = now;
+
     const filter: Expression = [
       "all",
+      ["has", "t"],
       [">=", ["get", "t"], t - this.trailWindowMs],
       ["<=", ["get", "t"], t],
     ];
