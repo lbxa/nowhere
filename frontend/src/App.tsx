@@ -1,31 +1,27 @@
-import mapboxgl from "mapbox-gl";
-
-import "mapbox-gl/dist/mapbox-gl.css";
+import type { Map } from "mapbox-gl";
 import { useEffect, useMemo, useRef, useState } from "react";
 import TimelineController from "./utils/TimelineController";
 import locations from "./mocks/locations-max.json";
 import { ScrubBar } from "./components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MapView, {
+  HEATMAP_LAYER_ID,
+  CIRCLE_LAYER_ID,
+} from "./components/MapView";
 
 const INITIAL_ZOOM = 13;
 const TRAIL_WINDOW_MS = 30 * 60 * 1000; // trailing window (e.g., last 10m)
 const PLAY_SPEED = 60 * 1000; // 1 minute of data per real second
-
-const getMapStyleFromTheme = (): string =>
-  document.documentElement.classList.contains("dark")
-    ? "mapbox://styles/mapbox/dark-v11?optimize=true"
-    : "mapbox://styles/mapbox/streets-v12?optimize=true";
+//
 
 export const App = () => {
-  const mapRef = useRef<mapboxgl.Map | null>(null);
-  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+  const mapRef = useRef<Map | null>(null);
   const [origin, setOrigin] = useState<[number, number]>([0, 0]);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [time, setTime] = useState<number>(0);
   const timeRef = useRef<number>(0);
   const timelineRef = useRef<TimelineController | null>(null);
-  const appliedStyleRef = useRef<string>("");
 
   const [minT, maxT] = useMemo(() => {
     let min = Infinity,
@@ -38,314 +34,15 @@ export const App = () => {
     return [min, max];
   }, []);
 
+  // Dispose timeline on unmount
   useEffect(() => {
-    mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
-    const initialStyle = getMapStyleFromTheme();
-    appliedStyleRef.current = initialStyle;
-    mapRef.current = new mapboxgl.Map({
-      container: mapContainerRef.current!,
-      style: initialStyle,
-      attributionControl: false,
-      renderWorldCopies: false,
-      antialias: false,
-    });
-
-    // Respond to Tailwind class-based theme changes
-    const themeObserver = new MutationObserver(() => {
-      const nextStyle = getMapStyleFromTheme();
-      if (nextStyle !== appliedStyleRef.current) {
-        appliedStyleRef.current = nextStyle;
-        mapRef.current?.setStyle(nextStyle);
-      }
-    });
-    themeObserver.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    // Get user's current location and zoom to it
-    const getCurrentLocation = () => {
-      if (!navigator.geolocation) {
-        console.warn("Geolocation is not supported by this browser.");
-        return;
-      }
-
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-
-          // Fly to user's location with zoom
-          mapRef.current?.flyTo({
-            center: [longitude, latitude],
-            zoom: INITIAL_ZOOM,
-            essential: true, // this animation is considered essential with respect to prefers-reduced-motion
-          });
-          setOrigin([longitude, latitude]);
-        },
-        (error) => {
-          console.error("Error getting location:", error.message);
-          // Could add fallback behavior here, like showing an error message to the user
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 10000,
-          maximumAge: 300000, // Accept cached position up to 5 minutes old
-        },
-      );
-    };
-
-    // Add locations as a blinking light-blue circle layer
-    mapRef.current.on("load", () => {
-      try {
-        const map = mapRef.current;
-        if (!map) return;
-        const features = (
-          locations as Array<{
-            id: string;
-            timestamp: number;
-            lat: number;
-            lng: number;
-          }>
-        ).map((p) => ({
-          type: "Feature" as const,
-          id: p.id,
-          geometry: {
-            type: "Point" as const,
-            coordinates: [
-              Math.round(p.lng * 1e6) / 1e6,
-              Math.round(p.lat * 1e6) / 1e6,
-            ],
-          },
-          properties: { t: p.timestamp * 1000 },
-        }));
-
-        map.addSource("locations", {
-          type: "geojson",
-          data: { type: "FeatureCollection", features },
-          buffer: 0,
-          maxzoom: 12,
-        });
-
-        map.addLayer(
-          {
-            id: "heatmap",
-            type: "heatmap",
-            source: "locations",
-            minzoom: 0,
-            maxzoom: 17,
-            paint: {
-              // weight is dynamically updated by the time scrubber
-              "heatmap-weight": 1,
-              // increase intensity as zoom level increases
-              "heatmap-intensity": [
-                "interpolate",
-                ["linear"],
-                ["zoom"],
-                5,
-                0.6,
-                17,
-                3,
-              ],
-              // use sequential color palette to use exponentially as the weight increases
-              "heatmap-color": [
-                "interpolate",
-                ["linear"],
-                ["heatmap-density"],
-                0,
-                "rgba(236,222,239,0)",
-                0.2,
-                "rgb(208,209,230)",
-                0.4,
-                "rgb(166,189,219)",
-                0.6,
-                "rgb(103,169,207)",
-                0.8,
-                "rgb(28,144,153)",
-              ],
-              // increase radius as zoom increases
-              "heatmap-radius": [
-                "interpolate",
-                ["linear"],
-                ["zoom"],
-                5,
-                10,
-                11,
-                15,
-                17,
-                25,
-              ],
-              // decrease opacity to transition into the circle layer
-              "heatmap-opacity": [
-                "interpolate",
-                ["linear"],
-                ["zoom"],
-                15,
-                1,
-                16.5,
-                0,
-              ],
-            },
-          },
-          "waterway-label",
-        );
-
-        map.addLayer({
-          id: "locations-circles",
-          type: "circle",
-          source: "locations",
-          minzoom: 16,
-          paint: {
-            "circle-radius": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              16,
-              3,
-              18,
-              6,
-              20,
-              10,
-            ],
-            "circle-color": "#93c5fd",
-            "circle-stroke-width": 1,
-            "circle-stroke-color": "#60a5fa",
-            "circle-opacity": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              16,
-              0.6,
-              18,
-              0.85,
-            ],
-          },
-        });
-
-        // Initialize timeline controller (encapsulated API)
-        const tl = new TimelineController(map, {
-          heatmapLayerId: "heatmap",
-          circleLayerId: "locations-circles",
-          trailWindowMs: TRAIL_WINDOW_MS,
-          playSpeed: PLAY_SPEED,
-          minTime: minT,
-          maxTime: maxT,
-          onTimeChange: (t) => {
-            setTime(t);
-            timeRef.current = t;
-          },
-        });
-        timelineRef.current = tl;
-        tl.setTime(minT);
-
-        map.on("styledata", () => {
-          // If style reloads, ensure layer exists again
-          if (!map.getSource("locations")) {
-            map.addSource("locations", {
-              type: "geojson",
-              data: { type: "FeatureCollection", features },
-              buffer: 0,
-              maxzoom: 12,
-            });
-          }
-          if (!map.getLayer("heatmap")) {
-            map.addLayer(
-              {
-                id: "heatmap",
-                type: "heatmap",
-                source: "locations",
-                minzoom: 0,
-                maxzoom: 17,
-                paint: {
-                  "heatmap-weight": 1,
-                  "heatmap-intensity": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    5,
-                    0.6,
-                    17,
-                    3,
-                  ],
-                  "heatmap-color": [
-                    "interpolate",
-                    ["linear"],
-                    ["heatmap-density"],
-                    0,
-                    "rgba(236,222,239,0)",
-                    0.2,
-                    "rgb(208,209,230)",
-                    0.4,
-                    "rgb(166,189,219)",
-                    0.6,
-                    "rgb(103,169,207)",
-                    0.8,
-                    "rgb(28,144,153)",
-                  ],
-                  "heatmap-radius": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    5,
-                    10,
-                    11,
-                    15,
-                    17,
-                    25,
-                  ],
-                  "heatmap-opacity": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    15,
-                    1,
-                    16.5,
-                    0,
-                  ],
-                },
-              },
-              "waterway-label",
-            );
-          }
-          if (!map.getLayer("locations-circles")) {
-            map.addLayer({
-              id: "locations-circles",
-              type: "circle",
-              source: "locations",
-              minzoom: 16,
-              paint: {
-                "circle-radius": 6,
-                "circle-color": "#93c5fd",
-                "circle-stroke-width": 1,
-                "circle-stroke-color": "#60a5fa",
-                "circle-opacity": [
-                  "interpolate",
-                  ["linear"],
-                  ["zoom"],
-                  16,
-                  0.6,
-                  18,
-                  0.85,
-                ],
-              },
-            });
-          }
-        });
-      } catch (e) {
-        console.error("Failed to load locations layer", e);
-      }
-    });
-
-    // Wait a moment for the map to fully load before getting location
-    setTimeout(getCurrentLocation, 1000);
-
     return () => {
       timelineRef.current?.dispose();
       timelineRef.current = null;
-      mapRef.current?.remove();
-      // Disconnect observer on unmount
-      themeObserver.disconnect();
     };
-  }, [minT, maxT]);
+  }, []);
+
+  // origin sync handled inside MapView
 
   const handleReset = () => {
     mapRef.current?.flyTo({
@@ -387,10 +84,28 @@ export const App = () => {
         handlePlay={handlePlay}
         isPlaying={isPlaying}
       />
-      <div
+      <MapView
         className="h-dvh w-screen bg-gray-300 z-0 absolute top-0 left-0"
-        ref={mapContainerRef}
-      ></div>
+        origin={origin}
+        onOriginChange={setOrigin}
+        onMapReady={(map) => {
+          mapRef.current = map;
+          const tl = new TimelineController(map, {
+            heatmapLayerId: HEATMAP_LAYER_ID,
+            circleLayerId: CIRCLE_LAYER_ID,
+            trailWindowMs: TRAIL_WINDOW_MS,
+            playSpeed: PLAY_SPEED,
+            minTime: minT,
+            maxTime: maxT,
+            onTimeChange: (t) => {
+              setTime(t);
+              timeRef.current = t;
+            },
+          });
+          timelineRef.current = tl;
+          tl.setTime(minT);
+        }}
+      />
     </div>
   );
 };
