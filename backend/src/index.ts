@@ -3,11 +3,11 @@ import { createServer } from "http";
 import cors from "cors";
 import helmet from "helmet";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
-import LocationService from "./services/locationService.js";
-import SocketHandler from "./websocket/socketHandler.js";
-import { appRouter } from "./trpc/appRouter.js";
-import { createContext } from "./trpc/context.js";
-import { locationUpdateLimiter, apiLimiter } from "./middleware/rateLimiters.js";
+import LocationService from "./services/locationService";
+import SocketHandler from "./websocket/socketHandler";
+import { appRouter } from "./trpc/appRouter";
+import { createContext } from "./trpc/context";
+import { locationUpdateLimiter, apiLimiter } from "./middleware/rateLimiters";
 
 // Load environment variables
 const PORT = parseInt(process.env.PORT || "3000");
