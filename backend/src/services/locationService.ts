@@ -6,7 +6,7 @@ import type {
   LocationValidationResult,
   LocationUpdateResult,
   LocationsResult,
-} from "@/types";
+} from "../types";
 
 export class LocationService {
   private redis: RedisClientType;
