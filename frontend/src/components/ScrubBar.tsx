@@ -25,20 +25,26 @@ export const ScrubBar = ({
     });
 
   return (
-    <div className="absolute bottom-sm left-sm right-sm sm:left-1/2 sm:right-auto sm:transform sm:-translate-x-1/2 sm:w-full sm:max-w-screen-sm text-ivory z-10 liquid-glass rounded-3xl p-md flex flex-col gap-sm">
+    <div className="absolute bottom-sm left-sm right-sm sm:left-1/2 sm:right-auto sm:transform sm:-translate-x-1/2 sm:w-full sm:max-w-screen-sm  z-10 liquid-glass rounded-3xl p-md flex flex-col gap-sm">
       <div className="absolute inset-0 rounded-3xl bg-indigo/20 pointer-events-none z-0" />
       <div className="flex items-center gap-sm relative z-10">
         <button
           onClick={handlePlay}
-          className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-indigo/40 text-ivory text-2xl leading-none"
+          className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-indigo/40  text-2xl leading-none"
         >
           {isPlaying ? (
-            <FontAwesomeIcon icon={["fas", "pause"]} />
+            <FontAwesomeIcon
+              icon={["fas", "pause"]}
+              className="text-black dark:text-white"
+            />
           ) : (
-            <FontAwesomeIcon icon={["fas", "play"]} />
+            <FontAwesomeIcon
+              icon={["fas", "play"]}
+              className="text-black dark:text-white"
+            />
           )}
         </button>
-        <p className="text-ivory/80">{datetime}</p>
+        <p className="text-black dark:text-white">{datetime}</p>
       </div>
       <input
         type="range"

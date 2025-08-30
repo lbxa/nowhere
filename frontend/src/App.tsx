@@ -11,6 +11,11 @@ const INITIAL_ZOOM = 13;
 const TRAIL_WINDOW_MS = 10 * 60 * 1000; // trailing window (e.g., last 10m)
 const PLAY_SPEED = 60 * 1000; // 1 minute of data per real second
 
+const getMapStyleFromTheme = (): string =>
+  document.documentElement.classList.contains("dark")
+    ? "mapbox://styles/mapbox/dark-v11"
+    : "mapbox://styles/mapbox/streets-v12";
+
 export const App = () => {
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
@@ -20,6 +25,7 @@ export const App = () => {
   const [time, setTime] = useState<number>(0);
   const timeRef = useRef<number>(0);
   const timelineRef = useRef<TimelineController | null>(null);
+  const appliedStyleRef = useRef<string>("");
 
   const [minT, maxT] = useMemo(() => {
     let min = Infinity,
@@ -34,10 +40,25 @@ export const App = () => {
 
   useEffect(() => {
     mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
+    const initialStyle = getMapStyleFromTheme();
+    appliedStyleRef.current = initialStyle;
     mapRef.current = new mapboxgl.Map({
       container: mapContainerRef.current!,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: initialStyle,
       attributionControl: false,
+    });
+
+    // Respond to Tailwind class-based theme changes
+    const themeObserver = new MutationObserver(() => {
+      const nextStyle = getMapStyleFromTheme();
+      if (nextStyle !== appliedStyleRef.current) {
+        appliedStyleRef.current = nextStyle;
+        mapRef.current?.setStyle(nextStyle);
+      }
+    });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
     });
 
     // Get user's current location and zoom to it
@@ -257,6 +278,8 @@ export const App = () => {
       timelineRef.current?.dispose();
       timelineRef.current = null;
       mapRef.current?.remove();
+      // Disconnect observer on unmount
+      themeObserver.disconnect();
     };
   }, [minT, maxT]);
 
@@ -285,9 +308,12 @@ export const App = () => {
     <div>
       <button
         onClick={handleReset}
-        className="h-12 w-12 items-center justify-center rounded-full bg-indigo/30 text-ivory text-2xl leading-none liquid-glass absolute top-sm left-sm z-10 bg-navy/80 backdrop-blur-lg rounded-3xl"
+        className="h-12 w-12 items-center justify-center rounded-full bg-indigo/30 text-2xl leading-none liquid-glass absolute top-sm left-sm z-10 backdrop-blur-lg rounded-3xl"
       >
-        <FontAwesomeIcon icon={["fas", "location-arrow"]} />
+        <FontAwesomeIcon
+          icon={["fas", "location-arrow"]}
+          className="text-black dark:text-white"
+        />
       </button>
       <ScrubBar
         minT={minT}
