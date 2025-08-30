@@ -8,6 +8,7 @@ import MapView, {
   HEATMAP_LAYER_ID,
   CIRCLE_LAYER_ID,
 } from "./components/MapView";
+import { useWebSocket } from "./api/hooks/useWebSocket";
 
 const INITIAL_ZOOM = 13;
 const TRAIL_WINDOW_MS = 30 * 60 * 1000; // trailing window (e.g., last 10m)
@@ -22,6 +23,12 @@ export const App = () => {
   const [time, setTime] = useState<number>(0);
   const timeRef = useRef<number>(0);
   const timelineRef = useRef<TimelineController | null>(null);
+  const { isConnected, connectionStatus } = useWebSocket();
+  const statusColor = isConnected
+    ? "text-green-500"
+    : connectionStatus.reconnectAttempts > 0
+      ? "text-yellow-500"
+      : "text-red-500";
 
   const [minT, maxT] = useMemo(() => {
     let min = Infinity,
@@ -75,6 +82,12 @@ export const App = () => {
           icon={["fas", "location-arrow"]}
           className="text-black dark:text-white"
         />
+      </button>
+      <button
+        onClick={handleReset}
+        className="h-12 w-12 items-center justify-center rounded-full bg-indigo/30 text-lg leading-none liquid-glass absolute top-sm right-sm z-10 backdrop-blur-lg rounded-3xl"
+      >
+        <FontAwesomeIcon icon={["fas", "circle"]} className={statusColor} />
       </button>
       <ScrubBar
         minT={minT}

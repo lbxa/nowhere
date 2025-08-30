@@ -1,5 +1,5 @@
-import React, { Component, type ReactNode } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { Component, type ReactNode } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Props {
   children: ReactNode;
@@ -22,7 +22,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('ErrorBoundary caught an error:', error, errorInfo);
+    console.error("ErrorBoundary caught an error:", error, errorInfo);
     this.setState({
       error,
       errorInfo,
@@ -45,19 +45,20 @@ export class ErrorBoundary extends Component<Props, State> {
 
       return (
         <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
-          <div className="max-w-md w-full bg-white rounded-3xl p-8 text-center shadow-2xl">
+          <div className="w-full bg-white rounded-3xl p-8 text-center shadow-2xl">
             <div className="mb-6">
-              <FontAwesomeIcon 
-                icon={["fas", "exclamation-triangle"]} 
+              <FontAwesomeIcon
+                icon={["fas", "exclamation-triangle"]}
                 className="text-6xl text-red-500 mb-4"
               />
               <h1 className="text-2xl font-bold text-gray-900 mb-2">
                 Something went wrong
               </h1>
               <p className="text-gray-600 mb-4">
-                The app encountered an unexpected error. This might be a temporary issue.
+                The app encountered an unexpected error. This might be a
+                temporary issue.
               </p>
-              
+
               {import.meta.env.DEV && this.state.error && (
                 <details className="text-left bg-gray-100 rounded-lg p-4 mb-4">
                   <summary className="cursor-pointer font-medium text-gray-800 mb-2">
