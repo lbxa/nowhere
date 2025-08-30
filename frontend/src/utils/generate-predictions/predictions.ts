@@ -680,7 +680,8 @@ export async function get_timeslots(
     return timeslots;
 }
 
-// ============= MAP POINT GENERATION CODE =============
+// ============= MAP POINT GENERATION CODE (REVISED FOR FADE-OUT LOGIC) =============
+// ============= MAP POINT GENERATION CODE (FINAL, CORRECTED VERSION) =============
 
 interface Coordinate {
     lat: number;
@@ -689,12 +690,23 @@ interface Coordinate {
 
 interface MapPoint {
     id: string;
-    timestamp: number;
+    timestamp: number; // Unix timestamp in seconds
     lat: number;
     lng: number;
 }
 
-export function generateRandomPolygon(
+interface RealisticPointOptions {
+    // Defines how strongly the point appearance is skewed towards the end of its 30-minute appearance window.
+    // 1.0 = linear (steady rate of appearance).
+    // 2.0 = (Default) quadratic, dots appear faster towards the end of the hour.
+    // >2.0 = A more pronounced exponential effect.
+    distributionFactor?: number;
+    // The lifespan of a dot on the map, in seconds.
+    pointLifespanSeconds?: number;
+}
+
+// Helper function to generate the spatial polygon (no changes from original)
+function generateRandomPolygon(
     center: Coordinate,
     avgRadius: number,
     irregularity: number,
@@ -714,24 +726,27 @@ export function generateRandomPolygon(
 
         vertices.push({ lat, lng });
     }
-
     return vertices;
 }
 
-export function random_normal(): number {
+// Helper for Gaussian distribution (no changes from original)
+function random_normal(): number {
     let u1 = Math.random();
     let u2 = Math.random();
     let z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2.0 * Math.PI * u2);
     return z0;
 }
 
-export function generateGaussianPoint(center: Coordinate, stdDev: number): Coordinate {
-    const lat = center.lat + random_normal() * stdDev;
-    const lng = center.lng + random_normal() * stdDev;
-    return { lat, lng };
+// Helper to generate a single point's coordinates (no changes from original)
+function generateGaussianPoint(center: Coordinate, stdDev: number): Coordinate {
+    return {
+        lat: center.lat + random_normal() * stdDev,
+        lng: center.lng + random_normal() * stdDev,
+    };
 }
 
-export function isPointInPolygon(point: Coordinate, polygon: Coordinate[]): boolean {
+// Helper to check if a point is in the polygon (no changes from original)
+function isPointInPolygon(point: Coordinate, polygon: Coordinate[]): boolean {
     let isInside = false;
     const numVertices = polygon.length;
     for (let i = 0, j = numVertices - 1; i < numVertices; j = i++) {
@@ -740,35 +755,93 @@ export function isPointInPolygon(point: Coordinate, polygon: Coordinate[]): bool
 
         const intersect = ((yi > point.lat) !== (yj > point.lat))
             && (point.lng < (xj - xi) * (point.lat - yi) / (yj - yi) + xi);
-        if (intersect) {
-            isInside = !isInside;
-        }
+        if (intersect) isInside = !isInside;
     }
     return isInside;
 }
 
-export function generateRealisticMapPoints(data: TimeSlot): MapPoint[] {
-    const finalPoints: MapPoint[] = [];
+/**
+ * Generates the precise number of points for a single timeslot, ensuring they are all
+ * visible at the target timestamp and appear exponentially over the preceding 30 minutes.
+ *
+ * @param data - The TimeSlot object containing the target count and timestamp.
+ * @param options - Configuration for point generation.
+ * @returns An array of generated MapPoint objects for this specific timeslot.
+ */
+function generatePointsForTimestamp(
+    data: TimeSlot,
+    options: RealisticPointOptions
+): MapPoint[] {
+    const {
+        distributionFactor = 2.0,
+        pointLifespanSeconds = 1800 // 30 minutes
+    } = options;
+
+    if (data.count <= 0) {
+        return [];
+    }
+
+    const generatedPoints: MapPoint[] = [];
     const center: Coordinate = { lat: data.lat, lng: data.lng };
 
+    // Define the geographic area for the points
     const polygonRadius = 0.00025;
     const standardDeviation = polygonRadius / 3;
-    const numPolygonVertices = 8;
+    const polygon = generateRandomPolygon(center, polygonRadius, 0.5, 0.5, 8);
 
-    const polygon = generateRandomPolygon(center, polygonRadius, 0.5, 0.5, numPolygonVertices);
+    // Define the time window in which points for THIS timeslot are BORN.
+    // They must all be born in the 30 minutes leading up to the target time.
+    const endTime = data["unix-time"];
+    const startTime = endTime - pointLifespanSeconds;
 
-    while (finalPoints.length < data.count) {
+    while (generatedPoints.length < data.count) {
         const candidatePoint = generateGaussianPoint(center, standardDeviation);
 
         if (isPointInPolygon(candidatePoint, polygon)) {
-            finalPoints.push({
+            // This is the key: Generate a timestamp skewed towards the END of the window.
+            // A random value raised to a power > 1 skews it towards 0.
+            // We use (1.0 - random) to get a value skewed towards 1.
+            const skewedProgress = Math.pow(Math.random(), distributionFactor);
+            const timeOffset = skewedProgress * pointLifespanSeconds;
+            const timestamp = startTime + timeOffset;
+
+            generatedPoints.push({
                 id: crypto.randomUUID(),
-                timestamp: data["unix-time"],
+                timestamp: Math.round(timestamp),
                 lat: candidatePoint.lat,
                 lng: candidatePoint.lng,
             });
         }
     }
+    return generatedPoints;
+}
 
-    return finalPoints;
+
+/**
+ * Main generation function. For each hourly data point, it creates a distinct
+ * population of dots designed to be fully visible at that exact hour,
+ * having appeared exponentially over the 30 minutes prior.
+ *
+ * @param timeslots - A sorted array of TimeSlot data.
+ * @param options - Configuration for point generation.
+ * @returns A single flat array of all generated MapPoint objects.
+ */
+export function generateRealisticMapPoints(
+    timeslots: TimeSlot[],
+    options: RealisticPointOptions = {}
+): MapPoint[] {
+    let allGeneratedPoints: MapPoint[] = [];
+
+    if (!timeslots || timeslots.length === 0) {
+        return [];
+    }
+    
+    // The logic is now much simpler: for each timeslot, generate its corresponding
+    // population of points. The display logic will handle the crossfade naturally.
+    for (const slot of timeslots) {
+        const pointsForSlot = generatePointsForTimestamp(slot, options);
+        allGeneratedPoints.push(...pointsForSlot);
+    }
+    
+    return allGeneratedPoints;
 }

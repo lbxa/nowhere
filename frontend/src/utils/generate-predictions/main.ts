@@ -7,18 +7,17 @@ async function main() {
 
         const client = new BondiLinesApiClient();
         const feedResponse = await client.getFeed(); // Gets live predictions
-           fs.writeFileSync("../../mocks/feed.json", feedResponse ? JSON.stringify(feedResponse, null, 2) : "No response");
+        fs.writeFileSync("../../mocks/feed.json", feedResponse ? JSON.stringify(feedResponse, null, 2) : "No response");
         const timeslots = await get_timeslots(feedResponse, locations); // Formats feed into timeslots for the specific locations in locations.json
-         fs.writeFileSync("../../mocks/timeslots.json", timeslots ? JSON.stringify(timeslots, null, 2) : "No response");
+        fs.writeFileSync("../../mocks/timeslots.json", timeslots ? JSON.stringify(timeslots, null, 2) : "No response");
         var myMapPoints = []; // Seed with one point to avoid null
-        for (const slot of timeslots || []) {
-            if (slot.count > 0) {
-                var newMapPoints = generateRealisticMapPoints(slot); // Generate 5 points per timeslot
-                for (const p of newMapPoints) {
-                    myMapPoints.push(p);
-                }
-            }
+
+        var newMapPoints = generateRealisticMapPoints(timeslots);
+        for (const p of newMapPoints) {
+            myMapPoints.push(p);
         }
+
+
         fs.writeFileSync("../../mocks/predicted-locations.json", myMapPoints ? JSON.stringify(myMapPoints, null, 2) : "No response");
         console.log(`✅ Successfully processed ${myMapPoints?.length || 0} points`);
     } catch (error) {

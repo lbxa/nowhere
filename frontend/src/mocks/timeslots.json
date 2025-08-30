@@ -1,1130 +1,4258 @@
 [
   {
+    "unix-time": 1756494000,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 0
+  },
+  {
+    "unix-time": 1756494000,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 0
+  },
+  {
+    "unix-time": 1756497600,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 2
+  },
+  {
+    "unix-time": 1756497600,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 10
+  },
+  {
+    "unix-time": 1756501200,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 1
+  },
+  {
+    "unix-time": 1756501200,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 30
+  },
+  {
+    "unix-time": 1756504800,
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 0
+  },
+  {
+    "unix-time": 1756504800,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 5
+  },
+  {
+    "unix-time": 1756504800,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 60
+  },
+  {
+    "unix-time": 1756508400,
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 40
+  },
+  {
+    "unix-time": 1756508400,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 11
+  },
+  {
+    "unix-time": 1756508400,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 0
+  },
+  {
     "unix-time": 1756508400,
     "venue-name": "Marlborough Hotel",
     "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 0
+  },
+  {
+    "unix-time": 1756508400,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 0
+  },
+  {
+    "unix-time": 1756508400,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
     "count": 0
   },
   {
     "unix-time": 1756508400,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
+    "count": 0
+  },
+  {
+    "unix-time": 1756508400,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 0
+  },
+  {
+    "unix-time": 1756508400,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
     "count": 0
   },
   {
     "unix-time": 1756508400,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 0
+  },
+  {
+    "unix-time": 1756508400,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 90
+  },
+  {
+    "unix-time": 1756508400,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 0
+  },
+  {
+    "unix-time": 1756512000,
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 55
+  },
+  {
+    "unix-time": 1756512000,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 18
+  },
+  {
+    "unix-time": 1756512000,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 21
   },
   {
     "unix-time": 1756512000,
     "venue-name": "Marlborough Hotel",
     "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
+    "lat": -33.8933249,
+    "lng": 151.1833132,
     "count": 9
   },
   {
     "unix-time": 1756512000,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 10
+  },
+  {
+    "unix-time": 1756512000,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 4
+  },
+  {
+    "unix-time": 1756512000,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 32
+  },
+  {
+    "unix-time": 1756512000,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 2
+  },
+  {
+    "unix-time": 1756512000,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 15
   },
   {
     "unix-time": 1756512000,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 30
   },
   {
+    "unix-time": 1756512000,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 160
+  },
+  {
+    "unix-time": 1756512000,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 27
+  },
+  {
     "unix-time": 1756515600,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 75
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 11
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 0
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 39
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
     "count": 0
   },
   {
     "unix-time": 1756515600,
     "venue-name": "Marlborough Hotel",
     "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
+    "lat": -33.8933249,
+    "lng": 151.1833132,
     "count": 18
   },
   {
     "unix-time": 1756515600,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 0
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 21
   },
   {
     "unix-time": 1756515600,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 14
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
     "count": 0
   },
   {
     "unix-time": 1756515600,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 54
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 4
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 0
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 25
   },
   {
     "unix-time": 1756515600,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 36
   },
   {
-    "unix-time": 1756519200,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 24
+    "unix-time": 1756515600,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 0
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 260
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 0
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 0
+  },
+  {
+    "unix-time": 1756515600,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 42
   },
   {
     "unix-time": 1756519200,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 23
-  },
-  {
-    "unix-time": 1756519200,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 36
-  },
-  {
-    "unix-time": 1756519200,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 108
-  },
-  {
-    "unix-time": 1756519200,
-    "venue-name": "Bella Vista Hotel",
-    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
     "count": 90
   },
   {
     "unix-time": 1756519200,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 12
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 4
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 47
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 30
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 23
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 29
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 24
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 24
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.7365865,
+    "lng": 150.9486334,
+    "count": 90
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 6
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 50
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 40
+  },
+  {
+    "unix-time": 1756519200,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 36
   },
   {
-    "unix-time": 1756522800,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
+    "unix-time": 1756519200,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 8
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 390
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
     "count": 27
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 12
+  },
+  {
+    "unix-time": 1756519200,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 63
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 125
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 10
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 1
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 49
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 20
   },
   {
     "unix-time": 1756522800,
     "venue-name": "Marlborough Hotel",
     "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
+    "lat": -33.8933249,
+    "lng": 151.1833132,
     "count": 27
   },
   {
     "unix-time": 1756522800,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 56
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 34
   },
   {
     "unix-time": 1756522800,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 186
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 38
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 27
   },
   {
     "unix-time": 1756522800,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 117
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 8
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 80
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 55
   },
   {
     "unix-time": 1756522800,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 54
   },
   {
+    "unix-time": 1756522800,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 12
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 470
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 36
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 20
+  },
+  {
+    "unix-time": 1756522800,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 84
+  },
+  {
     "unix-time": 1756526400,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 140
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 5
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 1
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 46
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
     "count": 20
   },
   {
     "unix-time": 1756526400,
     "venue-name": "Marlborough Hotel",
     "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
+    "lat": -33.8933249,
+    "lng": 151.1833132,
     "count": 36
   },
   {
     "unix-time": 1756526400,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 76
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 35
   },
   {
     "unix-time": 1756526400,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 258
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 48
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 20
   },
   {
     "unix-time": 1756526400,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 122
   },
   {
     "unix-time": 1756526400,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 11
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 100
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 70
+  },
+  {
+    "unix-time": 1756526400,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
+    "count": 30
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 14
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 480
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 36
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 27
+  },
+  {
+    "unix-time": 1756526400,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 102
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 185
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 4
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 2
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 56
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
+    "count": 0
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
     "count": 30
   },
   {
     "unix-time": 1756530000,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 24
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.8823104,
+    "lng": 151.2046682,
+    "count": 0
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 0
   },
   {
     "unix-time": 1756530000,
     "venue-name": "Marlborough Hotel",
     "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
+    "lat": -33.8933249,
+    "lng": 151.1833132,
     "count": 41
   },
   {
     "unix-time": 1756530000,
-    "venue-name": "Side Bar",
-    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 38
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 58
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 24
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
     "count": 0
-  },
-  {
-    "unix-time": 1756530000,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 88
-  },
-  {
-    "unix-time": 1756530000,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 294
   },
   {
     "unix-time": 1756530000,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 117
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 15
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 110
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 90
   },
   {
     "unix-time": 1756530000,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 30
   },
   {
-    "unix-time": 1756533600,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 34
+    "unix-time": 1756530000,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 14
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 470
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 45
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 0
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 33
+  },
+  {
+    "unix-time": 1756530000,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 126
   },
   {
     "unix-time": 1756533600,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 54
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 220
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 0
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 3
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 6
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 60
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
+    "count": 52
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 0
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 70
   },
   {
     "unix-time": 1756533600,
     "venue-name": "Side Bar",
     "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
+    "lat": -33.8823104,
+    "lng": 151.2046682,
     "count": 14
   },
   {
     "unix-time": 1756533600,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 104
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 15
   },
   {
     "unix-time": 1756533600,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 324
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 54
   },
   {
     "unix-time": 1756533600,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
-    "count": 0
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 42
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 68
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 34
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 1
   },
   {
     "unix-time": 1756533600,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 117
   },
   {
     "unix-time": 1756533600,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 20
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 120
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 125
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 0
+  },
+  {
+    "unix-time": 1756533600,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 36
   },
   {
-    "unix-time": 1756537200,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 48
+    "unix-time": 1756533600,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 17
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 480
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 54
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 42
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 38
+  },
+  {
+    "unix-time": 1756533600,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 156
   },
   {
     "unix-time": 1756537200,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 68
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 270
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 16
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 8
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 8
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 76
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
+    "count": 80
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 35
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 120
   },
   {
     "unix-time": 1756537200,
     "venue-name": "Side Bar",
     "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
+    "lat": -33.8823104,
+    "lng": 151.2046682,
     "count": 21
   },
   {
     "unix-time": 1756537200,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 116
-  },
-  {
-    "unix-time": 1756537200,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 384
-  },
-  {
-    "unix-time": 1756537200,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
     "count": 25
   },
   {
     "unix-time": 1756537200,
+    "venue-name": "Palms",
+    "address": "124 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8800822,
+    "lng": 151.2164961,
+    "count": 0
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 68
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 49
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 84
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 48
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 4
+  },
+  {
+    "unix-time": 1756537200,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 140
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 27
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 130
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 170
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 25
   },
   {
     "unix-time": 1756537200,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 78
   },
   {
-    "unix-time": 1756540800,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 61
+    "unix-time": 1756537200,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 23
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 560
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 77
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 62
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 45
+  },
+  {
+    "unix-time": 1756537200,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 195
   },
   {
     "unix-time": 1756540800,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 90
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 310
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 32
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 20
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 16
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 92
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
+    "count": 112
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 53
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 190
   },
   {
     "unix-time": 1756540800,
     "venue-name": "Side Bar",
     "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
+    "lat": -33.8823104,
+    "lng": 151.2046682,
     "count": 35
   },
   {
     "unix-time": 1756540800,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 134
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 40
   },
   {
     "unix-time": 1756540800,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 426
+    "venue-name": "Palms",
+    "address": "124 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8800822,
+    "lng": 151.2164961,
+    "count": 6
   },
   {
     "unix-time": 1756540800,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
-    "count": 43
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 90
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 57
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 98
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 61
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 10
   },
   {
     "unix-time": 1756540800,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 194
   },
   {
     "unix-time": 1756540800,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 36
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 160
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 225
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 43
+  },
+  {
+    "unix-time": 1756540800,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 126
   },
   {
-    "unix-time": 1756544400,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 78
+    "unix-time": 1756540800,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 33
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 660
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 108
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 77
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 53
+  },
+  {
+    "unix-time": 1756540800,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 231
   },
   {
     "unix-time": 1756544400,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 126
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 315
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 48
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 34
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 25
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 100
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
+    "count": 144
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 105
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 260
   },
   {
     "unix-time": 1756544400,
     "venue-name": "Side Bar",
     "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
+    "lat": -33.8823104,
+    "lng": 151.2046682,
     "count": 53
   },
   {
     "unix-time": 1756544400,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 150
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 65
   },
   {
     "unix-time": 1756544400,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 492
+    "venue-name": "Palms",
+    "address": "124 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8800822,
+    "lng": 151.2164961,
+    "count": 18
   },
   {
     "unix-time": 1756544400,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
-    "count": 73
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 126
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 65
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 114
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 78
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 16
   },
   {
     "unix-time": 1756544400,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 270
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 48
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 210
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 270
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 73
   },
   {
     "unix-time": 1756544400,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
+    "count": 192
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 45
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 750
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 144
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 85
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 67
+  },
+  {
+    "unix-time": 1756544400,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 246
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 315
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Tokyo Sing Song",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 0
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 100
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 58
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 38
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "The Vinyl Room",
+    "address": "52 Gymea Bay Rd, Gymea NSW 2227, Australia",
+    "lat": -34.0356893,
+    "lng": 151.0852593,
+    "count": 0
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 92
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
     "count": 192
   },
   {
     "unix-time": 1756548000,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 126
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 143
   },
   {
     "unix-time": 1756548000,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 189
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 320
   },
   {
     "unix-time": 1756548000,
     "venue-name": "Side Bar",
     "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
+    "lat": -33.8823104,
+    "lng": 151.2046682,
     "count": 95
   },
   {
     "unix-time": 1756548000,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 174
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 130
   },
   {
     "unix-time": 1756548000,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 534
+    "venue-name": "Palms",
+    "address": "124 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8800822,
+    "lng": 151.2164961,
+    "count": 50
   },
   {
     "unix-time": 1756548000,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
-    "count": 115
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 189
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Cult Nightclub",
+    "address": "73-74, 19-35 Bayswater Rd, Potts Point NSW 2011, Australia",
+    "lat": -33.8753257,
+    "lng": 151.2237906,
+    "count": 0
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 72
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 136
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 126
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 28
   },
   {
     "unix-time": 1756548000,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 351
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 61
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 350
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 330
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 115
   },
   {
     "unix-time": 1756548000,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 282
   },
   {
     "unix-time": 1756548000,
     "venue-name": "Chinese Laundry",
     "address": "1 Slip St, Sydney NSW 2000, Australia",
-    "lat": -33.868614469888726,
-    "lng": 151.20330621605322,
+    "lat": -33.8686139,
+    "lng": 151.2033051,
+    "count": 0
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 65
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 830
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 194
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 94
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 80
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Miranda Hotel/Carmens Nightclub",
+    "address": "590 Kingsway, Miranda NSW 2228, Australia",
+    "lat": -34.0343675,
+    "lng": 151.1013044,
+    "count": 0
+  },
+  {
+    "unix-time": 1756548000,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 258
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Sussudio",
+    "address": "2 Kellett St, Potts Point NSW 2011, Australia",
+    "lat": -33.8746096,
+    "lng": 151.2231535,
     "count": 0
   },
   {
     "unix-time": 1756551600,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 207
-  },
-  {
-    "unix-time": 1756551600,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 293
-  },
-  {
-    "unix-time": 1756551600,
-    "venue-name": "Side Bar",
-    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
-    "count": 165
-  },
-  {
-    "unix-time": 1756551600,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 192
-  },
-  {
-    "unix-time": 1756551600,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 600
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 380
   },
   {
     "unix-time": 1756551600,
     "venue-name": "Ivy",
     "address": "330 George St, Sydney NSW 2000, Australia",
-    "lat": -33.86657289687057,
-    "lng": 151.2075283591438,
+    "lat": -33.8665788,
+    "lng": 151.2073668,
     "count": 0
   },
   {
     "unix-time": 1756551600,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
-    "count": 170
+    "venue-name": "Tokyo Sing Song",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 44
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 216
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 79
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 54
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "The Vinyl Room",
+    "address": "52 Gymea Bay Rd, Gymea NSW 2227, Australia",
+    "lat": -34.0356893,
+    "lng": 151.0852593,
+    "count": 48
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 74
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
+    "count": 280
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 178
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 390
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.8823104,
+    "lng": 151.2046682,
+    "count": 165
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Noir Nightclub",
+    "address": "163 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802754,
+    "lng": 151.216136,
+    "count": 0
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Carousel Bar & Ballroom",
+    "address": "169 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802858,
+    "lng": 151.2161971,
+    "count": 0
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 250
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Palms",
+    "address": "124 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8800822,
+    "lng": 151.2164961,
+    "count": 104
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 293
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Cult Nightclub",
+    "address": "73-74, 19-35 Bayswater Rd, Potts Point NSW 2011, Australia",
+    "lat": -33.8753257,
+    "lng": 151.2237906,
+    "count": 40
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 84
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 166
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 207
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 52
   },
   {
     "unix-time": 1756551600,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 419
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 79
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 580
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 395
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 170
   },
   {
     "unix-time": 1756551600,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 402
   },
   {
     "unix-time": 1756551600,
     "venue-name": "Chinese Laundry",
     "address": "1 Slip St, Sydney NSW 2000, Australia",
-    "lat": -33.868614469888726,
-    "lng": 151.20330621605322,
-    "count": 264
+    "lat": -33.8686139,
+    "lng": 151.2033051,
+    "count": 352
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 96
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 930
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 288
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 102
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 94
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Miranda Hotel/Carmens Nightclub",
+    "address": "590 Kingsway, Miranda NSW 2228, Australia",
+    "lat": -34.0343675,
+    "lng": 151.1013044,
+    "count": 256
+  },
+  {
+    "unix-time": 1756551600,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 279
   },
   {
     "unix-time": 1756555200,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 292
+    "venue-name": "Sussudio",
+    "address": "2 Kellett St, Potts Point NSW 2011, Australia",
+    "lat": -33.8746096,
+    "lng": 151.2231535,
+    "count": 53
   },
   {
     "unix-time": 1756555200,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 392
-  },
-  {
-    "unix-time": 1756555200,
-    "venue-name": "Side Bar",
-    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
-    "count": 263
-  },
-  {
-    "unix-time": 1756555200,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 200
-  },
-  {
-    "unix-time": 1756555200,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 588
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 450
   },
   {
     "unix-time": 1756555200,
     "venue-name": "Ivy",
     "address": "330 George St, Sydney NSW 2000, Australia",
-    "lat": -33.86657289687057,
-    "lng": 151.2075283591438,
-    "count": 880
+    "lat": -33.8665788,
+    "lng": 151.2073668,
+    "count": 2475
   },
   {
     "unix-time": 1756555200,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
-    "count": 230
+    "venue-name": "Tokyo Sing Song",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 78
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 380
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 100
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 84
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "The Vinyl Room",
+    "address": "52 Gymea Bay Rd, Gymea NSW 2227, Australia",
+    "lat": -34.0356893,
+    "lng": 151.0852593,
+    "count": 78
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 66
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
+    "count": 356
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 160
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 430
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.8823104,
+    "lng": 151.2046682,
+    "count": 263
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Noir Nightclub",
+    "address": "163 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802754,
+    "lng": 151.216136,
+    "count": 201
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Carousel Bar & Ballroom",
+    "address": "169 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802858,
+    "lng": 151.2161971,
+    "count": 54
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 400
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Palms",
+    "address": "124 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8800822,
+    "lng": 151.2164961,
+    "count": 168
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 392
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Cult Nightclub",
+    "address": "73-74, 19-35 Bayswater Rd, Potts Point NSW 2011, Australia",
+    "lat": -33.8753257,
+    "lng": 151.2237906,
+    "count": 69
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 99
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 192
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 292
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 78
   },
   {
     "unix-time": 1756555200,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 450
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 93
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 840
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 430
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 230
   },
   {
     "unix-time": 1756555200,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 528
   },
   {
     "unix-time": 1756555200,
     "venue-name": "Chinese Laundry",
     "address": "1 Slip St, Sydney NSW 2000, Australia",
-    "lat": -33.868614469888726,
-    "lng": 151.20330621605322,
-    "count": 450
+    "lat": -33.8686139,
+    "lng": 151.2033051,
+    "count": 600
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 134
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 1000
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 401
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 112
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 100
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Miranda Hotel/Carmens Nightclub",
+    "address": "590 Kingsway, Miranda NSW 2228, Australia",
+    "lat": -34.0343675,
+    "lng": 151.1013044,
+    "count": 336
+  },
+  {
+    "unix-time": 1756555200,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 300
   },
   {
     "unix-time": 1756558800,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 340
+    "venue-name": "Sussudio",
+    "address": "2 Kellett St, Potts Point NSW 2011, Australia",
+    "lat": -33.8746096,
+    "lng": 151.2231535,
+    "count": 77
   },
   {
     "unix-time": 1756558800,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 450
-  },
-  {
-    "unix-time": 1756558800,
-    "venue-name": "Side Bar",
-    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
-    "count": 350
-  },
-  {
-    "unix-time": 1756558800,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 196
-  },
-  {
-    "unix-time": 1756558800,
-    "venue-name": "Coogee Pavilion Rooftop",
-    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
-    "lat": -33.91872197631784,
-    "lng": 151.25825482552122,
-    "count": 480
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 500
   },
   {
     "unix-time": 1756558800,
     "venue-name": "Ivy",
     "address": "330 George St, Sydney NSW 2000, Australia",
-    "lat": -33.86657289687057,
-    "lng": 151.2075283591438,
-    "count": 1088
+    "lat": -33.8665788,
+    "lng": 151.2073668,
+    "count": 3060
   },
   {
     "unix-time": 1756558800,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
+    "venue-name": "Tokyo Sing Song",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 100
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 528
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 100
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 100
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "The Vinyl Room",
+    "address": "52 Gymea Bay Rd, Gymea NSW 2227, Australia",
+    "lat": -34.0356893,
+    "lng": 151.0852593,
+    "count": 98
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 58
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
+    "count": 400
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
     "count": 250
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 430
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.8823104,
+    "lng": 151.2046682,
+    "count": 350
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Noir Nightclub",
+    "address": "163 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802754,
+    "lng": 151.216136,
+    "count": 300
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Carousel Bar & Ballroom",
+    "address": "169 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802858,
+    "lng": 151.2161971,
+    "count": 97
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 500
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Palms",
+    "address": "124 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8800822,
+    "lng": 151.2164961,
+    "count": 200
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 450
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Cult Nightclub",
+    "address": "73-74, 19-35 Bayswater Rd, Potts Point NSW 2011, Australia",
+    "lat": -33.8753257,
+    "lng": 151.2237906,
+    "count": 100
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 100
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 200
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 340
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 101
   },
   {
     "unix-time": 1756558800,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 432
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 100
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 1000
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 420
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 250
   },
   {
     "unix-time": 1756558800,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 594
   },
   {
     "unix-time": 1756558800,
     "venue-name": "Chinese Laundry",
     "address": "1 Slip St, Sydney NSW 2000, Australia",
-    "lat": -33.868614469888726,
-    "lng": 151.20330621605322,
-    "count": 600
+    "lat": -33.8686139,
+    "lng": 151.2033051,
+    "count": 800
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 150
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 960
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 450
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 112
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 87
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Miranda Hotel/Carmens Nightclub",
+    "address": "590 Kingsway, Miranda NSW 2228, Australia",
+    "lat": -34.0343675,
+    "lng": 151.1013044,
+    "count": 350
+  },
+  {
+    "unix-time": 1756558800,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 285
   },
   {
     "unix-time": 1756562400,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 275
+    "venue-name": "Sussudio",
+    "address": "2 Kellett St, Potts Point NSW 2011, Australia",
+    "lat": -33.8746096,
+    "lng": 151.2231535,
+    "count": 76
   },
   {
     "unix-time": 1756562400,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 360
-  },
-  {
-    "unix-time": 1756562400,
-    "venue-name": "Side Bar",
-    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
-    "count": 305
-  },
-  {
-    "unix-time": 1756562400,
-    "venue-name": "Paddo Inn",
-    "address": "338 Oxford St, Paddington NSW 2021, Australia",
-    "lat": -33.88607500762133,
-    "lng": 151.22911755335716,
-    "count": 136
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 415
   },
   {
     "unix-time": 1756562400,
     "venue-name": "Ivy",
     "address": "330 George St, Sydney NSW 2000, Australia",
-    "lat": -33.86657289687057,
-    "lng": 151.2075283591438,
-    "count": 1120
+    "lat": -33.8665788,
+    "lng": 151.2073668,
+    "count": 3150
   },
   {
     "unix-time": 1756562400,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
-    "count": 203
+    "venue-name": "Tokyo Sing Song",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 90
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 512
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 74
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 83
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "The Vinyl Room",
+    "address": "52 Gymea Bay Rd, Gymea NSW 2227, Australia",
+    "lat": -34.0356893,
+    "lng": 151.0852593,
+    "count": 81
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 43
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
+    "count": 320
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 213
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 330
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.8823104,
+    "lng": 151.2046682,
+    "count": 305
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Noir Nightclub",
+    "address": "163 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802754,
+    "lng": 151.216136,
+    "count": 270
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Carousel Bar & Ballroom",
+    "address": "169 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802858,
+    "lng": 151.2161971,
+    "count": 100
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 420
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Palms",
+    "address": "124 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8800822,
+    "lng": 151.2164961,
+    "count": 164
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 360
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Cult Nightclub",
+    "address": "73-74, 19-35 Bayswater Rd, Potts Point NSW 2011, Australia",
+    "lat": -33.8753257,
+    "lng": 151.2237906,
+    "count": 94
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 73
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 148
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 275
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 92
   },
   {
     "unix-time": 1756562400,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 329
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 80
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 840
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 320
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 203
   },
   {
     "unix-time": 1756562400,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 516
   },
   {
     "unix-time": 1756562400,
     "venue-name": "Chinese Laundry",
     "address": "1 Slip St, Sydney NSW 2000, Australia",
-    "lat": -33.868614469888726,
-    "lng": 151.20330621605322,
-    "count": 540
+    "lat": -33.8686139,
+    "lng": 151.2033051,
+    "count": 720
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 122
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 740
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 369
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 98
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Botany View Hotel",
+    "address": "597 King St, Newtown NSW 2042, Australia",
+    "lat": -33.9058669,
+    "lng": 151.1807404,
+    "count": 58
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Miranda Hotel/Carmens Nightclub",
+    "address": "590 Kingsway, Miranda NSW 2228, Australia",
+    "lat": -34.0343675,
+    "lng": 151.1013044,
+    "count": 270
+  },
+  {
+    "unix-time": 1756562400,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 216
   },
   {
     "unix-time": 1756566000,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 190
+    "venue-name": "Sussudio",
+    "address": "2 Kellett St, Potts Point NSW 2011, Australia",
+    "lat": -33.8746096,
+    "lng": 151.2231535,
+    "count": 72
   },
   {
     "unix-time": 1756566000,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 266
-  },
-  {
-    "unix-time": 1756566000,
-    "venue-name": "Side Bar",
-    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
-    "count": 231
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 310
   },
   {
     "unix-time": 1756566000,
     "venue-name": "Ivy",
     "address": "330 George St, Sydney NSW 2000, Australia",
-    "lat": -33.86657289687057,
-    "lng": 151.2075283591438,
-    "count": 1040
+    "lat": -33.8665788,
+    "lng": 151.2073668,
+    "count": 2925
   },
   {
     "unix-time": 1756566000,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
-    "count": 143
+    "venue-name": "Tokyo Sing Song",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 62
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 480
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 50
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 54
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "The Vinyl Room",
+    "address": "52 Gymea Bay Rd, Gymea NSW 2227, Australia",
+    "lat": -34.0356893,
+    "lng": 151.0852593,
+    "count": 59
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 27
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
+    "count": 216
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 223
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 220
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.8823104,
+    "lng": 151.2046682,
+    "count": 231
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Noir Nightclub",
+    "address": "163 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802754,
+    "lng": 151.216136,
+    "count": 228
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Carousel Bar & Ballroom",
+    "address": "169 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802858,
+    "lng": 151.2161971,
+    "count": 98
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 310
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Palms",
+    "address": "124 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8800822,
+    "lng": 151.2164961,
+    "count": 116
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 266
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Cult Nightclub",
+    "address": "73-74, 19-35 Bayswater Rd, Potts Point NSW 2011, Australia",
+    "lat": -33.8753257,
+    "lng": 151.2237906,
+    "count": 83
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 44
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 96
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 190
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 89
   },
   {
     "unix-time": 1756566000,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 203
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 56
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 630
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 215
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 143
   },
   {
     "unix-time": 1756566000,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 420
   },
   {
     "unix-time": 1756566000,
     "venue-name": "Chinese Laundry",
     "address": "1 Slip St, Sydney NSW 2000, Australia",
-    "lat": -33.868614469888726,
-    "lng": 151.20330621605322,
-    "count": 480
+    "lat": -33.8686139,
+    "lng": 151.2033051,
+    "count": 640
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 85
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 500
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 252
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 86
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Miranda Hotel/Carmens Nightclub",
+    "address": "590 Kingsway, Miranda NSW 2228, Australia",
+    "lat": -34.0343675,
+    "lng": 151.1013044,
+    "count": 165
+  },
+  {
+    "unix-time": 1756566000,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 138
   },
   {
     "unix-time": 1756569600,
-    "venue-name": "Scary Canary",
-    "address": "469 Kent St, Sydney NSW 2000, Australia",
-    "lat": -33.87300392411104,
-    "lng": 151.2049777211271,
-    "count": 92
+    "venue-name": "Sussudio",
+    "address": "2 Kellett St, Potts Point NSW 2011, Australia",
+    "lat": -33.8746096,
+    "lng": 151.2231535,
+    "count": 57
   },
   {
     "unix-time": 1756569600,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 167
-  },
-  {
-    "unix-time": 1756569600,
-    "venue-name": "Side Bar",
-    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
-    "lat": -33.882263101778655,
-    "lng": 151.2046201612295,
-    "count": 126
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 205
   },
   {
     "unix-time": 1756569600,
     "venue-name": "Ivy",
     "address": "330 George St, Sydney NSW 2000, Australia",
-    "lat": -33.86657289687057,
-    "lng": 151.2075283591438,
-    "count": 640
+    "lat": -33.8665788,
+    "lng": 151.2073668,
+    "count": 1800
   },
   {
     "unix-time": 1756569600,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
-    "count": 83
+    "venue-name": "Tokyo Sing Song",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 37
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 407
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Kalyx",
+    "address": "123 Avoca St, Randwick NSW 2031, Australia",
+    "lat": -33.9126835,
+    "lng": 151.2427054,
+    "count": 29
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Gitano Sydney",
+    "address": "Shop 2/53 Cross St, Double Bay NSW 2028, Australia",
+    "lat": -33.8757589,
+    "lng": 151.2422961,
+    "count": 27
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "The Vinyl Room",
+    "address": "52 Gymea Bay Rd, Gymea NSW 2227, Australia",
+    "lat": -34.0356893,
+    "lng": 151.0852593,
+    "count": 32
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Robin Hood Hotel",
+    "address": "203 Bronte Rd, Waverley NSW 2024, Australia",
+    "lat": -33.9008602,
+    "lng": 151.2537178,
+    "count": 16
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Goros",
+    "address": "84/86 Mary St, Surry Hills NSW 2010, Australia",
+    "lat": -33.8831258,
+    "lng": 151.2095232,
+    "count": 108
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 125
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
+    "count": 100
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.8823104,
+    "lng": 151.2046682,
+    "count": 126
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Noir Nightclub",
+    "address": "163 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802754,
+    "lng": 151.216136,
+    "count": 144
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Carousel Bar & Ballroom",
+    "address": "169 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802858,
+    "lng": 151.2161971,
+    "count": 75
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 185
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Palms",
+    "address": "124 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8800822,
+    "lng": 151.2164961,
+    "count": 64
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 167
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Cult Nightclub",
+    "address": "73-74, 19-35 Bayswater Rd, Potts Point NSW 2011, Australia",
+    "lat": -33.8753257,
+    "lng": 151.2237906,
+    "count": 61
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 21
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 48
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.8730155,
+    "lng": 151.2048733,
+    "count": 92
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 78
   },
   {
     "unix-time": 1756569600,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 90
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 31
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Establishment Bar",
+    "address": "Ground Floor, 252 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8640765,
+    "lng": 151.2076632,
+    "count": 360
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 115
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 83
   },
   {
     "unix-time": 1756569600,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 336
   },
   {
     "unix-time": 1756569600,
     "venue-name": "Chinese Laundry",
     "address": "1 Slip St, Sydney NSW 2000, Australia",
-    "lat": -33.868614469888726,
-    "lng": 151.20330621605322,
-    "count": 360
+    "lat": -33.8686139,
+    "lng": 151.2033051,
+    "count": 480
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 45
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "The Fiddler",
+    "address": "Commercial Rd, Rouse Hill NSW 2155, Australia",
+    "lat": -33.6858889,
+    "lng": 150.925329,
+    "count": 280
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 135
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 73
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Miranda Hotel/Carmens Nightclub",
+    "address": "590 Kingsway, Miranda NSW 2228, Australia",
+    "lat": -34.0343675,
+    "lng": 151.1013044,
+    "count": 74
+  },
+  {
+    "unix-time": 1756569600,
+    "venue-name": "Vic on the Park",
+    "address": "2 Addison Rd, Marrickville NSW 2204, Australia",
+    "lat": -33.9042176,
+    "lng": 151.168131,
+    "count": 72
   },
   {
     "unix-time": 1756573200,
-    "venue-name": "Marlborough Hotel",
-    "address": "145 King St, Newtown NSW 2042, Australia",
-    "lat": -33.89332218241223,
-    "lng": 151.18329545104154,
-    "count": 95
+    "venue-name": "Sussudio",
+    "address": "2 Kellett St, Potts Point NSW 2011, Australia",
+    "lat": -33.8746096,
+    "lng": 151.2231535,
+    "count": 38
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 110
   },
   {
     "unix-time": 1756573200,
     "venue-name": "Ivy",
     "address": "330 George St, Sydney NSW 2000, Australia",
-    "lat": -33.86657289687057,
-    "lng": 151.2075283591438,
-    "count": 480
+    "lat": -33.8665788,
+    "lng": 151.2073668,
+    "count": 1350
   },
   {
     "unix-time": 1756573200,
-    "venue-name": "Soda",
-    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
-    "lat": -33.87793203512837,
-    "lng": 151.21177122278598,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 322
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 63
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Shark Hotel",
+    "address": "127 Liverpool St, Sydney NSW 2000, Australia",
+    "lat": -33.8768395,
+    "lng": 151.2080368,
     "count": 40
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Carousel Bar & Ballroom",
+    "address": "169 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802858,
+    "lng": 151.2161971,
+    "count": 57
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 95
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8933249,
+    "lng": 151.1833132,
+    "count": 95
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Cult Nightclub",
+    "address": "73-74, 19-35 Bayswater Rd, Potts Point NSW 2011, Australia",
+    "lat": -33.8753257,
+    "lng": 151.2237906,
+    "count": 39
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Websters",
+    "address": "323 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8969051,
+    "lng": 151.1791077,
+    "count": 9
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Bank Hotel",
+    "address": "324 King St, Newtown NSW 2042, Australia",
+    "lat": -33.8974865,
+    "lng": 151.1792614,
+    "count": 22
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Pleasure Club",
+    "address": "6 Wilson St, Newtown NSW 2042, Australia",
+    "lat": -33.8969143,
+    "lng": 151.1796028,
+    "count": 59
   },
   {
     "unix-time": 1756573200,
     "venue-name": "Bella Vista Hotel",
     "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
-    "lat": -33.73668915119239,
-    "lng": 150.9488066966774,
+    "lat": -33.7365865,
+    "lng": 150.9486334,
     "count": 36
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Kelly's on King",
+    "address": "283-285 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89628,
+    "lng": 151.1797895,
+    "count": 14
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 65
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.877934,
+    "lng": 151.2117714,
+    "count": 40
   },
   {
     "unix-time": 1756573200,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 246
   },
   {
     "unix-time": 1756573200,
     "venue-name": "Chinese Laundry",
     "address": "1 Slip St, Sydney NSW 2000, Australia",
-    "lat": -33.868614469888726,
-    "lng": 151.20330621605322,
-    "count": 270
+    "lat": -33.8686139,
+    "lng": 151.2033051,
+    "count": 360
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Imperial Hotel Basement",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 21
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "Imperial Hotel",
+    "address": "35 Erskineville Rd, Erskineville NSW 2043, Australia",
+    "lat": -33.8992877,
+    "lng": 151.182573,
+    "count": 54
+  },
+  {
+    "unix-time": 1756573200,
+    "venue-name": "The Caterpillar Club",
+    "address": "92 Pitt St, Sydney NSW 2000, Australia",
+    "lat": -33.8671474,
+    "lng": 151.2087799,
+    "count": 52
+  },
+  {
+    "unix-time": 1756576800,
+    "venue-name": "Crows Nest Hotel",
+    "address": "1 Willoughby Rd, Crows Nest NSW 2065, Australia",
+    "lat": -33.8274888,
+    "lng": 151.2010414,
+    "count": 50
   },
   {
     "unix-time": 1756576800,
     "venue-name": "Ivy",
     "address": "330 George St, Sydney NSW 2000, Australia",
-    "lat": -33.86657289687057,
-    "lng": 151.2075283591438,
+    "lat": -33.8665788,
+    "lng": 151.2073668,
     "count": 0
+  },
+  {
+    "unix-time": 1756576800,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 158
+  },
+  {
+    "unix-time": 1756576800,
+    "venue-name": "Lucky Cat",
+    "address": "77 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.878654,
+    "lng": 151.2142599,
+    "count": 63
+  },
+  {
+    "unix-time": 1756576800,
+    "venue-name": "Carousel Bar & Ballroom",
+    "address": "169 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8802858,
+    "lng": 151.2161971,
+    "count": 33
+  },
+  {
+    "unix-time": 1756576800,
+    "venue-name": "Stonewall Hotel",
+    "address": "175 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8803869,
+    "lng": 151.2163231,
+    "count": 10
+  },
+  {
+    "unix-time": 1756576800,
+    "venue-name": "Cult Nightclub",
+    "address": "73-74, 19-35 Bayswater Rd, Potts Point NSW 2011, Australia",
+    "lat": -33.8753257,
+    "lng": 151.2237906,
+    "count": 8
+  },
+  {
+    "unix-time": 1756576800,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 50
   },
   {
     "unix-time": 1756576800,
     "venue-name": "Abercrombie",
     "address": "100 Broadway, Chippendale NSW 2008, Australia",
-    "lat": -33.884428619718285,
-    "lng": 151.1989098255198,
+    "lat": -33.8844999,
+    "lng": 151.1988991,
     "count": 0
+  },
+  {
+    "unix-time": 1756580400,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 116
+  },
+  {
+    "unix-time": 1756580400,
+    "venue-name": "Cult Nightclub",
+    "address": "73-74, 19-35 Bayswater Rd, Potts Point NSW 2011, Australia",
+    "lat": -33.8753257,
+    "lng": 151.2237906,
+    "count": 4
+  },
+  {
+    "unix-time": 1756580400,
+    "venue-name": "3 Wise Monkeys",
+    "address": "555 George St, Sydney NSW 2000, Australia",
+    "lat": -33.8762043,
+    "lng": 151.2059932,
+    "count": 25
+  },
+  {
+    "unix-time": 1756584000,
+    "venue-name": "Universal Nightclub",
+    "address": "85-91 Oxford St, Darlinghurst NSW 2010, Australia",
+    "lat": -33.8789473,
+    "lng": 151.2145141,
+    "count": 69
   }
 ]
