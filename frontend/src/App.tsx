@@ -109,13 +109,21 @@ export const App = () => {
         ).map((p) => ({
           type: "Feature" as const,
           id: p.id,
-          geometry: { type: "Point" as const, coordinates: [p.lng, p.lat] },
+          geometry: {
+            type: "Point" as const,
+            coordinates: [
+              Math.round(p.lng * 1e6) / 1e6,
+              Math.round(p.lat * 1e6) / 1e6,
+            ],
+          },
           properties: { t: p.timestamp * 1000 },
         }));
 
         map.addSource("locations", {
           type: "geojson",
           data: { type: "FeatureCollection", features },
+          buffer: 0,
+          maxzoom: 12,
         });
 
         map.addLayer(
@@ -123,7 +131,7 @@ export const App = () => {
             id: "heatmap",
             type: "heatmap",
             source: "locations",
-            minzoom: 11,
+            minzoom: 0,
             maxzoom: 17,
             paint: {
               // weight is dynamically updated by the time scrubber
@@ -133,8 +141,8 @@ export const App = () => {
                 "interpolate",
                 ["linear"],
                 ["zoom"],
-                11,
-                1,
+                5,
+                0.6,
                 17,
                 3,
               ],
@@ -159,6 +167,8 @@ export const App = () => {
                 "interpolate",
                 ["linear"],
                 ["zoom"],
+                5,
+                10,
                 11,
                 15,
                 17,
@@ -233,6 +243,8 @@ export const App = () => {
             map.addSource("locations", {
               type: "geojson",
               data: { type: "FeatureCollection", features },
+              buffer: 0,
+              maxzoom: 12,
             });
           }
           if (!map.getLayer("heatmap")) {
@@ -241,7 +253,7 @@ export const App = () => {
                 id: "heatmap",
                 type: "heatmap",
                 source: "locations",
-                minzoom: 11,
+                minzoom: 0,
                 maxzoom: 17,
                 paint: {
                   "heatmap-weight": 1,
@@ -249,8 +261,8 @@ export const App = () => {
                     "interpolate",
                     ["linear"],
                     ["zoom"],
-                    11,
-                    1,
+                    5,
+                    0.6,
                     17,
                     3,
                   ],
@@ -273,6 +285,8 @@ export const App = () => {
                     "interpolate",
                     ["linear"],
                     ["zoom"],
+                    5,
+                    10,
                     11,
                     15,
                     17,
