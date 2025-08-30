@@ -29,11 +29,10 @@ export class SocketHandler {
       server: httpServer,
       path: "/api/live",
       verifyClient: (info: { origin?: string; req: IncomingMessage }) => {
-        // Handle CORS
+        // Handle CORS (support multiple origins, comma-separated)
         const origin = info.origin;
-        const allowedOrigin = process.env.CORS_ORIGIN || "http://localhost:5173";
-
-        return !origin || origin === allowedOrigin;
+        const allowed = (process.env.CORS_ORIGIN || "http://localhost:5173").split(",").map((o) => o.trim());
+        return !origin || allowed.includes(origin);
       },
     });
 
