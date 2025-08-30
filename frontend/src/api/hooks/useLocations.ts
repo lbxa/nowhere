@@ -119,32 +119,6 @@ export const useLocations = () => {
     return Array.from(users) as string[];
   }, [data?.locations]);
 
-  /**
-   * Get statistics about the location data
-   */
-  const getStats = useCallback(() => {
-    if (!data) {
-      return {
-        totalLocations: 0,
-        totalUsers: 0,
-        oldestLocation: null,
-        newestLocation: null,
-        averageAccuracy: null,
-      };
-    }
-
-    const locations = data.locations;
-    const timestamps = locations.map((loc: LocationOutput) => loc.timestamp);
-
-    return {
-      totalLocations: locations.length,
-      totalUsers: data.totalActiveUsers,
-      oldestLocation: timestamps.length > 0 ? Math.min(...timestamps) : null,
-      newestLocation: timestamps.length > 0 ? Math.max(...timestamps) : null,
-      timespan: data.historicalTimespan,
-    };
-  }, [data]);
-
   return {
     // React Query interface
     data,
@@ -165,6 +139,5 @@ export const useLocations = () => {
     addLocationUpdate,
     getLocationsByTimeRange,
     getUniqueUsers,
-    getStats,
   };
 };
