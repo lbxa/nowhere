@@ -34,7 +34,6 @@ export default class TimelineController {
     this.minTime = options.minTime;
     this.maxTime = options.maxTime;
     this.onTimeChange = options.onTimeChange;
-
     this.currentTime = this.minTime;
 
     // Re-apply state when style reloads; stop animation when map is removed
