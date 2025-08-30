@@ -12,7 +12,6 @@
  * Usage: bun run bondi-api-client.ts
  */
 
-import type { HeadersInit } from "bun";
 import { DateTime } from 'luxon'; // You'll need to install: bun add luxon @types/luxon
 import * as fs from 'fs';
 import * as path from 'path';
