@@ -3,7 +3,7 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useEffect, useMemo, useRef, useState } from "react";
 import TimelineController from "./utils/TimelineController";
-import locations from "./mocks/locations-med.json";
+import locations from "./mocks/locations-max.json";
 import { ScrubBar } from "./components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -13,8 +13,8 @@ const PLAY_SPEED = 60 * 1000; // 1 minute of data per real second
 
 const getMapStyleFromTheme = (): string =>
   document.documentElement.classList.contains("dark")
-    ? "mapbox://styles/mapbox/dark-v11"
-    : "mapbox://styles/mapbox/streets-v12";
+    ? "mapbox://styles/mapbox/dark-v11?optimize=true"
+    : "mapbox://styles/mapbox/streets-v12?optimize=true";
 
 export const App = () => {
   const mapRef = useRef<mapboxgl.Map | null>(null);
@@ -46,6 +46,8 @@ export const App = () => {
       container: mapContainerRef.current!,
       style: initialStyle,
       attributionControl: false,
+      renderWorldCopies: false,
+      antialias: false,
     });
 
     // Respond to Tailwind class-based theme changes
@@ -121,6 +123,7 @@ export const App = () => {
             id: "heatmap",
             type: "heatmap",
             source: "locations",
+            minzoom: 11,
             maxzoom: 17,
             paint: {
               // weight is dynamically updated by the time scrubber
@@ -224,25 +227,6 @@ export const App = () => {
         timelineRef.current = tl;
         tl.setTime(minT);
 
-        // Blink animation: toggle opacity between 0.3 and 1.0
-        let animationFrameId = 0;
-        const start = performance.now();
-        const animate = () => {
-          const t = (performance.now() - start) / 1000; // seconds
-          const opacity = 0.65 + 0.35 * Math.sin(t * 4); // ~2 Hz blink
-          if (map && map.getLayer("locations-circles")) {
-            map.setPaintProperty(
-              "locations-circles",
-              "circle-opacity",
-              Math.max(0.3, opacity),
-            );
-          }
-          animationFrameId = requestAnimationFrame(animate);
-        };
-        animate();
-
-        // Cleanup animation on unmount or style change
-        map.on("remove", () => cancelAnimationFrame(animationFrameId));
         map.on("styledata", () => {
           // If style reloads, ensure layer exists again
           if (!map.getSource("locations")) {
@@ -251,17 +235,83 @@ export const App = () => {
               data: { type: "FeatureCollection", features },
             });
           }
+          if (!map.getLayer("heatmap")) {
+            map.addLayer(
+              {
+                id: "heatmap",
+                type: "heatmap",
+                source: "locations",
+                minzoom: 11,
+                maxzoom: 17,
+                paint: {
+                  "heatmap-weight": 1,
+                  "heatmap-intensity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    11,
+                    1,
+                    17,
+                    3,
+                  ],
+                  "heatmap-color": [
+                    "interpolate",
+                    ["linear"],
+                    ["heatmap-density"],
+                    0,
+                    "rgba(236,222,239,0)",
+                    0.2,
+                    "rgb(208,209,230)",
+                    0.4,
+                    "rgb(166,189,219)",
+                    0.6,
+                    "rgb(103,169,207)",
+                    0.8,
+                    "rgb(28,144,153)",
+                  ],
+                  "heatmap-radius": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    11,
+                    15,
+                    17,
+                    25,
+                  ],
+                  "heatmap-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    15,
+                    1,
+                    16.5,
+                    0,
+                  ],
+                },
+              },
+              "waterway-label",
+            );
+          }
           if (!map.getLayer("locations-circles")) {
             map.addLayer({
               id: "locations-circles",
               type: "circle",
               source: "locations",
+              minzoom: 16,
               paint: {
                 "circle-radius": 6,
                 "circle-color": "#93c5fd",
                 "circle-stroke-width": 1,
                 "circle-stroke-color": "#60a5fa",
-                "circle-opacity": 1,
+                "circle-opacity": [
+                  "interpolate",
+                  ["linear"],
+                  ["zoom"],
+                  16,
+                  0.6,
+                  18,
+                  0.85,
+                ],
               },
             });
           }
