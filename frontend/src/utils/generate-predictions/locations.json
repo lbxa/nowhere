@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Home The Venue",
+        "capacity": "2500",
+        "lat": -33.87252785735961, 
+        "lng": 151.20192845435565
+    },
+    {
+        "name": "Coogee Pavilion Rooftop",
+        "capacity": "600",
+        "lat": -33.91872197631784, 
+        "lng": 151.25825482552122
+    },
+      {
+        "name": "Royal Paddington",
+        "capacity": "600",
+        "lat": -33.882400086584234, 
+        "lng": 151.22850510834013
+    },
+    {
+        "name": "Ivy",
+        "capacity": "1600",
+        "lat": -33.86657289687057, 
+        "lng": 151.2075283591438
+    },
+    {
+        "name": "Soda",
+        "capacity": "250",
+        "lat": -33.87793203512837, 
+        "lng": 151.21177122278598
+    },
+    {
+        "name": "Marlborough Hotel",
+        "capacity": "450",
+        "lat": -33.89332218241223, 
+        "lng": 151.18329545104154
+    },
+    {
+        "name": "Bella Vista Hotel",
+        "capacity": "450",
+        "lat": -33.73668915119239, 
+        "lng": 150.9488066966774
+    },
+    {
+        "name": "Scary Canary",
+        "capacity": "340",
+        "lat": -33.87300392411104, 
+        "lng": 151.2049777211271
+    },
+    {
+        "name": "Side Bar",
+        "capacity": "350",
+        "lat": -33.882263101778655, 
+        "lng": 151.2046201612295
+    },
+    {
+        "name": "Abercrombie",
+        "capacity": "600",
+        "lat": -33.884428619718285,
+        "lng": 151.1989098255198
+    },
+    {
+        "name": "Chinese Laundry",
+        "capacity": "600",
+        "lat": -33.868614469888726, 
+        "lng": 151.20330621605322
+    },
+    {
+        "name": "Paddo Inn",
+        "capacity": "200",
+        "lat": -33.88607500762133, 
+        "lng": 151.22911755335716
+    }
+]

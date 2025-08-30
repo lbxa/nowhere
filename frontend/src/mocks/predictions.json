@@ -1,0 +1,1162 @@
+[
+  {
+    "utc-time": "2025-08-29T23:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-29T23:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-29T23:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T00:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 32
+  },
+  {
+    "utc-time": "2025-08-30T00:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 9
+  },
+  {
+    "utc-time": "2025-08-30T00:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 30
+  },
+  {
+    "utc-time": "2025-08-30T01:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T01:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 54
+  },
+  {
+    "utc-time": "2025-08-30T01:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 18
+  },
+  {
+    "utc-time": "2025-08-30T01:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T01:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 36
+  },
+  {
+    "utc-time": "2025-08-30T01:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T02:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 108
+  },
+  {
+    "utc-time": "2025-08-30T02:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 90
+  },
+  {
+    "utc-time": "2025-08-30T02:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 23
+  },
+  {
+    "utc-time": "2025-08-30T02:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 24
+  },
+  {
+    "utc-time": "2025-08-30T02:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 36
+  },
+  {
+    "utc-time": "2025-08-30T02:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 36
+  },
+  {
+    "utc-time": "2025-08-30T03:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 186
+  },
+  {
+    "utc-time": "2025-08-30T03:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 117
+  },
+  {
+    "utc-time": "2025-08-30T03:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 27
+  },
+  {
+    "utc-time": "2025-08-30T03:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 27
+  },
+  {
+    "utc-time": "2025-08-30T03:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 54
+  },
+  {
+    "utc-time": "2025-08-30T03:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 56
+  },
+  {
+    "utc-time": "2025-08-30T04:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 258
+  },
+  {
+    "utc-time": "2025-08-30T04:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 122
+  },
+  {
+    "utc-time": "2025-08-30T04:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 36
+  },
+  {
+    "utc-time": "2025-08-30T04:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 20
+  },
+  {
+    "utc-time": "2025-08-30T04:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 30
+  },
+  {
+    "utc-time": "2025-08-30T04:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 76
+  },
+  {
+    "utc-time": "2025-08-30T05:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 294
+  },
+  {
+    "utc-time": "2025-08-30T05:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 117
+  },
+  {
+    "utc-time": "2025-08-30T05:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 41
+  },
+  {
+    "utc-time": "2025-08-30T05:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 24
+  },
+  {
+    "utc-time": "2025-08-30T05:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T05:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 30
+  },
+  {
+    "utc-time": "2025-08-30T05:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 88
+  },
+  {
+    "utc-time": "2025-08-30T06:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 324
+  },
+  {
+    "utc-time": "2025-08-30T06:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T06:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 117
+  },
+  {
+    "utc-time": "2025-08-30T06:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 54
+  },
+  {
+    "utc-time": "2025-08-30T06:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 34
+  },
+  {
+    "utc-time": "2025-08-30T06:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 14
+  },
+  {
+    "utc-time": "2025-08-30T06:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 36
+  },
+  {
+    "utc-time": "2025-08-30T06:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 104
+  },
+  {
+    "utc-time": "2025-08-30T07:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 384
+  },
+  {
+    "utc-time": "2025-08-30T07:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 25
+  },
+  {
+    "utc-time": "2025-08-30T07:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 140
+  },
+  {
+    "utc-time": "2025-08-30T07:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 68
+  },
+  {
+    "utc-time": "2025-08-30T07:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 48
+  },
+  {
+    "utc-time": "2025-08-30T07:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 21
+  },
+  {
+    "utc-time": "2025-08-30T07:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 78
+  },
+  {
+    "utc-time": "2025-08-30T07:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 116
+  },
+  {
+    "utc-time": "2025-08-30T08:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 426
+  },
+  {
+    "utc-time": "2025-08-30T08:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 43
+  },
+  {
+    "utc-time": "2025-08-30T08:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 194
+  },
+  {
+    "utc-time": "2025-08-30T08:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 90
+  },
+  {
+    "utc-time": "2025-08-30T08:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 61
+  },
+  {
+    "utc-time": "2025-08-30T08:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 35
+  },
+  {
+    "utc-time": "2025-08-30T08:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 126
+  },
+  {
+    "utc-time": "2025-08-30T08:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 134
+  },
+  {
+    "utc-time": "2025-08-30T09:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 492
+  },
+  {
+    "utc-time": "2025-08-30T09:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 73
+  },
+  {
+    "utc-time": "2025-08-30T09:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 270
+  },
+  {
+    "utc-time": "2025-08-30T09:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 126
+  },
+  {
+    "utc-time": "2025-08-30T09:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 78
+  },
+  {
+    "utc-time": "2025-08-30T09:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 53
+  },
+  {
+    "utc-time": "2025-08-30T09:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 192
+  },
+  {
+    "utc-time": "2025-08-30T09:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 150
+  },
+  {
+    "utc-time": "2025-08-30T10:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 534
+  },
+  {
+    "utc-time": "2025-08-30T10:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 115
+  },
+  {
+    "utc-time": "2025-08-30T10:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 351
+  },
+  {
+    "utc-time": "2025-08-30T10:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 189
+  },
+  {
+    "utc-time": "2025-08-30T10:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 126
+  },
+  {
+    "utc-time": "2025-08-30T10:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 95
+  },
+  {
+    "utc-time": "2025-08-30T10:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 282
+  },
+  {
+    "utc-time": "2025-08-30T10:00:00.000Z",
+    "venue-name": "Chinese Laundry",
+    "address": "1 Slip St, Sydney NSW 2000, Australia",
+    "lat": -33.868614469888726,
+    "lng": 151.20330621605322,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T10:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 174
+  },
+  {
+    "utc-time": "2025-08-30T11:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 600
+  },
+  {
+    "utc-time": "2025-08-30T11:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 170
+  },
+  {
+    "utc-time": "2025-08-30T11:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T11:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 419
+  },
+  {
+    "utc-time": "2025-08-30T11:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 293
+  },
+  {
+    "utc-time": "2025-08-30T11:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 207
+  },
+  {
+    "utc-time": "2025-08-30T11:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 165
+  },
+  {
+    "utc-time": "2025-08-30T11:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 402
+  },
+  {
+    "utc-time": "2025-08-30T11:00:00.000Z",
+    "venue-name": "Chinese Laundry",
+    "address": "1 Slip St, Sydney NSW 2000, Australia",
+    "lat": -33.868614469888726,
+    "lng": 151.20330621605322,
+    "count": 264
+  },
+  {
+    "utc-time": "2025-08-30T11:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 192
+  },
+  {
+    "utc-time": "2025-08-30T12:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 588
+  },
+  {
+    "utc-time": "2025-08-30T12:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 230
+  },
+  {
+    "utc-time": "2025-08-30T12:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 880
+  },
+  {
+    "utc-time": "2025-08-30T12:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 450
+  },
+  {
+    "utc-time": "2025-08-30T12:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 392
+  },
+  {
+    "utc-time": "2025-08-30T12:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 292
+  },
+  {
+    "utc-time": "2025-08-30T12:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 263
+  },
+  {
+    "utc-time": "2025-08-30T12:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 528
+  },
+  {
+    "utc-time": "2025-08-30T12:00:00.000Z",
+    "venue-name": "Chinese Laundry",
+    "address": "1 Slip St, Sydney NSW 2000, Australia",
+    "lat": -33.868614469888726,
+    "lng": 151.20330621605322,
+    "count": 450
+  },
+  {
+    "utc-time": "2025-08-30T12:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 200
+  },
+  {
+    "utc-time": "2025-08-30T13:00:00.000Z",
+    "venue-name": "Coogee Pavilion Rooftop",
+    "address": "Level 3/169 Dolphin St, Coogee NSW 2034, Australia",
+    "lat": -33.91872197631784,
+    "lng": 151.25825482552122,
+    "count": 480
+  },
+  {
+    "utc-time": "2025-08-30T13:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 250
+  },
+  {
+    "utc-time": "2025-08-30T13:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 1088
+  },
+  {
+    "utc-time": "2025-08-30T13:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 432
+  },
+  {
+    "utc-time": "2025-08-30T13:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 450
+  },
+  {
+    "utc-time": "2025-08-30T13:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 340
+  },
+  {
+    "utc-time": "2025-08-30T13:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 350
+  },
+  {
+    "utc-time": "2025-08-30T13:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 594
+  },
+  {
+    "utc-time": "2025-08-30T13:00:00.000Z",
+    "venue-name": "Chinese Laundry",
+    "address": "1 Slip St, Sydney NSW 2000, Australia",
+    "lat": -33.868614469888726,
+    "lng": 151.20330621605322,
+    "count": 600
+  },
+  {
+    "utc-time": "2025-08-30T13:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 196
+  },
+  {
+    "utc-time": "2025-08-30T14:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 203
+  },
+  {
+    "utc-time": "2025-08-30T14:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T14:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 1120
+  },
+  {
+    "utc-time": "2025-08-30T14:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 329
+  },
+  {
+    "utc-time": "2025-08-30T14:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 360
+  },
+  {
+    "utc-time": "2025-08-30T14:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 275
+  },
+  {
+    "utc-time": "2025-08-30T14:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 305
+  },
+  {
+    "utc-time": "2025-08-30T14:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 516
+  },
+  {
+    "utc-time": "2025-08-30T14:00:00.000Z",
+    "venue-name": "Chinese Laundry",
+    "address": "1 Slip St, Sydney NSW 2000, Australia",
+    "lat": -33.868614469888726,
+    "lng": 151.20330621605322,
+    "count": 540
+  },
+  {
+    "utc-time": "2025-08-30T14:00:00.000Z",
+    "venue-name": "Paddo Inn",
+    "address": "338 Oxford St, Paddington NSW 2021, Australia",
+    "lat": -33.88607500762133,
+    "lng": 151.22911755335716,
+    "count": 136
+  },
+  {
+    "utc-time": "2025-08-30T15:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 143
+  },
+  {
+    "utc-time": "2025-08-30T15:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 203
+  },
+  {
+    "utc-time": "2025-08-30T15:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 266
+  },
+  {
+    "utc-time": "2025-08-30T15:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 190
+  },
+  {
+    "utc-time": "2025-08-30T15:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 231
+  },
+  {
+    "utc-time": "2025-08-30T15:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 420
+  },
+  {
+    "utc-time": "2025-08-30T15:00:00.000Z",
+    "venue-name": "Chinese Laundry",
+    "address": "1 Slip St, Sydney NSW 2000, Australia",
+    "lat": -33.868614469888726,
+    "lng": 151.20330621605322,
+    "count": 480
+  },
+  {
+    "utc-time": "2025-08-30T16:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 83
+  },
+  {
+    "utc-time": "2025-08-30T16:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T16:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T16:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 640
+  },
+  {
+    "utc-time": "2025-08-30T16:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 90
+  },
+  {
+    "utc-time": "2025-08-30T16:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 167
+  },
+  {
+    "utc-time": "2025-08-30T16:00:00.000Z",
+    "venue-name": "Scary Canary",
+    "address": "469 Kent St, Sydney NSW 2000, Australia",
+    "lat": -33.87300392411104,
+    "lng": 151.2049777211271,
+    "count": 92
+  },
+  {
+    "utc-time": "2025-08-30T16:00:00.000Z",
+    "venue-name": "Side Bar",
+    "address": "509 Pitt St, Haymarket NSW 2000, Australia",
+    "lat": -33.882263101778655,
+    "lng": 151.2046201612295,
+    "count": 126
+  },
+  {
+    "utc-time": "2025-08-30T16:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 336
+  },
+  {
+    "utc-time": "2025-08-30T16:00:00.000Z",
+    "venue-name": "Chinese Laundry",
+    "address": "1 Slip St, Sydney NSW 2000, Australia",
+    "lat": -33.868614469888726,
+    "lng": 151.20330621605322,
+    "count": 360
+  },
+  {
+    "utc-time": "2025-08-30T17:00:00.000Z",
+    "venue-name": "Soda",
+    "address": "16 Wentworth Ave, Surry Hills NSW 2010, Australia",
+    "lat": -33.87793203512837,
+    "lng": 151.21177122278598,
+    "count": 40
+  },
+  {
+    "utc-time": "2025-08-30T17:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 1040
+  },
+  {
+    "utc-time": "2025-08-30T17:00:00.000Z",
+    "venue-name": "Bella Vista Hotel",
+    "address": "13-15 Lexington Dr, Bella Vista NSW 2153, Australia",
+    "lat": -33.73668915119239,
+    "lng": 150.9488066966774,
+    "count": 36
+  },
+  {
+    "utc-time": "2025-08-30T17:00:00.000Z",
+    "venue-name": "Marlborough Hotel",
+    "address": "145 King St, Newtown NSW 2042, Australia",
+    "lat": -33.89332218241223,
+    "lng": 151.18329545104154,
+    "count": 95
+  },
+  {
+    "utc-time": "2025-08-30T17:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 246
+  },
+  {
+    "utc-time": "2025-08-30T17:00:00.000Z",
+    "venue-name": "Chinese Laundry",
+    "address": "1 Slip St, Sydney NSW 2000, Australia",
+    "lat": -33.868614469888726,
+    "lng": 151.20330621605322,
+    "count": 270
+  },
+  {
+    "utc-time": "2025-08-30T18:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T18:00:00.000Z",
+    "venue-name": "Abercrombie",
+    "address": "100 Broadway, Chippendale NSW 2008, Australia",
+    "lat": -33.884428619718285,
+    "lng": 151.1989098255198,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T20:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 0
+  },
+  {
+    "utc-time": "2025-08-30T21:00:00.000Z",
+    "venue-name": "Ivy",
+    "address": "330 George St, Sydney NSW 2000, Australia",
+    "lat": -33.86657289687057,
+    "lng": 151.2075283591438,
+    "count": 480
+  }
+]
