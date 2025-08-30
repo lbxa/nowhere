@@ -46,15 +46,29 @@ export const ScrubBar = ({
         </button>
         <p className="text-black dark:text-white">{datetime}</p>
       </div>
-      <input
-        type="range"
-        min={minT}
-        className="appearance-none range-md w-full bg-indigo/30 rounded-lg cursor-pointer accent-indigo relative z-10"
-        max={maxT}
-        step={60000}
-        value={time}
-        onChange={(e) => handleScrub(Number(e.target.value))}
-      />
+      <div className="relative">
+        <input
+          type="range"
+          min={minT}
+          className="appearance-none range-md w-full bg-indigo/30 rounded-lg cursor-pointer accent-indigo relative z-10"
+          max={maxT}
+          step={60000}
+          value={time}
+          list="markers"
+          onChange={(e) => handleScrub(Number(e.target.value))}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 flex justify-between px-1"
+        >
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <span
+              key={i}
+              className="h-2 w-2 rounded-lg bg-black dark:bg-white self-center"
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
