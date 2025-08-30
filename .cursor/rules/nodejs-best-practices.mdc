@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Package manager
+
+- Always use pnpm as the primary package manager.
+- Filter for the packages of concern e.g., `pnpm install --filter <pkg1> --filter <pkg2>`
+
+# Keep code clean
+
+- Use sound filesystem structures with minimum depth
+- Group files based on business domain 

@@ -3,7 +3,7 @@ import { randomUUID } from 'crypto';
 
 export interface LocationPing {
   id: string;
-  t: number; // timestamp in milliseconds
+  timestamp: number; // timestamp in milliseconds
   lat: number;
   lng: number;
 }
@@ -55,8 +55,9 @@ function chooseIndexByWeights(weights: number[]): number {
 }
 
 /**
- * Generates mock location data that simulates real-time user movement
- * Creates points clustered in a small geographic area with timestamps close together
+ * Generates mock location data with flowing clusters over time.
+ * Clusters drift smoothly (global wind + per-cluster velocity),
+ * creating a precipitation-like motion when animated.
  */
 function generateMockLocationData({lat, lng}: {lat?: number, lng?: number} = {}): LocationPing[] {
   const data: LocationPing[] = [];
@@ -79,28 +80,43 @@ function generateMockLocationData({lat, lng}: {lat?: number, lng?: number} = {})
   // Heavier weight for earlier clusters to create visible hotspots
   const clusterWeights = Array.from({ length: numClusters }, (_, k) => Math.pow(0.6, k));
 
+  // Global wind drift (total degrees across the whole timeRange)
+  const windDir = Math.random() * 2 * Math.PI;
+  const windMagDeg = 0.02; // ~2.2km total drift across timeRange
+  const windVel = { lat: windMagDeg * Math.sin(windDir), lng: windMagDeg * Math.cos(windDir) };
+
+  // Per-cluster velocity perturbations (in degrees across timeRange)
+  const clusterVelocities = Array.from({ length: numClusters }, () => ({
+    lat: windVel.lat + randomNormal(0, 0.003),
+    lng: windVel.lng + randomNormal(0, 0.003),
+  }));
+
   for (let i = 0; i < numPoints; i++) {
     // Create timestamps that progress forward but with some randomness
     const timeOffset = (i / numPoints) * timeRange;
     const randomTimeJitter = (Math.random() - 0.5) * 30000; // ±15 seconds jitter
-    const timestamp = startTime + timeOffset + randomTimeJitter;
+    const timestamp = Math.floor((startTime + timeOffset + randomTimeJitter) / 1000);
+    const progress = timeOffset / timeRange; // normalized [0,1]
 
     // Sample coordinates from a 2D Gaussian around a chosen cluster center
     const clusterIndex = chooseIndexByWeights(clusterWeights);
-    const center = clusterCenters[clusterIndex];
-    const lat = center.lat + randomNormal(0, clusterStdDevDeg);
-    const lng = center.lng + randomNormal(0, clusterStdDevDeg);
+    const center0 = clusterCenters[clusterIndex];
+    const vel = clusterVelocities[clusterIndex];
+    const movingCenterLat = center0.lat + vel.lat * progress;
+    const movingCenterLng = center0.lng + vel.lng * progress;
+    const lat = movingCenterLat + randomNormal(0, clusterStdDevDeg);
+    const lng = movingCenterLng + randomNormal(0, clusterStdDevDeg);
 
     data.push({
       id: randomUUID(),
-      t: timestamp,
+      timestamp: timestamp,
       lat: Math.round(lat * 1000000) / 1000000, // Round to 6 decimal places
       lng: Math.round(lng * 1000000) / 1000000
     });
   }
 
   // Sort by timestamp to ensure chronological order
-  return data.sort((a, b) => a.t - b.t);
+  return data.sort((a, b) => a.timestamp - b.timestamp);
 }
 
 /**
@@ -124,7 +140,7 @@ function saveMockData(data: LocationPing[], filename: string = 'locations.json')
     console.log(`✅ Mock data generated and saved to ${filename}`);
     console.log(`📊 Generated ${data.length} location points`);
     console.log(`📍 Geographic center: ${data[0].lat.toFixed(6)}, ${data[0].lng.toFixed(6)}`);
-    console.log(`⏰ Time range: ${new Date(data[0].t).toLocaleString()} to ${new Date(data[data.length - 1].t).toLocaleString()}`);
+    console.log(`⏰ Time range: ${new Date(data[0].timestamp).toLocaleString()} to ${new Date(data[data.length - 1].timestamp).toLocaleString()}`);
   } catch (error) {
     console.error('❌ Error saving mock data:', error);
   }
@@ -133,7 +149,13 @@ function saveMockData(data: LocationPing[], filename: string = 'locations.json')
 // Generate and save the mock data
 if (import.meta.main) {
   console.log('🚀 Generating mock location data...');
-  const mockData = generateMockLocationData({lat: CENTENNIAL_PARK_COORDINATES.lat, lng: CENTENNIAL_PARK_COORDINATES.lng});
+  const mockData = [
+    ...generateMockLocationData({lat: SYDNEY_COORDINATES.lat, lng: SYDNEY_COORDINATES.lng}),
+    ...generateMockLocationData({lat: NEWTOWN_COORDINATES.lat, lng: NEWTOWN_COORDINATES.lng}),
+    ...generateMockLocationData({lat: SURRY_HILLS_COORDINATES.lat, lng: SURRY_HILLS_COORDINATES.lng}),
+    ...generateMockLocationData({lat: BONDI_BEACH_COORDINATES.lat, lng: BONDI_BEACH_COORDINATES.lng}),
+    ...generateMockLocationData({lat: CENTENNIAL_PARK_COORDINATES.lat, lng: CENTENNIAL_PARK_COORDINATES.lng}),
+  ];
   saveMockData(mockData, './src/mocks/locations.json');
 }
 

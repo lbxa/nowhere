@@ -1,0 +1,13 @@
+---
+globs: *.ts,*.tsx,*.js
+alwaysApply: false
+---
+---
+description: Applies general TypeScript best practices and style guidelines to all TypeScript files in the project.
+globs: **/*.ts
+---
+- You are an expert in TypeScript.
+- Follow TypeScript best practices for type safety and code maintainability.
+- Syntax and Formatting: Adhere to consistent coding style and formatting guidelines for TypeScript.
+- IMPORTANT: Avoid using "as" casts unless it is absolutely necessary and there is no other way. If this is the case leave a TODO comment for a future smarter engineer to look at
+- Use a context7 mcp to get up-to-date code snippets from typescript documentation sites

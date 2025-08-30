@@ -1,15 +1,33 @@
 import mapboxgl from 'mapbox-gl';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import TimelineController from './utils/TimelineController';
 import locations from './mocks/locations.json';
 
 const INITIAL_ZOOM = 13;
+const TRAIL_WINDOW_MS = 10 * 60 * 1000; // trailing window (e.g., last 10m)
+const PLAY_SPEED = 60 * 1000; // 1 minute of data per real second
 
 export const App = () =>{
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const [origin, setOrigin] = useState<[number, number]>([0, 0]);
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [time, setTime] = useState<number>(0);
+  const timeRef = useRef<number>(0);
+  const timelineRef = useRef<TimelineController | null>(null);
+
+  const [minT, maxT] = useMemo(() => {
+    let min = Infinity, max = -Infinity;
+    for (const p of locations as Array<{ timestamp: number }>) {
+      const tMs = p.timestamp * 1000;
+      if (tMs < min) min = tMs;
+      if (tMs > max) max = tMs;
+    }
+    return [min, max];
+  }, []);
 
   useEffect(() => {
     mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
@@ -52,34 +70,29 @@ export const App = () =>{
     // Add locations as a blinking light-blue circle layer
     mapRef.current.on('load', () => {
       try {
-        const features = (locations as Array<{ id: string; lat: number; lng: number }>).map((p) => ({
+        const map = mapRef.current;
+        if (!map) return;
+        const features = (locations as Array<{ id: string; timestamp: number; lat: number; lng: number }>).map((p) => ({
           type: 'Feature' as const,
           id: p.id,
           geometry: { type: 'Point' as const, coordinates: [p.lng, p.lat] },
-          properties: {},
+          properties: { t: p.timestamp * 1000 },
         }));
 
-        mapRef.current?.addSource('locations', {
+        map.addSource('locations', {
           type: 'geojson',
           data: { type: 'FeatureCollection', features },
         });
 
-        mapRef.current?.addLayer(
+        map.addLayer(
           {
             'id': 'heatmap',
             'type': 'heatmap',
             'source': 'locations',
             'maxzoom': 17,
             'paint': {
-              // increase weight as diameter breast height increases
-              'heatmap-weight': {
-                'property': 'dbh',
-                'type': 'exponential',
-                'stops': [
-                  [1, 0],
-                  [62, 1]
-                ]
-              },
+              // weight is dynamically updated by the time scrubber
+              'heatmap-weight': 1,
               // increase intensity as zoom level increases
               'heatmap-intensity': [
                 'interpolate',
@@ -125,7 +138,7 @@ export const App = () =>{
           'waterway-label'
         );
 
-        mapRef.current?.addLayer({
+        map.addLayer({
           id: 'locations-circles',
           type: 'circle',
           source: 'locations',
@@ -152,31 +165,44 @@ export const App = () =>{
           },
         });
 
+        // Initialize timeline controller (encapsulated API)
+        const tl = new TimelineController(map, {
+          heatmapLayerId: 'heatmap',
+          circleLayerId: 'locations-circles',
+          trailWindowMs: TRAIL_WINDOW_MS,
+          playSpeed: PLAY_SPEED,
+          minTime: minT,
+          maxTime: maxT,
+          onTimeChange: (t) => { setTime(t); timeRef.current = t; }
+        });
+        timelineRef.current = tl;
+        tl.setTime(minT);
+
         // Blink animation: toggle opacity between 0.3 and 1.0
         let animationFrameId = 0;
         const start = performance.now();
         const animate = () => {
           const t = (performance.now() - start) / 1000; // seconds
           const opacity = 0.65 + 0.35 * Math.sin(t * 4); // ~2 Hz blink
-          if (mapRef.current && mapRef.current.getLayer('locations-circles')) {
-            mapRef.current.setPaintProperty('locations-circles', 'circle-opacity', Math.max(0.3, opacity));
+          if (map && map.getLayer('locations-circles')) {
+            map.setPaintProperty('locations-circles', 'circle-opacity', Math.max(0.3, opacity));
           }
           animationFrameId = requestAnimationFrame(animate);
         };
         animate();
 
         // Cleanup animation on unmount or style change
-        mapRef.current?.on('remove', () => cancelAnimationFrame(animationFrameId));
-        mapRef.current?.on('styledata', () => {
+        map.on('remove', () => cancelAnimationFrame(animationFrameId));
+        map.on('styledata', () => {
           // If style reloads, ensure layer exists again
-          if (!mapRef.current?.getSource('locations')) {
-            mapRef.current?.addSource('locations', {
+          if (!map.getSource('locations')) {
+            map.addSource('locations', {
               type: 'geojson',
               data: { type: 'FeatureCollection', features },
             });
           }
-          if (!mapRef.current?.getLayer('locations-circles')) {
-            mapRef.current?.addLayer({
+          if (!map.getLayer('locations-circles')) {
+            map.addLayer({
               id: 'locations-circles',
               type: 'circle',
               source: 'locations',
@@ -199,9 +225,11 @@ export const App = () =>{
     setTimeout(getCurrentLocation, 1000);
 
     return () => {
+      timelineRef.current?.dispose();
+      timelineRef.current = null;
       mapRef.current?.remove();
     };
-  }, []);
+  }, [minT, maxT]);
 
   const handleReset = () => {
     mapRef.current?.flyTo({
@@ -211,10 +239,35 @@ export const App = () =>{
     });
   }
 
+  const handleScrub = (t: number) => {
+    timelineRef.current?.stop();
+    setIsPlaying(false);
+    timelineRef.current?.setTime(t);
+  };
+
   return (
     <div>
       <div className="absolute top-0 left-0 bg-blue-200/80 z-10 backdrop-blur-lg rounded-md px-lg">
         <button onClick={handleReset}>Reset</button>
+        <button
+          onClick={() => {
+            const next = !isPlaying;
+            setIsPlaying(next);
+            if (next) timelineRef.current?.start();
+            else timelineRef.current?.stop();
+          }}
+        >
+          {isPlaying ? 'Pause' : 'Play'}
+        </button>
+        <input
+          type="range"
+          min={minT}
+          max={maxT}
+          step={60000}
+          value={time}
+          onChange={(e) => handleScrub(Number(e.target.value))}
+          style={{ width: 300 }}
+        />
       </div>
       <div className="h-screen w-screen bg-gray-300 z-0 absolute top-0 left-0" ref={mapContainerRef}></div>
     </div>
