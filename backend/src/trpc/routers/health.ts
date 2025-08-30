@@ -1,6 +1,6 @@
 import { TRPCError } from "@trpc/server";
-import { router, publicProcedure } from "../trpc.js";
-import { HealthCheckResponseSchema, StatsResponseSchema } from "../schemas.js";
+import { router, publicProcedure } from "../trpc";
+import { HealthCheckResponseSchema, StatsResponseSchema } from "../schemas";
 
 export const healthRouter = router({
   // Health check endpoint - migrated from locationController.healthCheck

@@ -1,6 +1,6 @@
 import { TRPCError } from "@trpc/server";
-import { router, publicProcedure, protectedProcedure } from "../trpc.js";
-import { LocationInputSchema, LocationsResponseSchema, LocationSubmitResponseSchema } from "../schemas.js";
+import { router, publicProcedure, protectedProcedure } from "../trpc";
+import { LocationInputSchema, LocationsResponseSchema, LocationSubmitResponseSchema } from "../schemas";
 
 export const locationRouter = router({
   // GET /api/locations -> trpc.location.getAll.query()

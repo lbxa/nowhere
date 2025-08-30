@@ -1,7 +1,7 @@
 import { Server as HttpServer, IncomingMessage } from "http";
 import { WebSocketServer, WebSocket } from "ws";
-import LocationService from "@/services/locationService.js";
-import type { LocationInput } from "@/types/location.types.js";
+import LocationService from "@/services/locationService";
+import type { LocationInput } from "@/types/location.types";
 
 export interface SocketData {
   deviceId?: string;
