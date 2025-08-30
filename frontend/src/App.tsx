@@ -3,13 +3,13 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import TimelineController from './utils/TimelineController';
-import locations from './mocks/locations.json';
+import locations from './mocks/predicted-locations.json';
 
 const INITIAL_ZOOM = 13;
 const TRAIL_WINDOW_MS = 10 * 60 * 1000; // trailing window (e.g., last 10m)
 const PLAY_SPEED = 60 * 1000; // 1 minute of data per real second
 
-export const App = () =>{
+export const App = () => {
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const [origin, setOrigin] = useState<[number, number]>([0, 0]);

@@ -627,3 +627,102 @@ export async function get_timeslots(
 
     return timeslots;
 }
+// A simple structure for a coordinate pair
+interface Coordinate {
+  lat: number;
+  lng: number;
+}
+
+interface MapPoint {
+  id: string; // A unique identifier
+  timestamp: number;  // Unix timestamp
+  lat: number;
+  lng: number;
+}
+export function generateRandomPolygon(
+  center: Coordinate,
+  avgRadius: number,
+  irregularity: number,
+  spikiness: number,
+  numVertices: number
+): Coordinate[] {
+  const vertices: Coordinate[] = [];
+  const angleStep = (2 * Math.PI) / numVertices;
+
+  for (let i = 0; i < numVertices; i++) {
+    const baseAngle = i * angleStep;
+    // Add randomness to the angle
+    const randomAngle = baseAngle + (Math.random() - 0.5) * irregularity * angleStep;
+    // Add randomness to the radius
+    const randomRadius = avgRadius * (1 + (Math.random() - 0.5) * spikiness);
+
+    const lat = center.lat + randomRadius * Math.cos(randomAngle);
+    const lng = center.lng + randomRadius * Math.sin(randomAngle);
+    
+    vertices.push({ lat, lng });
+  }
+
+  return vertices;
+}
+
+export function random_normal(): number {
+    let u1 = Math.random();
+    let u2 = Math.random();
+    //Convert uniform distributions to standard normal
+    let z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2.0 * Math.PI * u2);
+    return z0;
+}
+
+export function generateGaussianPoint(center: Coordinate, stdDev: number): Coordinate {
+    const lat = center.lat + random_normal() * stdDev;
+    const lng = center.lng + random_normal() * stdDev;
+    return { lat, lng };
+}
+
+export function isPointInPolygon(point: Coordinate, polygon: Coordinate[]): boolean {
+  let isInside = false;
+  const numVertices = polygon.length;
+  for (let i = 0, j = numVertices - 1; i < numVertices; j = i++) {
+    const xi = polygon[i].lng, yi = polygon[i].lat;
+    const xj = polygon[j].lng, yj = polygon[j].lat;
+
+    const intersect = ((yi > point.lat) !== (yj > point.lat))
+        && (point.lng < (xj - xi) * (point.lat - yi) / (yj - yi) + xi);
+    if (intersect) {
+        isInside = !isInside;
+    }
+  }
+  return isInside;
+}
+
+
+export function generateRealisticMapPoints(data: TimeSlot): MapPoint[] {
+    const finalPoints: MapPoint[] = [];
+    const center: Coordinate = { lat: data.lat, lng: data.lng };
+
+    // --- Tuneable Parameters ---
+    // The approximate size of the venue area in latitude/longitude degrees.
+    // A value of 0.0005 is roughly 55 meters.
+    const polygonRadius = 0.0005;
+    const standardDeviation = polygonRadius / 3; // Make the spread smaller than the area
+    const numPolygonVertices = 8;
+    
+    // Generate the boundary for this venue
+    const polygon = generateRandomPolygon(center, polygonRadius, 0.5, 0.5, numPolygonVertices);
+
+    // Generate points using rejection sampling
+    while (finalPoints.length < data.count) {
+        const candidatePoint = generateGaussianPoint(center, standardDeviation);
+
+        if (isPointInPolygon(candidatePoint, polygon)) {
+            finalPoints.push({
+                id: crypto.randomUUID(), // Standard way to get a UUID in modern JS
+                timestamp: data["unix-time"],
+                lat: candidatePoint.lat,
+                lng: candidatePoint.lng,
+            });
+        }
+    }
+
+    return finalPoints;
+}

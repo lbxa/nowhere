@@ -1,15 +1,25 @@
-import { BondiLinesApiClient, get_timeslots } from "./predictions.ts";
+import { BondiLinesApiClient, get_timeslots, generateRealisticMapPoints } from "./predictions.ts";
 import locations from "./locations.json" assert { type: "json" };
 import * as fs from 'fs';
 
 async function main() {
     try {
 
-        const client = new BondiLinesApiClient(); 
+        const client = new BondiLinesApiClient();
         const feedResponse = await client.getFeed(); // Gets live predictions
         const timeslots = await get_timeslots(feedResponse, locations); // Formats feed into timeslots for the specific locations in locations.json
-        fs.writeFileSync("../../mocks/timeslots.json", timeslots ? JSON.stringify(timeslots, null, 2) : "No response");
-        console.log(`✅ Successfully processed ${timeslots?.length || 0} timeslots`);        
+
+        var myMapPoints = []; // Seed with one point to avoid null
+        for (const slot of timeslots || []) {
+            if (slot.count > 0) {
+                var newMapPoints = generateRealisticMapPoints(slot); // Generate 5 points per timeslot
+                for (const p of newMapPoints) {
+                    myMapPoints.push(p);
+                }
+            }
+        }
+        fs.writeFileSync("../../mocks/predicted-locations.json", myMapPoints ? JSON.stringify(myMapPoints, null, 2) : "No response");
+        console.log(`✅ Successfully processed ${myMapPoints?.length || 0} points`);
     } catch (error) {
         console.error("❌ Error in main process:", error);
         process.exit(1);
