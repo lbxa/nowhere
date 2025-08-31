@@ -13,7 +13,12 @@ export const WelcomeDrawer = ({
   handleShareLocation: () => void;
 }) => {
   return (
-    <Drawer.Root open={drawerOpen} modal={true} dismissible={false}>
+    <Drawer.Root
+      open={drawerOpen}
+      modal={true}
+      dismissible={false}
+      shouldScaleBackground={false}
+    >
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />
         <Drawer.Content className="bg-gray-100 h-fit max-w-screen-sm mx-auto fixed bottom-0 left-0 right-0 outline-none rounded-t-3xl">
