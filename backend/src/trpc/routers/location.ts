@@ -1,26 +1,32 @@
 import { TRPCError } from "@trpc/server";
 import { createTRPCRouter, publicProcedure, protectedProcedure } from "../trpc";
-import { LocationInputSchema, LocationsResponseSchema, LocationSubmitResponseSchema } from "../schemas";
+import {
+  LocationInputSchema,
+  LocationsResponseSchema,
+  LocationSubmitResponseSchema,
+} from "../schemas";
 
 export const locationRouter = createTRPCRouter({
   // GET /api/locations -> trpc.location.getAll.query()
   // Migrated from locationController.getLocations
-  getAll: publicProcedure.output(LocationsResponseSchema).query(async ({ ctx }) => {
-    try {
-      const result = await ctx.locationService.getLocations();
-      return {
-        ...result,
-        historicalTimespan: `${process.env.LOCATION_DISPLAY_HOURS || "4"} hours`,
-        lastRefresh: Date.now(),
-      };
-    } catch (error) {
-      console.error("Error in getLocations:", error);
-      throw new TRPCError({
-        code: "INTERNAL_SERVER_ERROR",
-        message: "Failed to fetch locations",
-      });
-    }
-  }),
+  getAll: publicProcedure
+    .output(LocationsResponseSchema)
+    .query(async ({ ctx }) => {
+      try {
+        const result = await ctx.locationService.getLocations();
+        return {
+          ...result,
+          historicalTimespan: `${process.env.LOCATION_DISPLAY_HOURS || "24"} hours`,
+          lastRefresh: Date.now(),
+        };
+      } catch (error) {
+        console.error("Error in getLocations:", error);
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "Failed to fetch locations",
+        });
+      }
+    }),
 
   // POST /api/location -> trpc.location.submit.mutate()
   // Migrated from locationController.submitLocation
@@ -39,7 +45,10 @@ export const locationRouter = createTRPCRouter({
         }
 
         // Update location
-        const result = await ctx.locationService.updateUserLocation(ctx.deviceId!, input);
+        const result = await ctx.locationService.updateUserLocation(
+          ctx.deviceId!,
+          input
+        );
 
         if (!result.success) {
           throw new TRPCError({

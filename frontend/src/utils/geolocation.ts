@@ -1,4 +1,4 @@
-import type { GeolocationPosition } from '../api/types';
+import type { GeolocationPosition } from "../api/types";
 
 export interface GeolocationOptions {
   enableHighAccuracy?: boolean;
@@ -9,7 +9,11 @@ export interface GeolocationOptions {
 export interface GeolocationError {
   code: number;
   message: string;
-  type: 'permission_denied' | 'position_unavailable' | 'timeout' | 'not_supported';
+  type:
+    | "permission_denied"
+    | "position_unavailable"
+    | "timeout"
+    | "not_supported";
 }
 
 const DEFAULT_OPTIONS: GeolocationOptions = {
@@ -22,14 +26,14 @@ const DEFAULT_OPTIONS: GeolocationOptions = {
  * Get current position with improved error handling
  */
 export const getCurrentPosition = (
-  options: GeolocationOptions = DEFAULT_OPTIONS
+  options: GeolocationOptions = DEFAULT_OPTIONS,
 ): Promise<GeolocationPosition> => {
   return new Promise((resolve, reject) => {
     if (!navigator.geolocation) {
       reject({
         code: 0,
-        message: 'Geolocation is not supported by this browser',
-        type: 'not_supported',
+        message: "Geolocation is not supported by this browser",
+        type: "not_supported",
       } as GeolocationError);
       return;
     }
@@ -44,25 +48,25 @@ export const getCurrentPosition = (
         });
       },
       (error) => {
-        let errorType: GeolocationError['type'];
+        let errorType: GeolocationError["type"];
         let message: string;
 
         switch (error.code) {
           case error.PERMISSION_DENIED:
-            errorType = 'permission_denied';
-            message = 'Location access denied by user';
+            errorType = "permission_denied";
+            message = "Location access denied by user";
             break;
           case error.POSITION_UNAVAILABLE:
-            errorType = 'position_unavailable';
-            message = 'Location information is unavailable';
+            errorType = "position_unavailable";
+            message = "Location information is unavailable";
             break;
           case error.TIMEOUT:
-            errorType = 'timeout';
-            message = 'Location request timed out';
+            errorType = "timeout";
+            message = "Location request timed out";
             break;
           default:
-            errorType = 'position_unavailable';
-            message = 'An unknown error occurred while retrieving location';
+            errorType = "position_unavailable";
+            message = "An unknown error occurred while retrieving location";
         }
 
         reject({
@@ -71,7 +75,7 @@ export const getCurrentPosition = (
           type: errorType,
         } as GeolocationError);
       },
-      options
+      options,
     );
   });
 };
@@ -82,13 +86,13 @@ export const getCurrentPosition = (
 export const watchPosition = (
   callback: (position: GeolocationPosition) => void,
   errorCallback: (error: GeolocationError) => void,
-  options: GeolocationOptions = DEFAULT_OPTIONS
+  options: GeolocationOptions = DEFAULT_OPTIONS,
 ): number | null => {
   if (!navigator.geolocation) {
     errorCallback({
       code: 0,
-      message: 'Geolocation is not supported by this browser',
-      type: 'not_supported',
+      message: "Geolocation is not supported by this browser",
+      type: "not_supported",
     });
     return null;
   }
@@ -103,25 +107,25 @@ export const watchPosition = (
       });
     },
     (error) => {
-      let errorType: GeolocationError['type'];
+      let errorType: GeolocationError["type"];
       let message: string;
 
       switch (error.code) {
         case error.PERMISSION_DENIED:
-          errorType = 'permission_denied';
-          message = 'Location access denied by user';
+          errorType = "permission_denied";
+          message = "Location access denied by user";
           break;
         case error.POSITION_UNAVAILABLE:
-          errorType = 'position_unavailable';
-          message = 'Location information is unavailable';
+          errorType = "position_unavailable";
+          message = "Location information is unavailable";
           break;
         case error.TIMEOUT:
-          errorType = 'timeout';
-          message = 'Location request timed out';
+          errorType = "timeout";
+          message = "Location request timed out";
           break;
         default:
-          errorType = 'position_unavailable';
-          message = 'An unknown error occurred while retrieving location';
+          errorType = "position_unavailable";
+          message = "An unknown error occurred while retrieving location";
       }
 
       errorCallback({
@@ -130,7 +134,7 @@ export const watchPosition = (
         type: errorType,
       });
     },
-    options
+    options,
   );
 };
 
@@ -148,46 +152,45 @@ export const clearWatch = (watchId: number): void => {
  */
 export const checkGeolocationSupport = async (): Promise<{
   supported: boolean;
-  permission: 'granted' | 'denied' | 'prompt' | 'unknown';
+  permission: "granted" | "denied" | "prompt" | "unknown";
 }> => {
   if (!navigator.geolocation) {
-    return { supported: false, permission: 'unknown' };
+    return { supported: false, permission: "unknown" };
   }
 
   try {
     // Check if permissions API is available
-    if ('permissions' in navigator) {
-      const permission = await navigator.permissions.query({ name: 'geolocation' });
+    if ("permissions" in navigator) {
+      const permission = await navigator.permissions.query({
+        name: "geolocation",
+      });
       return { supported: true, permission: permission.state as any };
     } else {
       // Fallback: try to get position to check permission
       try {
         await getCurrentPosition({ ...DEFAULT_OPTIONS, timeout: 1000 });
-        return { supported: true, permission: 'granted' };
+        return { supported: true, permission: "granted" };
       } catch (error) {
         const geoError = error as GeolocationError;
-        if (geoError.type === 'permission_denied') {
-          return { supported: true, permission: 'denied' };
+        if (geoError.type === "permission_denied") {
+          return { supported: true, permission: "denied" };
         }
-        return { supported: true, permission: 'prompt' };
+        return { supported: true, permission: "prompt" };
       }
     }
   } catch {
-    return { supported: true, permission: 'unknown' };
+    return { supported: true, permission: "unknown" };
   }
 };
 
 /**
  * Request location permission
  */
-export const requestLocationPermission = async (): Promise<GeolocationPosition> => {
-  try {
+export const requestLocationPermission =
+  async (): Promise<GeolocationPosition> => {
     return await getCurrentPosition({
       enableHighAccuracy: true,
       timeout: 15000,
       maximumAge: 0, // Force fresh position for permission request
     });
-  } catch (error) {
-    throw error;
-  }
-};
+  };
