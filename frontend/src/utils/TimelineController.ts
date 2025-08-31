@@ -57,7 +57,6 @@ export default class TimelineController {
   public setTime(t: number): void {
     this.currentTime = t;
     this.applyTimeToMap(t);
-    if (this.onTimeChange) this.onTimeChange(t);
   }
 
   public start(): void {
@@ -117,5 +116,8 @@ export default class TimelineController {
     if (this.map.getLayer(this.circleLayerId)) {
       this.map.setFilter(this.circleLayerId, filter);
     }
+
+    // Notify after a map update was actually applied (throttled)
+    if (this.onTimeChange) this.onTimeChange(t);
   }
 }

@@ -15,6 +15,20 @@ export const ScrubBar = ({
   handlePlay: () => void;
   isPlaying: boolean;
 }) => {
+  // Normalize slider to 0..1000 to avoid huge epoch ranges causing precision/UX issues
+  const sliderMax = 1000;
+  const totalRange = Math.max(1, maxT - minT);
+  const normalizedValue = Math.min(
+    sliderMax,
+    Math.max(0, Math.round(((time - minT) / totalRange) * sliderMax)),
+  );
+
+  const onChangeNormalized = (value: number) => {
+    const ratio = value / sliderMax;
+    const newTime = Math.round(minT + ratio * totalRange);
+    handleScrub(newTime);
+  };
+
   const datetime =
     new Date(time).toLocaleDateString("en-US", { weekday: "long" }) +
     " " +
@@ -49,13 +63,13 @@ export const ScrubBar = ({
       <div className="relative">
         <input
           type="range"
-          min={minT}
+          min={0}
           className="appearance-none range-md w-full bg-indigo/30 rounded-lg cursor-pointer accent-indigo relative z-10"
-          max={maxT}
-          step={60000}
-          value={time}
+          max={sliderMax}
+          step={1}
+          value={normalizedValue}
           list="markers"
-          onChange={(e) => handleScrub(Number(e.target.value))}
+          onChange={(e) => onChangeNormalized(Number(e.target.value))}
         />
         <div
           aria-hidden="true"
