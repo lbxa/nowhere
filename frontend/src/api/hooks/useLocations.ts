@@ -59,7 +59,7 @@ export const useLocations = () => {
         (prevData: LocationsResponse | undefined) => {
           if (!prevData) return prevData;
 
-          // Check if location already exists (avoid duplicates)
+          // Check if duplicate location already exists (avoid duplicates)
           const exists = prevData.locations.some(
             (loc) =>
               loc.userId === newLocation.userId &&
