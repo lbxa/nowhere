@@ -74,21 +74,27 @@ export const App = () => {
 
   return (
     <div>
-      <button
-        onClick={handleReset}
-        className="h-12 w-12 items-center justify-center rounded-full bg-indigo/30 text-2xl leading-none liquid-glass absolute top-sm left-sm z-10 backdrop-blur-lg rounded-3xl"
-      >
-        <FontAwesomeIcon
-          icon={["fas", "location-arrow"]}
-          className="text-black dark:text-white"
-        />
-      </button>
-      <button
-        onClick={handleReset}
-        className="h-12 w-12 items-center justify-center rounded-full bg-indigo/30 text-lg leading-none liquid-glass absolute top-sm right-sm z-10 backdrop-blur-lg rounded-3xl"
-      >
-        <FontAwesomeIcon icon={["fas", "circle"]} className={statusColor} />
-      </button>
+    <button
+  onClick={handleReset}
+  className="liquid-glass absolute top-sm left-sm z-10 h-14 w-14 aspect-square rounded-full flex items-center justify-center backdrop-blur-lg"
+  aria-label="Recenter"
+>
+  <FontAwesomeIcon
+    icon={["fas", "location-arrow"]}
+    className="text-black dark:text-white text-xl leading-none"
+  />
+</button>
+
+<button
+  onClick={handleReset}
+  className="liquid-glass absolute top-sm right-sm z-10 h-14 w-14 aspect-square rounded-full flex items-center justify-center backdrop-blur-lg"
+  aria-label="Connection status"
+>
+  <FontAwesomeIcon
+    icon={["fas", "circle"]}
+    className={`${statusColor} text-xl leading-none`}
+  />
+</button>
       <ScrubBar
         minT={minT}
         maxT={maxT}
