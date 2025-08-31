@@ -1,10 +1,20 @@
+// ScrubBar.tsx
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
 import { useFloating, autoUpdate, offset, flip, shift } from "@floating-ui/react";
 
 const STEP_MS = 60_000;       // 1 minute
-const LONG_PRESS_MS = 20;    // hold duration to start scrubbing
+const LONG_PRESS_MS = 20;     // hold duration to start scrubbing
 const MOVE_TOLERANCE_PX = 6;  // cancel long-press if moved too much pre-hold
+
+type Props = {
+  minT: number;
+  maxT: number;
+  time: number;
+  handleScrub: (t: number) => void;
+  handlePlay: () => void;
+  isPlaying: boolean;
+};
 
 export const ScrubBar = ({
   minT,
@@ -13,14 +23,7 @@ export const ScrubBar = ({
   handleScrub,
   handlePlay,
   isPlaying,
-}: {
-  minT: number;
-  maxT: number;
-  time: number;
-  handleScrub: (t: number) => void;
-  handlePlay: () => void;
-  isPlaying: boolean;
-}) => {
+}: Props) => {
   const [isDragging, setIsDragging] = useState(false);
 
   const trackRef = useRef<HTMLDivElement>(null);
@@ -32,15 +35,14 @@ export const ScrubBar = ({
   const pressOriginRef = useRef<{ x: number; y: number } | null>(null);
   const isPressingRef = useRef(false);
 
-  // Tooltip visibility
+  // Tooltip visibility (keep visible while playing or dragging)
   const tooltipVisible = isDragging || isPlaying;
 
   // Tooltip
-  const { refs, floatingStyles, placement, update } = useFloating({
+  const { refs, floatingStyles, update } = useFloating({
     open: tooltipVisible,
     placement: "top",
     middleware: [offset(20), flip(), shift({ padding: 8 })],
-    // Critical: ensure the tooltip tracks style-left changes every frame while open
     whileElementsMounted: (reference, floating, u) =>
       autoUpdate(reference, floating, u, { animationFrame: true }),
   });
@@ -50,7 +52,7 @@ export const ScrubBar = ({
     if (isPlaying) update();
   }, [time, isPlaying, update]);
 
-  // Format day + time (source of truth = thumb center => `time`)
+  // Format day + time (thumb center => `time`)
   const dt = new Date(time);
   const datetime =
     dt.toLocaleDateString("en-AU", { weekday: "long", timeZone: "Australia/Sydney" }) +
@@ -82,28 +84,23 @@ export const ScrubBar = ({
     return clamp(((t - minT) / (maxT - minT)) * width, 0, width);
   };
 
-  // Position overlay thumb whenever time/size changes
-useEffect(() => {
-  const place = () => {
-    if (!thumbRef.current || !trackRef.current) return;
+  // Place overlay thumb at true center whenever time/size changes
+  useEffect(() => {
+    const place = () => {
+      if (!thumbRef.current || !trackRef.current) return;
+      // X position from time
+      thumbRef.current.style.left = `${timeToPx(time)}px`;
+      // TRUE vertical center based on the track container’s height
+      const centerY = trackRef.current.clientHeight / 2;
+      thumbRef.current.style.top = `${centerY}px`;
+      thumbRef.current.style.transform = "translateX(-50%) translateY(-50%)";
+    };
 
-    // X position from time
-    thumbRef.current.style.left = `${timeToPx(time)}px`;
-
-    // TRUE vertical center based on the track container’s height
-    const centerY = trackRef.current.clientHeight / 2;
-    thumbRef.current.style.top = `${centerY}px`;
-
-    // Keep centered visually
-    thumbRef.current.style.transform = "translateX(-50%) translateY(-50%)";
-  };
-
-  place();
-  const ro = new ResizeObserver(place);
-  if (trackRef.current) ro.observe(trackRef.current);
-  return () => ro.disconnect();
-}, [time, minT, maxT]);
-
+    place();
+    const ro = new ResizeObserver(place);
+    if (trackRef.current) ro.observe(trackRef.current);
+    return () => ro.disconnect();
+  }, [time, minT, maxT]);
 
   // Global pointer listeners — ONLY drag after long-press
   useEffect(() => {
@@ -117,7 +114,7 @@ useEffect(() => {
             clearTimeout(holdTimerRef.current);
             holdTimerRef.current = null;
           }
-          isPressingRef.current = false; // hold cancelled, do nothing
+          isPressingRef.current = false;
           return;
         }
       }
@@ -159,9 +156,7 @@ useEffect(() => {
     holdTimerRef.current = setTimeout(() => {
       if (isPressingRef.current) {
         // Stop playing when user starts scrubbing
-        if (isPlaying) {
-          handlePlay(); // This will toggle playing to false
-        }
+        if (isPlaying) handlePlay(); // toggle off
         setIsDragging(true); // begin scrubbing only after long-press completes
       }
     }, LONG_PRESS_MS);
@@ -170,11 +165,10 @@ useEffect(() => {
   return (
     <div className="absolute bottom-sm left-sm right-sm sm:left-1/2 sm:right-auto sm:transform sm:-translate-x-1/2 sm:w-full sm:max-w-screen-sm z-10 flex items-stretch gap-sm select-none">
       {/* Play/Pause */}
-      <div className="liquid-glass rounded-full aspect-square h-14 flex-shrink-0 relative flex items-center justify-center">
-        <div className="absolute inset-0 rounded-full bg-indigo/20 pointer-events-none z-0" />
+      <div className="liquid-glass glass-tint rounded-full aspect-square h-14 flex-shrink-0 relative flex items-center justify-center">
         <button
           onClick={handlePlay}
-          className="relative z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo/40 text-xl leading-none transition-all hover:bg-indigo/50"
+          className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo/40 text-xl leading-none transition-all hover:bg-indigo/50"
         >
           {isPlaying ? (
             <FontAwesomeIcon icon={["fas", "pause"]} className="text-black dark:text-white" />
@@ -185,9 +179,7 @@ useEffect(() => {
       </div>
 
       {/* Scrubber */}
-      <div className="liquid-glass rounded-3xl h-14 px-5 flex items-center flex-1 relative overflow-visible">
-        <div className="absolute inset-0 rounded-3xl bg-indigo/20 pointer-events-none z-0" />
-
+      <div className="liquid-glass glass-tint rounded-3xl h-14 px-5 flex items-center flex-1 relative overflow-visible">
         <div className="relative z-10 w-full" ref={trackRef}>
           {/* Visual track (native input) — thumb hidden and NON-interactive */}
           <input
@@ -214,14 +206,14 @@ useEffect(() => {
             ))}
           </div>
 
-          {/* Overlay thumb (true center): long-press to start scrubbing, then drag */}
+          {/* Overlay thumb (true center): long-press to start, then drag */}
           <div
             ref={(el) => {
               thumbRef.current = el!;
               if (el) refs.setReference(el); // tooltip follows thumb center
             }}
-            className="glass-thumb absolute top-1/2 z-40 h-6 w-6 rounded-full touch-none cursor-pointer"
-            style={{ left: 0, transform: "translateX(-50%) translateY(-50%)", touchAction: "none" }}
+            className="glass-thumb absolute z-40 h-6 w-6 rounded-full touch-none cursor-pointer"
+            style={{ left: 0, top: "50%", transform: "translateX(-50%) translateY(-50%)", touchAction: "none" }}
             onPointerDown={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -231,28 +223,24 @@ useEffect(() => {
             onContextMenu={(e) => e.preventDefault()}
           />
 
-             {/* Tooltip with animation */}
-<div
-  ref={refs.setFloating}
-  className={`
-    liquid-glass rounded-2xl px-4 py-2 relative z-50
-    transition-all duration-200 ease-out origin-bottom
-    ${tooltipVisible 
-      ? 'opacity-100 scale-100 translate-y-0 pointer-events-none' 
-      : 'opacity-0 scale-90 translate-y-1 pointer-events-none'
-    }
-  `}
-  style={floatingStyles}
->
-  {/* Much higher opacity for better text readability to match scrubber opacity */}
-  <div className="absolute inset-0 rounded-2xl bg-indigo/60 backdrop-blur-sm pointer-events-none" />
-  <div className="absolute inset-0 rounded-2xl bg-black/10 dark:bg-black/20 pointer-events-none" />
-  <p className="relative z-10 text-black dark:text-white text-sm font-medium whitespace-nowrap">
-    {datetime}
-  </p>
-</div>
-
-
+          {/* Tooltip — identical glass stack to scrubber */}
+          <div
+            ref={refs.setFloating}
+            className={`
+              liquid-glass glass-tint rounded-2xl px-4 py-2 relative z-50
+              transition-all duration-200 ease-out origin-bottom
+              ${tooltipVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-90 translate-y-1"}
+              pointer-events-none
+            `}
+            style={floatingStyles}
+          >
+            <p
+              className="relative z-10 text-black dark:text-white text-sm font-medium whitespace-nowrap"
+              style={{ textShadow: "0 1px 1px rgba(0,0,0,.35)" }}
+            >
+              {datetime}
+            </p>
+          </div>
         </div>
       </div>
     </div>
