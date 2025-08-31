@@ -212,15 +212,6 @@ export const MapView = ({
             "circle-color": "#93c5fd",
             "circle-stroke-width": 1,
             "circle-stroke-color": "#60a5fa",
-            "circle-opacity": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              16,
-              0.6,
-              18,
-              0.85,
-            ],
           },
         });
 
@@ -392,15 +383,6 @@ export const MapView = ({
                 "circle-color": "#93c5fd",
                 "circle-stroke-width": 1,
                 "circle-stroke-color": "#60a5fa",
-                "circle-opacity": [
-                  "interpolate",
-                  ["linear"],
-                  ["zoom"],
-                  16,
-                  0.6,
-                  18,
-                  0.85,
-                ],
               },
             });
           }
@@ -469,15 +451,15 @@ export const MapView = ({
                 coords[0] === 0 && coords[1] === 0
                   ? []
                   : [
-                      {
-                        type: "Feature",
-                        geometry: {
-                          type: "Point",
-                          coordinates: [coords[0], coords[1]],
-                        },
-                        properties: {},
+                    {
+                      type: "Feature",
+                      geometry: {
+                        type: "Point",
+                        coordinates: [coords[0], coords[1]],
                       },
-                    ],
+                      properties: {},
+                    },
+                  ],
             });
           }
         });
@@ -511,15 +493,15 @@ export const MapView = ({
         origin[0] === 0 && origin[1] === 0
           ? []
           : [
-              {
-                type: "Feature",
-                geometry: {
-                  type: "Point",
-                  coordinates: [origin[0], origin[1]],
-                },
-                properties: {},
+            {
+              type: "Feature",
+              geometry: {
+                type: "Point",
+                coordinates: [origin[0], origin[1]],
               },
-            ],
+              properties: {},
+            },
+          ],
     });
     originRef.current = origin;
   }, [origin]);

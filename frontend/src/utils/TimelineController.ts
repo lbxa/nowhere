@@ -1,4 +1,5 @@
 import type { Map, Expression } from "mapbox-gl";
+import { createPingOpacityDecay } from "./mapboxPingOpacityDecay";
 
 export type TimelineControllerOptions = {
   heatmapLayerId: string;
@@ -116,6 +117,12 @@ export default class TimelineController {
     }
     if (this.map.getLayer(this.circleLayerId)) {
       this.map.setFilter(this.circleLayerId, filter);
+      const opacityExpression = createPingOpacityDecay(t, {
+        maxOpacity: 0.85,
+        minOpacity: 0.1,
+        maxDecayTimeMs: this.trailWindowMs,
+      });
+      this.map.setPaintProperty(this.circleLayerId, "circle-opacity", opacityExpression as any);
     }
   }
 }
