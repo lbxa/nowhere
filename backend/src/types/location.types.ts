@@ -2,7 +2,7 @@ export interface LocationInput {
   lat: number;
   lng: number;
   accuracy: number;
-  timestamp: number;
+  timestamp: number; // Unix epoch in milliseconds
 }
 
 export interface LocationRecord {
@@ -10,14 +10,14 @@ export interface LocationRecord {
   lat: number;
   lng: number;
   accuracy: number;
-  timestamp: number;
+  timestamp: number; // Unix epoch in milliseconds
 }
 
 export interface LocationOutput {
   userId: string;
   lat: number;
   lng: number;
-  timestamp: number;
+  timestamp: number; // Unix epoch in milliseconds
   ageMinutes: number;
 }
 

@@ -58,10 +58,15 @@ export class LocationService {
   }
 
   /**
-   * Validate location data
+   * Validate location data - must be Unix epoch in milliseconds
    */
   validateLocation(locationData: LocationInput): LocationValidationResult {
     const { lat, lng, accuracy, timestamp } = locationData;
+
+    // Require millisecond precision epoch timestamps (e.g., Date.now())
+    if (!Number.isInteger(timestamp) || timestamp < 1_000_000_000_000) {
+      return { valid: false, error: "Invalid timestamp: must be Unix epoch in milliseconds" };
+    }
 
     // Validate latitude
     if (lat < -90 || lat > 90) {

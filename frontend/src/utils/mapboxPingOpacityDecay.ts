@@ -6,7 +6,7 @@ export interface OpacityDecayOptions {
 
 export function createPingOpacityDecay(
   referenceTime: number,
-  options: OpacityDecayOptions = {}
+  options: OpacityDecayOptions = {},
 ) {
   const {
     maxOpacity = 0.85,
@@ -27,13 +27,5 @@ export function createPingOpacityDecay(
 }
 
 export function createZoomBasedOpacity() {
-  return [
-    "interpolate",
-    ["linear"],
-    ["zoom"],
-    16,
-    0.6,
-    18,
-    0.85,
-  ];
+  return ["interpolate", ["linear"], ["zoom"], 16, 0.6, 18, 0.85];
 }

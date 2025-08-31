@@ -5,7 +5,14 @@ export const LocationInputSchema = z.object({
   lat: z.number().min(-90).max(90),
   lng: z.number().min(-180).max(180),
   accuracy: z.number().positive(),
-  timestamp: z.number().positive(),
+  timestamp: z
+    .number()
+    .int()
+    .positive()
+    .describe("Unix epoch in milliseconds")
+    .refine((v) => v >= 1e12, {
+      message: "timestamp must be in milliseconds (ms), not seconds",
+    }),
 });
 
 // Output schemas
