@@ -78,8 +78,10 @@ export const ScrubBar = ({
     const rect = trackRef.current?.getBoundingClientRect();
     return { width: rect?.width ?? 0, left: rect?.left ?? 0 };
   };
+
   const clamp = (v: number, lo: number, hi: number) =>
     Math.min(hi, Math.max(lo, v));
+
   const pxToTime = (x: number) => {
     const { width } = getTrackMetrics();
     if (width <= 0) return minT;
@@ -88,6 +90,7 @@ export const ScrubBar = ({
     const snapped = Math.round((raw - minT) / STEP_MS) * STEP_MS + minT;
     return clamp(snapped, minT, maxT);
   };
+
   const timeToPx = (t: number) => {
     const { width } = getTrackMetrics();
     if (width <= 0 || maxT === minT) return 0;
@@ -174,7 +177,6 @@ export const ScrubBar = ({
 
   return (
     <div className="absolute bottom-sm left-sm right-sm sm:left-1/2 sm:right-auto sm:transform sm:-translate-x-1/2 sm:w-full sm:max-w-screen-sm z-10 flex items-stretch gap-sm select-none">
-      {/* Play/Pause */}
       <div className="liquid-glass glass-tint rounded-full aspect-square h-14 flex-shrink-0 relative flex items-center justify-center">
         <button
           onClick={handlePlay}
@@ -194,10 +196,8 @@ export const ScrubBar = ({
         </button>
       </div>
 
-      {/* Scrubber */}
       <div className="liquid-glass glass-tint rounded-3xl h-14 px-5 flex items-center flex-1 relative overflow-visible">
         <div className="relative z-10 w-full" ref={trackRef}>
-          {/* Visual track (native input) — thumb hidden and NON-interactive */}
           <input
             ref={inputRef}
             type="range"
@@ -212,7 +212,6 @@ export const ScrubBar = ({
               [&::-webkit-slider-thumb]:w-0 [&::-moz-range-thumb]:w-0 [&::-ms-thumb]:w-0"
           />
 
-          {/* Tick marks */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 flex justify-between"
@@ -225,7 +224,6 @@ export const ScrubBar = ({
             ))}
           </div>
 
-          {/* Overlay thumb (true center): long-press to start, then drag */}
           <div
             ref={(el) => {
               thumbRef.current = el!;
@@ -247,7 +245,6 @@ export const ScrubBar = ({
             onContextMenu={(e) => e.preventDefault()}
           />
 
-          {/* Tooltip — identical glass stack to scrubber */}
           <div
             ref={refs.setFloating}
             className={`
