@@ -8,8 +8,6 @@ export const LOCATIONS_SOURCE_ID = "locations" as const;
 export const USER_SOURCE_ID = "user-location" as const;
 export const USER_PULSE_LAYER_ID = "user-location-pulse" as const;
 export const USER_CIRCLE_LAYER_ID = "user-location-circle" as const;
-
-const INITIAL_ZOOM = 13;
 const PULSE_DURATION_MS = 1200;
 
 const getMapStyleFromTheme = (): string =>
@@ -74,33 +72,7 @@ export const MapView = ({
       attributeFilter: ["class"],
     });
 
-    // Get user's current location and zoom to it
-    const getCurrentLocation = () => {
-      if (!navigator.geolocation) {
-        console.warn("Geolocation is not supported by this browser.");
-        return;
-      }
-
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          mapRef.current?.flyTo({
-            center: [longitude, latitude],
-            zoom: INITIAL_ZOOM,
-            essential: true,
-          });
-          onOriginChangeRef.current?.([longitude, latitude]);
-        },
-        (error) => {
-          console.error("Error getting location:", error.message);
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 10000,
-          maximumAge: 300000,
-        },
-      );
-    };
+    // User location is requested by the parent App only after user consent
 
     mapRef.current.on("load", () => {
       try {
@@ -447,8 +419,7 @@ export const MapView = ({
       }
     });
 
-    // Wait a moment for the map to fully load before getting location
-    setTimeout(getCurrentLocation, 1000);
+    // Do not request geolocation here; handled by the parent after consent
 
     return () => {
       mapRef.current?.remove();

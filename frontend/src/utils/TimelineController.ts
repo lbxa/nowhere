@@ -58,7 +58,6 @@ export default class TimelineController {
   public setTime(t: number): void {
     this.currentTime = t;
     this.applyTimeToMap(t);
-    if (this.onTimeChange) this.onTimeChange(t);
   }
 
   public start(): void {
@@ -124,5 +123,8 @@ export default class TimelineController {
       });
       this.map.setPaintProperty(this.circleLayerId, "circle-opacity", opacityExpression as any);
     }
+
+    // Notify after a map update was actually applied (throttled)
+    if (this.onTimeChange) this.onTimeChange(t);
   }
 }

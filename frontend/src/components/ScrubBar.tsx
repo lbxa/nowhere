@@ -1,11 +1,17 @@
 // ScrubBar.tsx
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
-import { useFloating, autoUpdate, offset, flip, shift } from "@floating-ui/react";
+import {
+  useFloating,
+  autoUpdate,
+  offset,
+  flip,
+  shift,
+} from "@floating-ui/react";
 
-const STEP_MS = 60_000;       // 1 minute
-const LONG_PRESS_MS = 20;     // hold duration to start scrubbing
-const MOVE_TOLERANCE_PX = 6;  // cancel long-press if moved too much pre-hold
+const STEP_MS = 60_000; // 1 minute
+const LONG_PRESS_MS = 20; // hold duration to start scrubbing
+const MOVE_TOLERANCE_PX = 6; // cancel long-press if moved too much pre-hold
 
 type Props = {
   minT: number;
@@ -55,7 +61,10 @@ export const ScrubBar = ({
   // Format day + time (thumb center => `time`)
   const dt = new Date(time);
   const datetime =
-    dt.toLocaleDateString("en-AU", { weekday: "long", timeZone: "Australia/Sydney" }) +
+    dt.toLocaleDateString("en-AU", {
+      weekday: "long",
+      timeZone: "Australia/Sydney",
+    }) +
     " " +
     dt.toLocaleTimeString("en-AU", {
       hour: "numeric",
@@ -69,7 +78,8 @@ export const ScrubBar = ({
     const rect = trackRef.current?.getBoundingClientRect();
     return { width: rect?.width ?? 0, left: rect?.left ?? 0 };
   };
-  const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
+  const clamp = (v: number, lo: number, hi: number) =>
+    Math.min(hi, Math.max(lo, v));
   const pxToTime = (x: number) => {
     const { width } = getTrackMetrics();
     if (width <= 0) return minT;
@@ -171,9 +181,15 @@ export const ScrubBar = ({
           className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo/40 text-xl leading-none transition-all hover:bg-indigo/50"
         >
           {isPlaying ? (
-            <FontAwesomeIcon icon={["fas", "pause"]} className="text-black dark:text-white" />
+            <FontAwesomeIcon
+              icon={["fas", "pause"]}
+              className="text-black dark:text-white"
+            />
           ) : (
-            <FontAwesomeIcon icon={["fas", "play"]} className="text-black dark:text-white ml-0.5" />
+            <FontAwesomeIcon
+              icon={["fas", "play"]}
+              className="text-black dark:text-white ml-0.5"
+            />
           )}
         </button>
       </div>
@@ -202,7 +218,10 @@ export const ScrubBar = ({
             className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 flex justify-between"
           >
             {[0, 1, 2, 3, 4, 5].map((i) => (
-              <span key={i} className="h-1.5 w-1.5 rounded-full bg-black/60 dark:bg-white/60" />
+              <span
+                key={i}
+                className="h-1.5 w-1.5 rounded-full bg-black/60 dark:bg-white/60"
+              />
             ))}
           </div>
 
@@ -213,7 +232,12 @@ export const ScrubBar = ({
               if (el) refs.setReference(el); // tooltip follows thumb center
             }}
             className="glass-thumb absolute z-40 h-6 w-6 rounded-full touch-none cursor-pointer"
-            style={{ left: 0, top: "50%", transform: "translateX(-50%) translateY(-50%)", touchAction: "none" }}
+            style={{
+              left: 0,
+              top: "50%",
+              transform: "translateX(-50%) translateY(-50%)",
+              touchAction: "none",
+            }}
             onPointerDown={(e) => {
               e.preventDefault();
               e.stopPropagation();

@@ -54,6 +54,10 @@ export const App = () => {
 
     try {
       const position = await requestLocationPermission();
+      // Center map and update origin after user consent
+      const center: [number, number] = [position.lng, position.lat];
+      setOrigin(center);
+      mapRef.current?.flyTo({ center, zoom: INITIAL_ZOOM, essential: true });
       await submitLocation(position.lat, position.lng, position.accuracy);
       setLocationStatus("success");
       setDrawerOpen(false);
@@ -81,6 +85,14 @@ export const App = () => {
     }
     return [min, max];
   }, [timelineLocations]);
+
+  // Ensure the scrub time is always within bounds and initialized
+  useEffect(() => {
+    setTime((prev) => {
+      if (!prev || prev < minT || prev > maxT) return minT;
+      return prev;
+    });
+  }, [minT, maxT]);
 
   // Update map data when live locations change
   useEffect(() => {
@@ -119,9 +131,13 @@ export const App = () => {
   };
 
   const handleScrub = (t: number) => {
-    timelineRef.current?.stop();
-    setIsPlaying(false);
-    timelineRef.current?.setTime(t);
+    // Update UI immediately even if timeline isn't ready yet
+    setTime(t);
+    if (timelineRef.current) {
+      timelineRef.current.stop();
+      setIsPlaying(false);
+      timelineRef.current.setTime(t);
+    }
   };
 
   const handlePlay = () => {
