@@ -231,7 +231,7 @@ useEffect(() => {
             onContextMenu={(e) => e.preventDefault()}
           />
 
-       {/* Tooltip with animation */}
+             {/* Tooltip with animation */}
 <div
   ref={refs.setFloating}
   className={`
@@ -244,12 +244,14 @@ useEffect(() => {
   `}
   style={floatingStyles}
 >
-  {/* was bg-indigo/30 */}
-  <div className="absolute inset-0 rounded-2xl bg-indigo/20 pointer-events-none" />
+  {/* Much higher opacity for better text readability to match scrubber opacity */}
+  <div className="absolute inset-0 rounded-2xl bg-indigo/60 backdrop-blur-sm pointer-events-none" />
+  <div className="absolute inset-0 rounded-2xl bg-black/10 dark:bg-black/20 pointer-events-none" />
   <p className="relative z-10 text-black dark:text-white text-sm font-medium whitespace-nowrap">
     {datetime}
   </p>
 </div>
+
 
         </div>
       </div>
