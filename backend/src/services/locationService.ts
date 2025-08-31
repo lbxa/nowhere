@@ -76,7 +76,10 @@ export class LocationService {
     // Validate accuracy (must be <= 50 meters)
     const maxAccuracy = parseInt(process.env.MAX_ACCURACY || "50");
     if (accuracy > maxAccuracy) {
-      return { valid: false, error: `Location too inaccurate: ${accuracy}m exceeds maximum ${maxAccuracy}m` };
+      return {
+        valid: false,
+        error: `Location too inaccurate: ${accuracy}m exceeds maximum ${maxAccuracy}m`,
+      };
     }
 
     // Validate timestamp (must be within last 5 minutes)
@@ -91,7 +94,10 @@ export class LocationService {
   /**
    * Store individual user location in Redis
    */
-  async updateUserLocation(deviceId: string, locationData: LocationInput): Promise<LocationUpdateResult> {
+  async updateUserLocation(
+    deviceId: string,
+    locationData: LocationInput
+  ): Promise<LocationUpdateResult> {
     try {
       const { lat, lng, accuracy, timestamp } = locationData;
       const userId = this.generateAnonymousUserId(deviceId);
@@ -111,7 +117,10 @@ export class LocationService {
 
       // Add to user's location history (sorted set for efficient time-range queries)
       const userLocationHistoryKey = `user:${deviceId}:locations`;
-      await this.redis.zAdd(userLocationHistoryKey, { score: timestamp, value: locationKey });
+      await this.redis.zAdd(userLocationHistoryKey, {
+        score: timestamp,
+        value: locationKey,
+      });
 
       // Keep only recent locations in sorted set (last 24 hours)
       const oneDayAgo = Date.now() - 24 * 60 * 60 * 1000;
@@ -129,7 +138,7 @@ export class LocationService {
    */
   async getLocations(): Promise<LocationsResult> {
     try {
-      const displayHours = parseInt(process.env.LOCATION_DISPLAY_HOURS || "4");
+      const displayHours = parseInt(process.env.LOCATION_DISPLAY_HOURS || "24");
       const timeThreshold = Date.now() - displayHours * 60 * 60 * 1000;
 
       // Get all individual location keys

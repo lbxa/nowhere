@@ -1,5 +1,9 @@
-import type { WebSocketMessage, WebSocketLocationUpdate, ConnectionStatus } from '../api/types';
-import { deviceIdService } from './deviceIdService';
+import type {
+  WebSocketMessage,
+  WebSocketLocationUpdate,
+  ConnectionStatus,
+} from "../api/types";
+import { deviceIdService } from "./deviceIdService";
 
 export class WebSocketService {
   private static instance: WebSocketService;
@@ -11,7 +15,7 @@ export class WebSocketService {
     isConnected: false,
     reconnectAttempts: 0,
   };
-  
+
   private callbacks: {
     onLocationUpdate?: (update: WebSocketLocationUpdate) => void;
     onConnectionChange?: (status: ConnectionStatus) => void;
@@ -24,8 +28,8 @@ export class WebSocketService {
 
   private constructor() {
     // Listen to online/offline events
-    window.addEventListener('online', this.handleOnline.bind(this));
-    window.addEventListener('offline', this.handleOffline.bind(this));
+    window.addEventListener("online", this.handleOnline.bind(this));
+    window.addEventListener("offline", this.handleOffline.bind(this));
   }
 
   static getInstance(): WebSocketService {
@@ -51,9 +55,8 @@ export class WebSocketService {
       this.ws.onmessage = this.handleMessage.bind(this);
       this.ws.onclose = this.handleClose.bind(this);
       this.ws.onerror = this.handleError.bind(this);
-
     } catch (error) {
-      console.error('Failed to create WebSocket connection:', error);
+      console.error("Failed to create WebSocket connection:", error);
       this.scheduleReconnect();
     }
   }
@@ -67,8 +70,8 @@ export class WebSocketService {
 
     if (this.ws) {
       // Send leave message before closing
-      this.sendMessage({ type: 'leave-updates' });
-      this.ws.close(1000, 'Client disconnecting');
+      this.sendMessage({ type: "leave-updates" });
+      this.ws.close(1000, "Client disconnecting");
       this.ws = null;
     }
 
@@ -86,7 +89,7 @@ export class WebSocketService {
       try {
         this.ws.send(JSON.stringify(message));
       } catch (error) {
-        console.error('Failed to send WebSocket message:', error);
+        console.error("Failed to send WebSocket message:", error);
       }
     }
   }
@@ -96,7 +99,7 @@ export class WebSocketService {
    */
   joinLocationUpdates(): void {
     this.sendMessage({
-      type: 'join-updates',
+      type: "join-updates",
       data: {
         deviceId: deviceIdService.getDeviceId(),
       },
@@ -107,7 +110,7 @@ export class WebSocketService {
    * Leave location updates room
    */
   leaveLocationUpdates(): void {
-    this.sendMessage({ type: 'leave-updates' });
+    this.sendMessage({ type: "leave-updates" });
   }
 
   /**
@@ -118,9 +121,12 @@ export class WebSocketService {
     if (import.meta.env.VITE_WS_URL) {
       return import.meta.env.VITE_WS_URL;
     }
-    
-    const origin = import.meta.env.VITE_API_ORIGIN || import.meta.env.VITE_API_URL || 'http://localhost:3000';
-    const wsUrl = origin.replace(/^http/, 'ws');
+
+    const origin =
+      import.meta.env.VITE_API_ORIGIN ||
+      import.meta.env.VITE_API_URL ||
+      "http://localhost:3000";
+    const wsUrl = origin.replace(/^http/, "ws");
     return `${wsUrl}/api/live`;
   }
 
@@ -128,7 +134,7 @@ export class WebSocketService {
    * Handle WebSocket open event
    */
   private handleOpen(): void {
-    console.log('WebSocket connected');
+    console.log("WebSocket connected");
     this.updateConnectionStatus({
       isConnected: true,
       lastConnectionTime: Date.now(),
@@ -137,10 +143,10 @@ export class WebSocketService {
 
     // Join location updates room
     this.joinLocationUpdates();
-    
+
     // Start heartbeat
     this.startHeartbeat();
-    
+
     this.clearReconnectTimer();
   }
 
@@ -152,18 +158,24 @@ export class WebSocketService {
       const message: WebSocketMessage = JSON.parse(event.data);
 
       switch (message.type) {
-        case 'location-update':
-          this.callbacks.onLocationUpdate?.(message.data as WebSocketLocationUpdate);
+        case "location-update":
+          this.callbacks.onLocationUpdate?.(
+            message.data as WebSocketLocationUpdate,
+          );
           break;
-        case 'system-message':
-          const systemData = message.data as { message: string; type: string; timestamp: number };
+        case "system-message":
+          const systemData = message.data as {
+            message: string;
+            type: string;
+            timestamp: number;
+          };
           this.callbacks.onSystemMessage?.(systemData.message, systemData.type);
           break;
         default:
-          console.log('Unknown WebSocket message type:', message.type);
+          console.log("Unknown WebSocket message type:", message.type);
       }
     } catch (error) {
-      console.error('Failed to parse WebSocket message:', error);
+      console.error("Failed to parse WebSocket message:", error);
     }
   }
 
@@ -171,11 +183,11 @@ export class WebSocketService {
    * Handle WebSocket close event
    */
   private handleClose(event: CloseEvent): void {
-    console.log('WebSocket disconnected:', event.code, event.reason);
+    console.log("WebSocket disconnected:", event.code, event.reason);
     this.updateConnectionStatus({
       isConnected: false,
     });
-    
+
     this.clearHeartbeatTimer();
 
     // Attempt to reconnect unless explicitly closed
@@ -188,7 +200,11 @@ export class WebSocketService {
    * Handle WebSocket error event
    */
   private handleError(error: Event): void {
-    console.error('WebSocket error:', error);
+    console.error("WebSocket error:", error);
+    // Ensure we schedule a reconnect on error as well, in case close isn't fired
+    if (this.connectionStatus.isOnline && !this.connectionStatus.isConnected) {
+      this.scheduleReconnect();
+    }
   }
 
   /**
@@ -196,7 +212,7 @@ export class WebSocketService {
    */
   private scheduleReconnect(): void {
     if (this.connectionStatus.reconnectAttempts >= this.maxReconnectAttempts) {
-      console.log('Max reconnection attempts reached');
+      console.log("Max reconnection attempts reached");
       return;
     }
 
@@ -204,8 +220,12 @@ export class WebSocketService {
       return; // Already scheduled
     }
 
-    const delay = this.reconnectDelay * Math.pow(2, this.connectionStatus.reconnectAttempts); // Exponential backoff
-    console.log(`Attempting to reconnect in ${delay}ms (attempt ${this.connectionStatus.reconnectAttempts + 1})`);
+    const delay =
+      this.reconnectDelay *
+      Math.pow(2, this.connectionStatus.reconnectAttempts); // Exponential backoff
+    console.log(
+      `Attempting to reconnect in ${delay}ms (attempt ${this.connectionStatus.reconnectAttempts + 1})`,
+    );
 
     this.reconnectTimer = setTimeout(() => {
       this.updateConnectionStatus({
@@ -233,7 +253,7 @@ export class WebSocketService {
     this.clearHeartbeatTimer();
     this.heartbeatTimer = setInterval(() => {
       if (this.ws && this.ws.readyState === WebSocket.OPEN) {
-        this.sendMessage({ type: 'ping' });
+        this.sendMessage({ type: "ping" });
       }
     }, this.heartbeatInterval);
   }

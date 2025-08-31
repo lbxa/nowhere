@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import locations from "../mocks/locations-max.json";
 
 export const HEATMAP_LAYER_ID = "heatmap" as const;
 export const CIRCLE_LAYER_ID = "locations-circles" as const;
@@ -107,29 +106,9 @@ export const MapView = ({
       try {
         const map = mapRef.current;
         if (!map) return;
-        const features = (
-          locations as Array<{
-            id: string;
-            timestamp: number;
-            lat: number;
-            lng: number;
-          }>
-        ).map((p) => ({
-          type: "Feature" as const,
-          id: p.id,
-          geometry: {
-            type: "Point" as const,
-            coordinates: [
-              Math.round(p.lng * 1e6) / 1e6,
-              Math.round(p.lat * 1e6) / 1e6,
-            ],
-          },
-          properties: { t: p.timestamp * 1000 },
-        }));
-
         map.addSource(LOCATIONS_SOURCE_ID, {
           type: "geojson",
-          data: { type: "FeatureCollection", features },
+          data: { type: "FeatureCollection", features: [] },
           buffer: 0,
           maxzoom: 12,
         });
@@ -317,7 +296,7 @@ export const MapView = ({
           if (!map.getSource(LOCATIONS_SOURCE_ID)) {
             map.addSource(LOCATIONS_SOURCE_ID, {
               type: "geojson",
-              data: { type: "FeatureCollection", features },
+              data: { type: "FeatureCollection", features: [] },
               buffer: 0,
               maxzoom: 12,
             });
