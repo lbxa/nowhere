@@ -4,6 +4,7 @@
     "lib": ["ESNext"],
     "target": "ESNext",
     "module": "Preserve",
+    "baseUrl": ".",
     "moduleDetection": "force",
     "jsx": "react-jsx",
     "allowJs": true,
@@ -24,11 +25,6 @@
     // Some stricter flags (disabled by default)
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false,
-    "baseUrl": ".",
-    "paths": {
-      "@nowhere/trpc": ["libs/trpc/src/index.ts"],
-      "@nowhere/trpc/*": ["libs/trpc/src/*"]
-    }
+    "noPropertyAccessFromIndexSignature": false
   }
 }
