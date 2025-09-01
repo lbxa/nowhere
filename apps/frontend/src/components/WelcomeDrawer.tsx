@@ -36,7 +36,7 @@ export const WelcomeDrawer = ({
               <div className="space-y-4 py-4">
                 <p className="text-gray-700 leading-relaxed">
                   Share your location to see everyone around you in real-time.
-                  Never miss out on what's happening in your city.
+                  Never miss out on what's happening again.
                 </p>
               </div>
 
