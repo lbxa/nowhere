@@ -82,7 +82,7 @@ export class LocationService {
     }
 
     // Validate accuracy (must be <= 50 meters)
-    const maxAccuracy = parseInt(process.env.MAX_ACCURACY || "50");
+    const maxAccuracy = Number(process.env.MAX_ACCURACY) ?? 50;
     if (accuracy > maxAccuracy) {
       return {
         valid: false,
