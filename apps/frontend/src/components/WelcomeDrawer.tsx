@@ -19,7 +19,7 @@ export const WelcomeDrawer = ({
     >
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-        <Drawer.Content className="h-fit max-w-[420px] mx-auto fixed bottom-0 left-0 right-0 outline-none rounded-t-5xl">
+        <Drawer.Content className="h-fit max-w-[410px] mx-auto fixed bottom-0 left-0 right-0 outline-none rounded-t-5xl">
           <div className="p-xl pb-md bg-white/90 backdrop-blur-lg rounded-t-5xl mx-auto">
             <div className="text-center flex flex-col gap-md">
               <div className="space-y-md">
