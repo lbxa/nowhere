@@ -102,10 +102,7 @@ export class LocationService {
   /**
    * Store individual user location in Redis
    */
-  async updateUserLocation(
-    deviceId: string,
-    locationData: LocationInput
-  ): Promise<LocationUpdateResult> {
+  async updateUserLocation(deviceId: string, locationData: LocationInput): Promise<LocationUpdateResult> {
     try {
       const { lat, lng, accuracy, timestamp } = locationData;
       const userId = this.generateAnonymousUserId(deviceId);
@@ -133,6 +130,24 @@ export class LocationService {
       // Keep only recent locations in sorted set (last 24 hours)
       const oneDayAgo = Date.now() - 24 * 60 * 60 * 1000;
       await this.redis.zRemRangeByScore(userLocationHistoryKey, 0, oneDayAgo);
+
+      // PUBLISH real-time location update via Redis Pub/Sub
+      try {
+        const channel = process.env.REDIS_LOCATION_CHANNEL || "realtime:location-updates";
+        await this.redis.publish(
+          channel,
+          JSON.stringify({
+            userId,
+            lat,
+            lng,
+            timestamp,
+            ageMinutes: 0,
+          })
+        );
+      } catch (publishError) {
+        // Non-fatal: persistence succeeded; Pub/Sub failure should not break request
+        console.error("Error publishing location update:", publishError);
+      }
 
       return { success: true, userId };
     } catch (error) {

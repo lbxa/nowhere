@@ -6,7 +6,6 @@ export class WebSocketService {
   private static instance: WebSocketService;
   private ws: WebSocket | null = null;
   private reconnectTimer: NodeJS.Timeout | null = null;
-  private heartbeatTimer: NodeJS.Timeout | null = null;
   private connectionStatus: ConnectionStatus = {
     isOnline: navigator.onLine,
     isConnected: false,
@@ -21,7 +20,6 @@ export class WebSocketService {
 
   private readonly maxReconnectAttempts = 5;
   private readonly reconnectDelay = 2000; // Start with 2 seconds
-  private readonly heartbeatInterval = 30000; // 30 seconds
 
   private constructor() {
     // Listen to online/offline events
@@ -62,7 +60,6 @@ export class WebSocketService {
    */
   disconnect(): void {
     this.clearReconnectTimer();
-    this.clearHeartbeatTimer();
 
     if (this.ws) {
       // Send leave message before closing
@@ -127,9 +124,6 @@ export class WebSocketService {
     // Join location updates room
     this.joinLocationUpdates();
 
-    // Start heartbeat
-    this.startHeartbeat();
-
     this.clearReconnectTimer();
   }
 
@@ -142,19 +136,22 @@ export class WebSocketService {
 
       switch (message.type) {
         case "location-update":
-          this.callbacks.onLocationUpdate?.(
-            message.data as WebSocketLocationUpdate,
-          );
+          if (message.data) {
+            this.callbacks.onLocationUpdate?.(message.data);
+          }
           break;
-        case "system-message": {
-          const systemData = message.data as {
-            message: string;
-            type: string;
-            timestamp: number;
-          };
-          this.callbacks.onSystemMessage?.(systemData.message, systemData.type);
+        case "system-message":
+          if (message.data) {
+            this.callbacks.onSystemMessage?.(
+              message.data.message,
+              message.data.type,
+            );
+          }
           break;
-        }
+        case "ping":
+          // Respond to server ping with pong
+          this.sendMessage({ type: "pong" });
+          break;
         default:
           console.log("Unknown WebSocket message type:", message.type);
       }
@@ -171,8 +168,6 @@ export class WebSocketService {
     this.updateConnectionStatus({
       isConnected: false,
     });
-
-    this.clearHeartbeatTimer();
 
     // Attempt to reconnect unless explicitly closed
     if (event.code !== 1000 && this.connectionStatus.isOnline) {
@@ -227,28 +222,6 @@ export class WebSocketService {
     if (this.reconnectTimer) {
       clearTimeout(this.reconnectTimer);
       this.reconnectTimer = null;
-    }
-  }
-
-  /**
-   * Start heartbeat to keep connection alive
-   */
-  private startHeartbeat(): void {
-    this.clearHeartbeatTimer();
-    this.heartbeatTimer = setInterval(() => {
-      if (this.ws && this.ws.readyState === WebSocket.OPEN) {
-        this.sendMessage({ type: "ping" });
-      }
-    }, this.heartbeatInterval);
-  }
-
-  /**
-   * Clear heartbeat timer
-   */
-  private clearHeartbeatTimer(): void {
-    if (this.heartbeatTimer) {
-      clearInterval(this.heartbeatTimer);
-      this.heartbeatTimer = null;
     }
   }
 
