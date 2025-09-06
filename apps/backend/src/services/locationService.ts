@@ -157,12 +157,11 @@ export class LocationService {
   }
 
   /**
-   * Get all individual location dots from the last N hours (default: 4 hours)
+   * Get all individual location dots from the last N hours
    */
-  async getLocations(): Promise<LocationsResult> {
+  async getLocations(hours: number): Promise<LocationsResult> {
     try {
-      const displayHours = parseInt(process.env.LOCATION_DISPLAY_HOURS || "24");
-      const timeThreshold = Date.now() - displayHours * 60 * 60 * 1000;
+      const timeThreshold = Date.now() - hours * 60 * 60 * 1000;
 
       // Get all individual location keys
       const locationKeys = await this.redis.keys("location:*:*");
@@ -206,7 +205,8 @@ export class LocationService {
    */
   async getStats(): Promise<any> {
     try {
-      const { locations, totalActiveUsers } = await this.getLocations();
+      const statsHours = 24; // Fixed 24 hours for consistent stats
+      const { locations, totalActiveUsers } = await this.getLocations(statsHours);
       const allLocationKeys = await this.redis.keys("location:*:*");
 
       // Calculate coverage bounds
@@ -246,7 +246,7 @@ export class LocationService {
           },
         },
         dataRetention: {
-          displayWindow: `${process.env.LOCATION_DISPLAY_HOURS || "4"} hours`,
+          displayWindow: `${statsHours} hours`,
           totalDataStored: "persistent",
           oldestEntry: oldestEntry === Date.now() ? null : oldestEntry,
         },

@@ -1,23 +1,31 @@
 import { TRPCError } from "@trpc/server";
 import { createTRPCRouter, publicProcedure, protectedProcedure } from "../trpc";
-import { LocationInputSchema, LocationsResponseSchema, LocationSubmitResponseSchema } from "@nowhere/trpc";
+import {
+  LocationInputSchema,
+  LocationsInputSchema,
+  LocationsResponseSchema,
+  LocationSubmitResponseSchema,
+} from "@nowhere/trpc";
 
 export const locationRouter = createTRPCRouter({
-  getAll: publicProcedure.output(LocationsResponseSchema).query(async ({ ctx }) => {
-    try {
-      const result = await ctx.locationService.getLocations();
-      return {
-        ...result,
-        historicalTimespan: `${process.env.LOCATION_DISPLAY_HOURS || "24"} hours`,
-        lastRefresh: Date.now(),
-      };
-    } catch (error) {
-      throw new TRPCError({
-        code: "INTERNAL_SERVER_ERROR",
-        message: "Failed to fetch locations",
-      });
-    }
-  }),
+  getAll: publicProcedure
+    .input(LocationsInputSchema)
+    .output(LocationsResponseSchema)
+    .query(async ({ input, ctx }) => {
+      try {
+        const result = await ctx.locationService.getLocations(input.hours);
+        return {
+          ...result,
+          historicalTimespan: `${input.hours} hours`,
+          lastRefresh: Date.now(),
+        };
+      } catch (error) {
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "Failed to fetch locations",
+        });
+      }
+    }),
 
   submit: protectedProcedure
     .input(LocationInputSchema)
