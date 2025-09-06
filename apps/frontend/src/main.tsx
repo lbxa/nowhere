@@ -1,0 +1,30 @@
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { ErrorBoundary } from "./components";
+import { Toaster } from "react-hot-toast";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { App } from "./App.tsx";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "./api/trpc.ts";
+library.add(fas);
+
+import "./index.css";
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <App />
+        <Toaster
+          toastOptions={{
+            style: {
+              borderRadius: "20px",
+            },
+          }}
+        />
+      </QueryClientProvider>
+    </ErrorBoundary>
+  </StrictMode>,
+);

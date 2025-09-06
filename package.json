@@ -6,6 +6,7 @@
   "peerDependencies": {
     "typescript": "^5"
   },
+  "packageManager": "bun@1.2.19",
   "private": true,
   "scripts": {
     "dev": "bun --filter '*' dev",
@@ -15,11 +16,7 @@
   },
   "type": "module",
   "workspaces": [
-    "frontend",
-    "backend"
-  ],
-  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748",
-  "dependencies": {
-    "@tanstack/react-query": "^5.85.6"
-  }
+    "apps/*",
+    "libs/*"
+  ]
 }
