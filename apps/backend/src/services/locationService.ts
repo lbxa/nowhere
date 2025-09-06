@@ -102,10 +102,7 @@ export class LocationService {
   /**
    * Store individual user location in Redis
    */
-  async updateUserLocation(
-    deviceId: string,
-    locationData: LocationInput
-  ): Promise<LocationUpdateResult> {
+  async updateUserLocation(deviceId: string, locationData: LocationInput): Promise<LocationUpdateResult> {
     try {
       const { lat, lng, accuracy, timestamp } = locationData;
       const userId = this.generateAnonymousUserId(deviceId);
@@ -134,6 +131,24 @@ export class LocationService {
       const oneDayAgo = Date.now() - 24 * 60 * 60 * 1000;
       await this.redis.zRemRangeByScore(userLocationHistoryKey, 0, oneDayAgo);
 
+      // PUBLISH real-time location update via Redis Pub/Sub
+      try {
+        const channel = process.env.REDIS_LOCATION_CHANNEL || "realtime:location-updates";
+        await this.redis.publish(
+          channel,
+          JSON.stringify({
+            userId,
+            lat,
+            lng,
+            timestamp,
+            ageMinutes: 0,
+          })
+        );
+      } catch (publishError) {
+        // Non-fatal: persistence succeeded; Pub/Sub failure should not break request
+        console.error("Error publishing location update:", publishError);
+      }
+
       return { success: true, userId };
     } catch (error) {
       console.error("Error updating user location:", error);
@@ -142,12 +157,11 @@ export class LocationService {
   }
 
   /**
-   * Get all individual location dots from the last N hours (default: 4 hours)
+   * Get all individual location dots from the last N hours
    */
-  async getLocations(): Promise<LocationsResult> {
+  async getLocations(hours: number): Promise<LocationsResult> {
     try {
-      const displayHours = parseInt(process.env.LOCATION_DISPLAY_HOURS || "24");
-      const timeThreshold = Date.now() - displayHours * 60 * 60 * 1000;
+      const timeThreshold = Date.now() - hours * 60 * 60 * 1000;
 
       // Get all individual location keys
       const locationKeys = await this.redis.keys("location:*:*");
@@ -191,7 +205,8 @@ export class LocationService {
    */
   async getStats(): Promise<any> {
     try {
-      const { locations, totalActiveUsers } = await this.getLocations();
+      const statsHours = 24; // Fixed 24 hours for consistent stats
+      const { locations, totalActiveUsers } = await this.getLocations(statsHours);
       const allLocationKeys = await this.redis.keys("location:*:*");
 
       // Calculate coverage bounds
@@ -231,7 +246,7 @@ export class LocationService {
           },
         },
         dataRetention: {
-          displayWindow: `${process.env.LOCATION_DISPLAY_HOURS || "4"} hours`,
+          displayWindow: `${statsHours} hours`,
           totalDataStored: "persistent",
           oldestEntry: oldestEntry === Date.now() ? null : oldestEntry,
         },

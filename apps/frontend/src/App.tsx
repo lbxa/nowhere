@@ -15,6 +15,7 @@ import type { GeolocationError } from "./utils/geolocation";
 import { useLocations } from "./api/hooks/useLocations";
 import type { LocationPoint } from "./api/types";
 import toast from "react-hot-toast";
+import { deviceIdService } from "./services/deviceIdService";
 
 const INITIAL_ZOOM = 13;
 const TRAIL_WINDOW_MS = 30 * 60 * 1000; // trailing window (e.g., last 10m)
@@ -24,6 +25,7 @@ export const App = () => {
   const mapRef = useRef<Map | null>(null);
   const { requestLocationPermission } = useRequestLocationPermission();
   const [origin, setOrigin] = useState<[number, number]>([0, 0]);
+  const deviceId = useMemo(() => deviceIdService.getDeviceId(), []);
 
   const [time, setTime] = useState<number>(0);
   const timeRef = useRef<number>(0);
@@ -100,7 +102,8 @@ export const App = () => {
     const source = map.getSource(LOCATIONS_SOURCE_ID);
     if (!isGeoJSONSource(source)) return;
 
-    const features = timelineLocations.map((p) => ({
+    const visible = timelineLocations.filter((p) => p.userId !== deviceId);
+    const features = visible.map((p) => ({
       type: "Feature" as const,
       id: p.id,
       geometry: {
@@ -111,9 +114,8 @@ export const App = () => {
     }));
 
     source.setData({ type: "FeatureCollection", features });
-  }, [timelineLocations]);
+  }, [timelineLocations, deviceId]);
 
-  // Dispose timeline on unmount
   useEffect(() => {
     return () => {
       timelineRef.current?.dispose();
@@ -157,8 +159,12 @@ export const App = () => {
   const handlePlay = () => {
     const next = !isPlaying;
     setIsPlaying(next);
-    if (next) timelineRef.current?.start();
-    else timelineRef.current?.stop();
+    if (next) {
+      timelineRef.current?.setTime(minT);
+      timelineRef.current?.start();
+    } else {
+      timelineRef.current?.stop();
+    }
   };
 
   return (
@@ -215,7 +221,7 @@ export const App = () => {
             },
           });
           timelineRef.current = tl;
-          tl.setTime(minT);
+          tl.setTime(time >= minT && time <= maxT ? time : minT);
         }}
       />
     </div>

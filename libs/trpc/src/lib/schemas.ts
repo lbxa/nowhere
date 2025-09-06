@@ -15,6 +15,10 @@ export const LocationInputSchema = z.object({
     }),
 });
 
+export const LocationsInputSchema = z.object({
+  hours: z.number().int().positive().max(168),
+});
+
 // Output schemas
 export const LocationOutputSchema = z.object({
   userId: z.string(),
@@ -70,6 +74,7 @@ export const LocationSubmitResponseSchema = z.object({
 
 // Type exports for use in procedures
 export type LocationInput = z.infer<typeof LocationInputSchema>;
+export type LocationsInput = z.infer<typeof LocationsInputSchema>;
 export type LocationOutput = z.infer<typeof LocationOutputSchema>;
 export type LocationsResponse = z.infer<typeof LocationsResponseSchema>;
 export type StatsResponse = z.infer<typeof StatsResponseSchema>;

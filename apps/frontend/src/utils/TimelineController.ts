@@ -68,7 +68,7 @@ export default class TimelineController {
       const dt = now - last;
       last = now;
       let next = this.currentTime + (dt * this.playSpeed) / 1000;
-      if (next > this.maxTime) next = this.minTime;
+      if (next > this.maxTime) next = this.maxTime;
       this.setTime(next);
       this.animId = requestAnimationFrame(tick);
     };
@@ -121,7 +121,11 @@ export default class TimelineController {
         minOpacity: 0.1,
         maxDecayTimeMs: this.trailWindowMs,
       });
-      this.map.setPaintProperty(this.circleLayerId, "circle-opacity", opacityExpression as any);
+      this.map.setPaintProperty(
+        this.circleLayerId,
+        "circle-opacity",
+        opacityExpression as Expression,
+      );
     }
 
     // Notify after a map update was actually applied (throttled)
