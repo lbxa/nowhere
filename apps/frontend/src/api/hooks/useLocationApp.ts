@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { useLocations } from "./useLocations";
 import { useWebSocket } from "./useWebSocket";
 import { useSubmitLocation } from "./useSubmitLocation";
+import toast from "react-hot-toast";
 
 interface LocationState {
   hasSubmitted: boolean;
@@ -35,7 +36,8 @@ export const useLocationApp = () => {
 
       try {
         if (!navigator.geolocation) {
-          throw new Error("Geolocation is not supported by this browser");
+          toast.error("Geolocation is not supported by this browser");
+          return;
         }
 
         const position = await new Promise<GeolocationPosition>(
