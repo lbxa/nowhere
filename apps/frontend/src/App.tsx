@@ -160,8 +160,12 @@ export const App = () => {
   const handlePlay = () => {
     const next = !isPlaying;
     setIsPlaying(next);
-    if (next) timelineRef.current?.start();
-    else timelineRef.current?.stop();
+    if (next) {
+      timelineRef.current?.setTime(minT);
+      timelineRef.current?.start();
+    } else {
+      timelineRef.current?.stop();
+    }
   };
 
   return (
@@ -218,7 +222,7 @@ export const App = () => {
             },
           });
           timelineRef.current = tl;
-          tl.setTime(minT);
+          tl.setTime(time >= minT && time <= maxT ? time : minT);
         }}
       />
     </div>

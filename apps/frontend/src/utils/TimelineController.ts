@@ -68,7 +68,7 @@ export default class TimelineController {
       const dt = now - last;
       last = now;
       let next = this.currentTime + (dt * this.playSpeed) / 1000;
-      if (next > this.maxTime) next = this.minTime;
+      if (next > this.maxTime) next = this.maxTime;
       this.setTime(next);
       this.animId = requestAnimationFrame(tick);
     };
