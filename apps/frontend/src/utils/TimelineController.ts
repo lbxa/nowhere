@@ -121,7 +121,11 @@ export default class TimelineController {
         minOpacity: 0.1,
         maxDecayTimeMs: this.trailWindowMs,
       });
-      this.map.setPaintProperty(this.circleLayerId, "circle-opacity", opacityExpression as any);
+      this.map.setPaintProperty(
+        this.circleLayerId,
+        "circle-opacity",
+        opacityExpression as Expression,
+      );
     }
 
     // Notify after a map update was actually applied (throttled)
