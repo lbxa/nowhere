@@ -329,15 +329,18 @@ export class SocketHandler {
     }
 
     // Unsubscribe and disconnect Redis subscriber
-    try {
-      if (this.redisSubscriber) {
+    if (this.redisSubscriber) {
+      try {
+        await this.redisSubscriber.unsubscribe(this.redisChannel);
+      } catch (_) {
+        // nothing
+      } finally {
         try {
-          await this.redisSubscriber.unsubscribe(this.redisChannel);
-        } catch (_) {}
-        await this.redisSubscriber.disconnect();
+          await this.redisSubscriber.disconnect();
+        } catch (e) {
+          console.error("Error closing Redis subscriber:", e);
+        }
       }
-    } catch (e) {
-      console.error("Error closing Redis subscriber:", e);
     }
 
     // Close the WebSocket server
