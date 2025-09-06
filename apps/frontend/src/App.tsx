@@ -116,7 +116,6 @@ export const App = () => {
     source.setData({ type: "FeatureCollection", features });
   }, [timelineLocations, deviceId]);
 
-  // Dispose timeline on unmount
   useEffect(() => {
     return () => {
       timelineRef.current?.dispose();
